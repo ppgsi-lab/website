@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Apresentação Geral" description="Conheça o Programa de Pós-Graduação em Sistemas de Informação da EACH/USP">
@@ -157,11 +158,11 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- Navigation links -->
     <nav class="mt-16 pt-8 border-t border-rule flex flex-wrap gap-4">
-      <a href="/about/research" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Linhas de Pesquisa &rarr;</a>
-      <a href="/about/areas" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Áreas de Aplicação &rarr;</a>
-      <a href="/courses" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Disciplinas &rarr;</a>
-      <a href="/about/regulations" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Regulamentos &rarr;</a>
-      <a href="/about/production" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Produção &rarr;</a>
+      <a href={url("/about/research")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Linhas de Pesquisa &rarr;</a>
+      <a href={url("/about/areas")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Áreas de Aplicação &rarr;</a>
+      <a href={url("/courses")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Disciplinas &rarr;</a>
+      <a href={url("/about/regulations")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Regulamentos &rarr;</a>
+      <a href={url("/about/production")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Produção &rarr;</a>
     </nav>
   </section>
 </Layout>

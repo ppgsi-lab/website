@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Alunos Estrangeiros" description="Orientações para candidatos estrangeiros ao PPgSI — documentação, bolsas e processo de admissão.">
@@ -48,7 +49,7 @@ import Layout from '../../layouts/Layout.astro';
     </p>
 
     <p class="text-body-lg text-ink-2 leading-relaxed mb-4">
-      Consulte a página de <a href="/admission" class="text-teal hover:text-teal-dark">processo seletivo</a> para mais informações sobre inscrição e documentação necessária.
+      Consulte a página de <a href={url("/admission")} class="text-teal hover:text-teal-dark">processo seletivo</a> para mais informações sobre inscrição e documentação necessária.
     </p>
   </section>
 </Layout>

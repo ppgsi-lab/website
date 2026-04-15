@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Editais Abertos" description="Editais abertos e resultados de processos seletivos do PPgSI — mestrado e doutorado.">
@@ -37,7 +38,7 @@ import Layout from '../../layouts/Layout.astro';
         </a> do processo seletivo para o primeiro e segundo semestre de 2025, publicado no Diário Oficial da União
       </li>
       <li><strong>Projetos e vagas:</strong> <a href="http://ppgsi.each.usp.br/projetos-e-vagas-02-2025/" class="text-teal hover:text-teal-dark" target="_blank" rel="noopener">lista de projetos e vagas para o segundo semestre de 2025 ↗</a> (publicado em 19/04/25)</li>
-      <li><strong>Inscrição em:</strong> <a href="/admission" class="text-teal hover:text-teal-dark">formulários do processo seletivo</a></li>
+      <li><strong>Inscrição em:</strong> <a href={url("/admission")} class="text-teal hover:text-teal-dark">formulários do processo seletivo</a></li>
       <li><strong>Resultados em:</strong> <a href="#resultados" class="text-teal hover:text-teal-dark">resultados do processo seletivo</a></li>
     </ul>
 
@@ -58,7 +59,7 @@ import Layout from '../../layouts/Layout.astro';
         </a> do processo seletivo para o primeiro e segundo semestre de 2025
       </li>
       <li><strong>Projetos e vagas:</strong> <a href="http://ppgsi.each.usp.br/projetos-e-vagas-01-2025/" class="text-teal hover:text-teal-dark" target="_blank" rel="noopener">lista de projetos e vagas para o primeiro semestre de 2025 ↗</a> (publicado em 22/10/24)</li>
-      <li><strong>Inscrição em:</strong> <a href="/admission" class="text-teal hover:text-teal-dark">formulários do processo seletivo</a></li>
+      <li><strong>Inscrição em:</strong> <a href={url("/admission")} class="text-teal hover:text-teal-dark">formulários do processo seletivo</a></li>
     </ul>
 
     <h3 class="text-xl font-semibold text-ink mt-8 mb-3">Editais de processos seletivos anteriores</h3>

@@ -5,6 +5,7 @@ const semester = getCurrentSemester();
 const ui = getUI();
 const editals = semester.openCalls;
 const courses = semester.courses;
+import { url } from '../lib/url';
 ---
 
 <section class="px-8 pt-4 pb-12 md:pt-6 md:pb-16">
@@ -21,7 +22,7 @@ const courses = semester.courses;
         </h3>
         <div class="space-y-4">
           {editals.map((edital) => (
-            <a href={edital.href} target="_blank" rel="noopener"
+            <a href={url(edital.href)} target="_blank" rel="noopener"
                class="block border border-rule p-6 md:p-8 hover:border-teal transition-colors duration-200 group/edital">
               <p class="text-body-xs text-ink-4 mb-2">{edital.code}</p>
               <h4 class="font-display text-display-card font-bold tracking-tight text-ink leading-tight">
@@ -33,7 +34,7 @@ const courses = semester.courses;
             </a>
           ))}
         </div>
-        <a href="/admission" class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
+        <a href={url("/admission")} class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
           {ui.currentSemester.admissionInfo} →
         </a>
       </div>
@@ -51,7 +52,7 @@ const courses = semester.courses;
             </div>
           ))}
         </div>
-        <a href="/courses" class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
+        <a href={url("/courses")} class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
           {ui.currentSemester.fullCatalog} →
         </a>
       </div>

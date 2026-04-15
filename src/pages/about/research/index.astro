@@ -36,6 +36,7 @@ const applicationAreas = [
   'Personalização e imersão audiovisual',
   'Música digital',
 ];
+import { url } from '../../../lib/url';
 ---
 
 <Layout title="Pesquisa" description="Linhas de pesquisa, áreas de pesquisa e áreas de aplicação do PPgSI - EACH/USP">
@@ -59,7 +60,7 @@ const applicationAreas = [
     <!-- Research lines -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
       {lines.map((line) => (
-        <a href={line.href} class:list={[
+        <a href={url(line.href)} class:list={[
           'relative border-2 block group/line transition-colors duration-200',
           line.color === 'teal' ? 'border-teal hover:bg-teal-50' : 'border-yellow hover:bg-yellow-light',
         ]}>
@@ -112,8 +113,8 @@ const applicationAreas = [
 
     <!-- Navigation links -->
     <nav class="mt-16 pt-8 border-t border-rule flex flex-wrap gap-4">
-      <a href="/about" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">&larr; Apresentação Geral</a>
-      <a href="/courses" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Disciplinas &rarr;</a>
+      <a href={url("/about")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">&larr; Apresentação Geral</a>
+      <a href={url("/courses")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Disciplinas &rarr;</a>
     </nav>
   </section>
 </Layout>

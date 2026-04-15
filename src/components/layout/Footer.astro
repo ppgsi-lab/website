@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { ui } = Astro.props;
+import { url } from '../../lib/url';
 ---
 
 <footer class="bg-teal text-white mt-16">
@@ -26,31 +27,31 @@ const { ui } = Astro.props;
       <div class="md:col-span-2">
         <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionProgram}</p>
         <ul class="space-y-2.5">
-          <li><a href="/about" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.presentation}</a></li>
-          <li><a href="/about/research" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.research}</a></li>
-          <li><a href="/courses" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.courses}</a></li>
-          <li><a href="/about/regulations" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.regulations}</a></li>
-          <li><a href="/posts" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.posts}</a></li>
+          <li><a href={url("/about")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.presentation}</a></li>
+          <li><a href={url("/about/research")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.research}</a></li>
+          <li><a href={url("/courses")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.courses}</a></li>
+          <li><a href={url("/about/regulations")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.regulations}</a></li>
+          <li><a href={url("/posts")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.posts}</a></li>
         </ul>
       </div>
 
       <div class="md:col-span-2">
         <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionAcademic}</p>
         <ul class="space-y-2.5">
-          <li><a href="/admission" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.admission}</a></li>
-          <li><a href="/admission/open" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.openCalls}</a></li>
-          <li><a href="/academic/forms" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.forms}</a></li>
-          <li><a href="/academic/funding" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.funding}</a></li>
-          <li><a href="/faq" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.faq}</a></li>
+          <li><a href={url("/admission")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.admission}</a></li>
+          <li><a href={url("/admission/open")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.openCalls}</a></li>
+          <li><a href={url("/academic/forms")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.forms}</a></li>
+          <li><a href={url("/academic/funding")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.funding}</a></li>
+          <li><a href={url("/faq")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.faq}</a></li>
         </ul>
       </div>
 
       <div class="md:col-span-2">
         <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionPeople}</p>
         <ul class="space-y-2.5">
-          <li><a href="/people" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.advisors}</a></li>
-          <li><a href="/people/students" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.students}</a></li>
-          <li><a href="/people/ccp" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.ccp}</a></li>
+          <li><a href={url("/people")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.advisors}</a></li>
+          <li><a href={url("/people/students")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.students}</a></li>
+          <li><a href={url("/people/ccp")} class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.ccp}</a></li>
         </ul>
       </div>
 

@@ -14,13 +14,14 @@ function isGroup(item: NavChild | NavGroup): item is NavGroup {
 function hasGroups(children: (NavChild | NavGroup)[]): boolean {
   return children.some(c => isGroup(c));
 }
+import { url } from '../../lib/url';
 ---
 
 <div class="hidden lg:flex items-center gap-1">
   {nav.map((item) => (
     <div class="relative group/nav">
       {item.href ? (
-        <a href={item.href}
+        <a href={url(item.href)}
            class="hover-item py-2 px-3 text-nav font-bold text-ink uppercase">
           {item.label}
         </a>
@@ -39,7 +40,7 @@ function hasGroups(children: (NavChild | NavGroup)[]): boolean {
                     transition-all duration-200">
           <div class="bg-bone border border-rule shadow-lg py-2 min-w-[280px]">
             {(item.children as NavChild[]).map((child) => (
-              <a href={child.href}
+              <a href={url(child.href)}
                  class="hover-item block px-4 py-2.5 text-body font-semibold text-ink-3 uppercase">
                 {child.label}
               </a>
@@ -60,7 +61,7 @@ function hasGroups(children: (NavChild | NavGroup)[]): boolean {
                     {(child as NavGroup).group}
                   </p>
                   {(child as NavGroup).items.map((sub) => (
-                    <a href={sub.href}
+                    <a href={url(sub.href)}
                        class="hover-item block px-2 py-2 text-body font-semibold text-ink-3 uppercase">
                       {sub.label}
                     </a>
@@ -71,7 +72,7 @@ function hasGroups(children: (NavChild | NavGroup)[]): boolean {
             {(item.children as (NavChild | NavGroup)[]).filter(c => !isGroup(c)).length > 0 && (
               <div class="border-t border-rule/50 mt-3 pt-3 mx-5">
                 {(item.children as (NavChild | NavGroup)[]).filter(c => !isGroup(c)).map((child) => (
-                  <a href={(child as NavChild).href}
+                  <a href={url((child as NavChild).href)}
                      class="hover-item block px-2 py-2 text-body font-semibold text-ink-3 uppercase">
                     {(child as NavChild).label}
                   </a>

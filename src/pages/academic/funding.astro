@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Bolsas e PROAP" description="Regras de bolsas de estudo e verba PROAP do PPgSI — Capes, Fapesp, estágios e financiamento.">
@@ -32,7 +33,7 @@ import Layout from '../../layouts/Layout.astro';
     <h3 class="text-xl font-semibold text-ink mt-8 mb-3">Bolsas Capes (Cotas do Programa e PRPG)</h3>
 
     <p class="text-body-lg text-ink-2 leading-relaxed mb-4">
-      Consultar programa <a href="/academic/pae" class="text-teal hover:text-teal-dark">PAE</a>.
+      Consultar programa <a href={url("/academic/pae")} class="text-teal hover:text-teal-dark">PAE</a>.
     </p>
 
     <h3 class="text-xl font-semibold text-ink mt-8 mb-3">Bolsas Fapesp</h3>

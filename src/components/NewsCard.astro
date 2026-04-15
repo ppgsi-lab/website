@@ -11,6 +11,7 @@ interface Props {
 const { title, date, summary, slug, source, cover } = Astro.props;
 
 const formatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+import { url } from '../lib/url';
 ---
 
 <div class="border border-rule p-6 md:p-8 hover:border-teal transition-colors duration-200 group/news">
@@ -19,7 +20,7 @@ const formatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'lon
   )}
   <p class="text-body-xs text-ink-4 mb-2">{formatted}{source && ` · ${source}`}</p>
   <h3 class="font-display text-display-card font-bold tracking-tight leading-display-card">
-    <a href={`/news/${slug}`} class="text-ink hover:text-teal transition-colors">{title}</a>
+    <a href={url(`/news/${slug}`)} class="text-ink hover:text-teal transition-colors">{title}</a>
   </h3>
   <p class="text-body-sm text-ink-3 mt-3 leading-relaxed">{summary}</p>
 </div>

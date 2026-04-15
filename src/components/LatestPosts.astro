@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+import { url } from '../lib/url';
 ---
 
 {posts.length > 0 && (
@@ -28,7 +29,7 @@ const posts = (await getCollection('posts'))
         ))}
       </div>
 
-      <a href="/posts" class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
+      <a href={url("/posts")} class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
         Ver todas as publicações →
       </a>
     </div>

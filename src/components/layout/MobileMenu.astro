@@ -10,13 +10,14 @@ const { nav } = Astro.props;
 function isGroup(item: NavChild | NavGroup): item is NavGroup {
   return 'group' in item;
 }
+import { url } from '../../lib/url';
 ---
 
 <div id="mobile-menu" class="hidden lg:hidden bg-bone border-b border-rule px-8 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
   {nav.map((item) => (
     <div class="border-b border-rule/50 last:border-0">
       {item.href ? (
-        <a href={item.href} class="block py-3 text-body-sm text-ink-3 hover:text-ink">
+        <a href={url(item.href)} class="block py-3 text-body-sm text-ink-3 hover:text-ink">
           {item.label}
         </a>
       ) : (
@@ -35,13 +36,13 @@ function isGroup(item: NavChild | NavGroup): item is NavGroup {
                     {child.group}
                   </p>
                   {child.items.map((sub) => (
-                    <a href={sub.href} class="block py-2 text-body-xs text-ink-3 hover:text-ink">
+                    <a href={url(sub.href)} class="block py-2 text-body-xs text-ink-3 hover:text-ink">
                       {sub.label}
                     </a>
                   ))}
                 </div>
               ) : (
-                <a href={(child as NavChild).href} class="block py-2 text-body-xs text-ink-3 hover:text-ink">
+                <a href={url((child as NavChild).href)} class="block py-2 text-body-xs text-ink-3 hover:text-ink">
                   {(child as NavChild).label}
                 </a>
               )
@@ -53,14 +54,14 @@ function isGroup(item: NavChild | NavGroup): item is NavGroup {
   ))}
 
   <div class="flex items-center gap-4 pt-4">
-    <a href="/">
-      <img src="/ppgsi_logo.svg" alt="PPgSI" class="h-10" />
+    <a href={url("/")}>
+      <img src={url("/ppgsi_logo.svg")} alt="PPgSI" class="h-10" />
     </a>
     <a href="https://each.usp.br" target="_blank" rel="noopener">
-      <img src="/logoeach.png" alt="EACH-USP" class="h-10" />
+      <img src={url("/logoeach.png")} alt="EACH-USP" class="h-10" />
     </a>
     <a href="https://www.usp.br" target="_blank" rel="noopener">
-      <img src="/logo_usp.png" alt="USP" class="h-8" />
+      <img src={url("/logo_usp.png")} alt="USP" class="h-8" />
     </a>
   </div>
 </div>

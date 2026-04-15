@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Posts" description="Publicações de alunos e professores do PPgSI">
@@ -21,7 +22,7 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
     {allTags.length > 0 && (
       <div class="flex gap-3 flex-wrap mb-12">
         {allTags.map((tag) => (
-          <a href={`/posts/tags/${tag}`} class="hover-item text-sm text-ink-2 border border-rule px-4 py-2 transition-colors">
+          <a href={url(`/posts/tags/${tag}`)} class="hover-item text-sm text-ink-2 border border-rule px-4 py-2 transition-colors">
             {tag}
           </a>
         ))}

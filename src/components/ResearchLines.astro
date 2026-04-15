@@ -3,6 +3,7 @@ import { getResearchLineSummaries, getUI } from '../lib/data';
 
 const lines = getResearchLineSummaries();
 const ui = getUI();
+import { url } from '../lib/url';
 ---
 
 <section class="px-8 pt-12 pb-12 md:pt-16 md:pb-16">
@@ -13,7 +14,7 @@ const ui = getUI();
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {lines.map((line) => (
-        <a href={line.href} class:list={[
+        <a href={url(line.href)} class:list={[
           'relative border-2 block group/line transition-colors duration-200',
           line.color === 'teal' ? 'border-teal hover:bg-teal-50' : 'border-yellow hover:bg-yellow-light',
         ]}>

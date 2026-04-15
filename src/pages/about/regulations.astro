@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Normas e Regimentos" description="Regulamentos, regimentos e normas do PPgSI - EACH/USP">
@@ -74,8 +75,8 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- Navigation links -->
     <nav class="mt-16 pt-8 border-t border-rule flex flex-wrap gap-4">
-      <a href="/about" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">&larr; Apresentação Geral</a>
-      <a href="/about/production" class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Produção Acadêmica &rarr;</a>
+      <a href={url("/about")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">&larr; Apresentação Geral</a>
+      <a href={url("/about/production")} class="hover-item px-4 py-2 text-sm font-medium text-ink transition-colors">Produção Acadêmica &rarr;</a>
     </nav>
   </section>
 </Layout>

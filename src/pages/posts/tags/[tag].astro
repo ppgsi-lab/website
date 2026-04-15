@@ -18,11 +18,12 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props;
+import { url } from '../../../lib/url';
 ---
 
 <Layout title={`Posts sobre ${tag}`} description={`Publicações do PPgSI com a tag ${tag}`}>
   <section class="mx-auto max-w-container px-8 py-section md:py-section-md">
-    <a href="/posts" class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todos os posts</a>
+    <a href={url("/posts")} class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todos os posts</a>
     <p class="eyebrow text-teal mb-3">Tag</p>
     <h1 class="font-display text-display-page font-bold tracking-tight text-ink mb-8">
       {tag}

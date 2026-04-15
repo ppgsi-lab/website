@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
 ---
 
 <Layout title="Perguntas Frequentes" description="Perguntas e respostas frequentes sobre o PPgSI — programa, processo seletivo, bolsas, disciplinas e mais.">
@@ -803,7 +804,7 @@ import Layout from '../../layouts/Layout.astro';
           80) Qual o valor da bolsa de estudos?
         </summary>
         <p class="text-body-lg text-ink-2 leading-relaxed pb-4 pt-2">
-          Depende do momento e agência de fomento. Consulte: <a href="/academic/funding" class="text-teal hover:text-teal-dark">Bolsas e PROAP</a>
+          Depende do momento e agência de fomento. Consulte: <a href={url("/academic/funding")} class="text-teal hover:text-teal-dark">Bolsas e PROAP</a>
         </p>
       </details>
 
@@ -830,7 +831,7 @@ import Layout from '../../layouts/Layout.astro';
           83) Qual o procedimento para candidatos estrangeiros interessados em cursar o mestrado e o doutorado no PPgSI?
         </summary>
         <p class="text-body-lg text-ink-2 leading-relaxed pb-4 pt-2">
-          Depende do tipo de bolsa. Consulte: <a href="/admission/international" class="text-teal hover:text-teal-dark">Alunos Estrangeiros</a>
+          Depende do tipo de bolsa. Consulte: <a href={url("/admission/international")} class="text-teal hover:text-teal-dark">Alunos Estrangeiros</a>
         </p>
       </details>
 
@@ -839,7 +840,7 @@ import Layout from '../../layouts/Layout.astro';
           84) Há outras formas de financiamento além dessas bolsas de estudo?
         </summary>
         <p class="text-body-lg text-ink-2 leading-relaxed pb-4 pt-2">
-          Sim, outras bolsas como Estágio PAE podem ser oferecidas. Consulte: <a href="/academic/pae" class="text-teal hover:text-teal-dark">Estágio PAE</a>
+          Sim, outras bolsas como Estágio PAE podem ser oferecidas. Consulte: <a href={url("/academic/pae")} class="text-teal hover:text-teal-dark">Estágio PAE</a>
         </p>
       </details>
     </div>

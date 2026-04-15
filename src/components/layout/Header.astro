@@ -8,14 +8,15 @@ interface Props {
 }
 
 const { nav } = Astro.props;
+import { url } from '../../lib/url';
 ---
 
 <header class="fixed top-0 inset-x-0 z-50">
   <div class="bg-bone border-b border-rule/50">
     <nav class="mx-auto max-w-container px-8 flex items-center justify-between h-16">
       <!-- PPgSI logo -->
-      <a href="/" class="hidden lg:block shrink-0">
-        <img src="/ppgsi.svg" alt="PPgSI" class="h-16 pt-1" />
+      <a href={url("/")} class="hidden lg:block shrink-0">
+        <img src={url("/ppgsi.svg")} alt="PPgSI" class="h-16 pt-1" />
       </a>
 
       <DesktopNav nav={nav} />
@@ -23,10 +24,10 @@ const { nav } = Astro.props;
       <!-- EACH + USP logos -->
       <div class="hidden lg:flex items-center gap-6 shrink-0">
         <a href="https://each.usp.br" target="_blank" rel="noopener">
-          <img src="/logoeach.png" alt="EACH-USP" class="h-12" />
+          <img src={url("/logoeach.png")} alt="EACH-USP" class="h-12" />
         </a>
         <a href="https://www.usp.br" target="_blank" rel="noopener">
-          <img src="/logo_usp.png" alt="USP" class="h-10" />
+          <img src={url("/logo_usp.png")} alt="USP" class="h-10" />
         </a>
       </div>
 

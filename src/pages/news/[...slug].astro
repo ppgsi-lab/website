@@ -19,11 +19,12 @@ const prevItem = currentIndex < allNews.length - 1 ? allNews[currentIndex + 1] :
 const nextItem = currentIndex > 0 ? allNews[currentIndex - 1] : null;
 
 const formatted = item.data.date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+import { url } from '../../lib/url';
 ---
 
 <Layout title={item.data.title} description={item.data.summary}>
   <article class="mx-auto max-w-prose px-8 py-section md:py-section-md">
-    <a href="/news" class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todas as notícias</a>
+    <a href={url("/news")} class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todas as notícias</a>
 
     {item.data.cover && (
       <img src={item.data.cover} alt="" class="w-full h-64 md:h-80 object-cover mb-8" />
@@ -44,13 +45,13 @@ const formatted = item.data.date.toLocaleDateString('pt-BR', { day: 'numeric', m
 
     <nav class="mt-16 pt-8 border-t border-rule grid grid-cols-1 md:grid-cols-2 gap-4">
       {prevItem ? (
-        <a href={`/news/${prevItem.id}`} class="block border border-rule p-6 hover:border-teal transition-colors">
+        <a href={url(`/news/${prevItem.id}`)} class="block border border-rule p-6 hover:border-teal transition-colors">
           <p class="eyebrow text-ink-4 mb-2">← Anterior</p>
           <p class="font-display text-base font-bold text-ink">{prevItem.data.title}</p>
         </a>
       ) : <div />}
       {nextItem && (
-        <a href={`/news/${nextItem.id}`} class="block border border-rule p-6 hover:border-teal transition-colors text-right">
+        <a href={url(`/news/${nextItem.id}`)} class="block border border-rule p-6 hover:border-teal transition-colors text-right">
           <p class="eyebrow text-ink-4 mb-2">Próxima →</p>
           <p class="font-display text-base font-bold text-ink">{nextItem.data.title}</p>
         </a>

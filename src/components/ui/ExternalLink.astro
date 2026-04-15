@@ -1,0 +1,13 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  class?: string;
+}
+
+const { href, label, class: className } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener" class:list={['text-teal hover:underline', className]}>
+  {label} ↗
+</a>

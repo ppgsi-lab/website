@@ -1,0 +1,73 @@
+---
+import type { UIStrings } from '../../types';
+
+interface Props {
+  ui: UIStrings;
+}
+
+const { ui } = Astro.props;
+---
+
+<footer class="bg-teal text-white mt-16">
+  <div class="mx-auto max-w-container px-8 py-section">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+      <div class="md:col-span-4">
+        <p class="font-display text-3xl font-bold leading-tight tracking-tight">
+          {ui.footer.programName}
+        </p>
+        <p class="text-body-xs text-on-primary-subtle mt-6 leading-relaxed max-w-sm">
+          {ui.footer.institution}<br/>
+          {ui.footer.university}<br/>
+          {ui.footer.address}<br/>
+          {ui.footer.zip}
+        </p>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionProgram}</p>
+        <ul class="space-y-2.5">
+          <li><a href="/about" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.presentation}</a></li>
+          <li><a href="/about/research" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.research}</a></li>
+          <li><a href="/courses" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.courses}</a></li>
+          <li><a href="/about/regulations" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.regulations}</a></li>
+          <li><a href="/posts" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.posts}</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionAcademic}</p>
+        <ul class="space-y-2.5">
+          <li><a href="/admission" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.admission}</a></li>
+          <li><a href="/admission/open" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.openCalls}</a></li>
+          <li><a href="/academic/forms" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.forms}</a></li>
+          <li><a href="/academic/funding" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.funding}</a></li>
+          <li><a href="/faq" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.faq}</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionPeople}</p>
+        <ul class="space-y-2.5">
+          <li><a href="/people" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.advisors}</a></li>
+          <li><a href="/people/students" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.students}</a></li>
+          <li><a href="/people/ccp" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.ccp}</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <p class="eyebrow text-on-primary-faint mb-4">{ui.footer.sectionLinks}</p>
+        <ul class="space-y-2.5">
+          <li><a href="https://each.usp.br" target="_blank" rel="noopener" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.each} ↗</a></li>
+          <li><a href="https://www.usp.br" target="_blank" rel="noopener" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.usp} ↗</a></li>
+          <li><a href="https://www.gov.br/capes" target="_blank" rel="noopener" class="text-body-sm text-on-primary-muted hover:text-white transition-colors">{ui.footer.capes} ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-20 pt-6 border-t border-on-primary-ghost">
+      <p class="text-tag text-on-primary-dim">
+        &copy; {new Date().getFullYear()} PPgSI — EACH/USP
+      </p>
+    </div>
+  </div>
+</footer>

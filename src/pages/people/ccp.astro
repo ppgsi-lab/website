@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/ui/Section.astro';
+import PageHeader from '../../components/ui/PageHeader.astro';
+import SubNav from '../../components/ui/SubNav.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import InfoBox from '../../components/ui/InfoBox.astro';
+import { getCCP, getUI } from '../../lib/data';
+
+const ccp = getCCP();
+const ui = getUI();
+---
+
+<Layout title={ui.pages.ccpTitle} description={ui.pages.ccpDescription}>
+  <Section>
+    <PageHeader
+      eyebrow={ui.people.sectionLabel}
+      title={ui.pages.ccpTitle}
+      description={ui.pages.ccpDescription}
+    />
+
+    <SubNav links={[
+      { label: ui.people.advisorsLabel, href: '/people' },
+      { label: ui.people.studentsLabel, href: '/people/students' },
+      { label: ui.people.alumniLabel, href: '/people/alumni' },
+    ]} />
+
+    <!-- Current composition -->
+    <SectionTitle class="text-display-section">{ui.pages.currentComposition}</SectionTitle>
+
+    <div class="overflow-x-auto mb-16">
+      <table class="w-full text-left text-sm">
+        <thead>
+          <tr class="border-b-2 border-ink">
+            <th class="py-3 pr-4 font-bold text-ink">{ui.table.holder}</th>
+            <th class="py-3 pr-4 font-bold text-ink">{ui.table.position}</th>
+            <th class="py-3 pr-4 font-bold text-ink">{ui.table.period}</th>
+            <th class="py-3 pr-4 font-bold text-ink">{ui.table.alternate}</th>
+            <th class="py-3 font-bold text-ink">{ui.table.term}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ccp.members.map((m) => (
+            <tr class="border-b border-rule">
+              <td class="py-3 pr-4 text-ink font-medium">{m.holder || <span class="text-ink-4">&mdash;</span>}</td>
+              <td class="py-3 pr-4 text-ink-2">{m.role || <span class="text-ink-4">&mdash;</span>}</td>
+              <td class="py-3 pr-4 text-ink-3">{m.term || <span class="text-ink-4">&mdash;</span>}</td>
+              <td class="py-3 pr-4 text-ink font-medium">{m.alternate || <span class="text-ink-4">&mdash;</span>}</td>
+              <td class="py-3 text-ink-3">{m.alternateTerm || <span class="text-ink-4">&mdash;</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Past coordinators -->
+    <SectionTitle class="text-display-section">{ui.pages.pastCoordinators}</SectionTitle>
+
+    <div class="mb-16">
+      {ccp.pastCoordinators.map((ex) => (
+        <div class="border-b border-rule py-4 flex justify-between items-center">
+          <span class="font-medium text-ink">{ex.name}</span>
+          <span class="text-sm text-ink-3">{ex.term}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Meeting calendar -->
+    <SectionTitle class="text-display-section">{ui.pages.meetingCalendar}</SectionTitle>
+
+    <InfoBox>
+      A CCP reúne-se ordinariamente nos meses de fevereiro, março, abril, maio, junho, agosto,
+      setembro, outubro, novembro e dezembro. Não há reuniões ordinárias nos meses de janeiro e julho.
+      As reuniões ordinárias são realizadas na primeira quarta-feira útil/letiva de cada mês.
+    </InfoBox>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 mb-16">
+      {ccp.meetings.map((semester) => (
+        <div>
+          <h3 class="font-bold text-ink mb-4">{semester.label}</h3>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b-2 border-ink">
+                <th class="py-2 pr-4 font-bold text-ink">{ui.table.date}</th>
+                <th class="py-2 pr-4 font-bold text-ink">{ui.table.day}</th>
+                <th class="py-2 font-bold text-ink">{ui.table.time}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {semester.items.map((r) => (
+                <tr class="border-b border-rule">
+                  <td class="py-2 pr-4 text-ink">{r.date}</td>
+                  <td class="py-2 pr-4 text-ink-3">{r.day}</td>
+                  <td class="py-2 text-ink-3">{r.time || <span class="text-ink-4">&mdash;</span>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
+
+    <InfoBox title={ui.pages.importantInfo}>
+      A pauta deve ser divulgada com no mínimo 48 horas úteis de antecedência. Documentação
+      de docentes e alunos deve ser entregue até a segunda-feira anterior às 13h30, respeitando
+      feriados e recessos. Casos excepcionais podem ser avaliados conforme justificativa apresentada.
+      Para itens encaminhados à CPG após reunião da CCP, esta costuma se reunir na segunda
+      quinta-feira de cada mês.
+    </InfoBox>
+  </Section>
+</Layout>

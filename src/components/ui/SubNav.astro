@@ -1,0 +1,15 @@
+---
+interface Props {
+  links: { label: string; href: string }[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="flex gap-3 flex-wrap mb-12">
+  {links.map((link) => (
+    <a href={link.href} class="hover-item text-sm text-ink-2 border border-rule px-4 py-2 transition-colors">
+      {link.label}
+    </a>
+  ))}
+</div>

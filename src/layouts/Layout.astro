@@ -1,0 +1,54 @@
+---
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { getNavigation, getUI } from '../lib/data';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const nav = getNavigation();
+const ui = getUI();
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description ?? ui.site.description} />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <title>{title} — {ui.site.title}</title>
+  </head>
+  <body class="bg-bone text-ink font-body">
+    <Header nav={nav} />
+
+    <main class="pt-14">
+      <slot />
+    </main>
+
+    <Footer ui={ui} />
+
+    <script>
+      // Mobile menu toggle
+      document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+
+      // Mobile accordion
+      document.querySelectorAll('.mobile-accordion-toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling as HTMLElement;
+          const arrow = btn.querySelector('svg');
+          content?.classList.toggle('hidden');
+          arrow?.classList.toggle('rotate-180');
+        });
+      });
+    </script>
+  </body>
+</html>

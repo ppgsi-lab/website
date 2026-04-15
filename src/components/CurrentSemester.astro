@@ -1,0 +1,60 @@
+---
+import { getCurrentSemester, getUI } from '../lib/data';
+
+const semester = getCurrentSemester();
+const ui = getUI();
+const editals = semester.openCalls;
+const courses = semester.courses;
+---
+
+<section class="px-8 pt-4 pb-12 md:pt-6 md:pb-16">
+  <div class="mx-auto max-w-container">
+    <h2 class="font-display text-display-hero font-bold tracking-tight leading-display-hero text-ink mb-8 md:mb-12">
+      {ui.currentSemester.title}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+      <!-- Editals column -->
+      <div>
+        <h3 class="eyebrow text-ink-4 mb-8">
+          {ui.currentSemester.openCallsLabel}
+        </h3>
+        <div class="space-y-4">
+          {editals.map((edital) => (
+            <a href={edital.href} target="_blank" rel="noopener"
+               class="block border border-rule p-6 md:p-8 hover:border-teal transition-colors duration-200 group/edital">
+              <p class="text-body-xs text-ink-4 mb-2">{edital.code}</p>
+              <h4 class="font-display text-display-card font-bold tracking-tight text-ink leading-tight">
+                {edital.title}
+              </h4>
+              <span class="mt-4 inline-flex text-body-sm font-bold text-teal group-hover/edital:text-teal-dark transition-colors">
+                {ui.currentSemester.accessCall} ↗
+              </span>
+            </a>
+          ))}
+        </div>
+        <a href="/admission" class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
+          {ui.currentSemester.admissionInfo} →
+        </a>
+      </div>
+
+      <!-- Courses column -->
+      <div>
+        <h3 class="eyebrow text-ink-4 mb-8">
+          {ui.currentSemester.coursesLabel} {semester.label}
+        </h3>
+        <div class="border-t border-rule">
+          {courses.map((course) => (
+            <div class="py-3.5 border-b border-rule/50 flex items-baseline gap-4">
+              <span class="text-body-xs text-ink-4 font-mono shrink-0">{course.code}</span>
+              <span class="text-body-sm text-ink-2">{course.name}</span>
+            </div>
+          ))}
+        </div>
+        <a href="/courses" class="mt-8 inline-block text-body-xs text-ink-4 hover:text-ink transition-colors">
+          {ui.currentSemester.fullCatalog} →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

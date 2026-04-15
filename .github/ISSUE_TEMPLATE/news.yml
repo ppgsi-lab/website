@@ -1,0 +1,60 @@
+name: 📰 Nova notícia
+description: Publicar um comunicado, edital, aviso ou evento institucional
+title: "[notícia] "
+labels: ["tipo:notícia", "publicação"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo para publicar uma nova notícia no site.
+        Ao submeter esta issue, um **pull request** será aberto automaticamente com o arquivo Markdown já formatado.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: Título exibido no card e na página da notícia
+      placeholder: "Ex: Edital de Mestrado 2026 publicado"
+    validations:
+      required: true
+
+  - type: input
+    id: data
+    attributes:
+      label: Data
+      description: Data de publicação no formato AAAA-MM-DD
+      placeholder: "2026-04-15"
+    validations:
+      required: true
+
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte / órgão emissor
+      description: Opcional. Ex, EACH/CPG, CAPES, CNPq, PPgSI/AIS
+      placeholder: "EACH/CPG"
+    validations:
+      required: false
+
+  - type: textarea
+    id: resumo
+    attributes:
+      label: Resumo
+      description: 1-2 frases que aparecem no card da listagem e na prévia do post
+      placeholder: "Inscrições abertas para o processo seletivo de mestrado (Edital EACH/CPG 90/2025)."
+    validations:
+      required: true
+
+  - type: textarea
+    id: conteudo
+    attributes:
+      label: Conteúdo
+      description: Corpo da notícia em Markdown. Suporta títulos (##), listas, links e imagens.
+      placeholder: |
+        O Programa de Pós-Graduação em Sistemas de Informação publicou o **Edital EACH/CPG 90/2025**...
+
+        ## Prazos
+
+        - Inscrições: até 30 de novembro
+    validations:
+      required: true

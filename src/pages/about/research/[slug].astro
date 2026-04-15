@@ -1,0 +1,77 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Section from '../../../components/ui/Section.astro';
+import SectionTitle from '../../../components/ui/SectionTitle.astro';
+import PageNav from '../../../components/ui/PageNav.astro';
+import { getResearchLines, getUI } from '../../../lib/data';
+import type { ResearchLine } from '../../../types';
+
+export function getStaticPaths() {
+  const lines = getResearchLines();
+  return lines.map((line, i) => ({
+    params: { slug: line.slug },
+    props: {
+      line,
+      prev: i > 0 ? { label: lines[i - 1].name, href: `/about/research/${lines[i - 1].slug}` } : { label: 'Pesquisa', href: '/about/research' },
+      next: i < lines.length - 1 ? { label: lines[i + 1].name, href: `/about/research/${lines[i + 1].slug}` } : { label: 'Pesquisa', href: '/about/research' },
+    },
+  }));
+}
+
+interface Props {
+  line: ResearchLine;
+  prev: { label: string; href: string };
+  next: { label: string; href: string };
+}
+
+const { line, prev, next } = Astro.props;
+const ui = getUI();
+---
+
+<Layout title={line.name} description={`${ui.research.researchLineLabel}: ${line.name} - PPgSI EACH/USP`}>
+  <Section>
+    <p class:list={[
+      'eyebrow mb-4',
+      line.color === 'teal' ? 'text-teal' : 'text-ink-4',
+    ]}>
+      {ui.research.researchLineLabel}
+    </p>
+    <h1 class="font-display text-display-page font-bold tracking-tight text-ink mb-12">
+      {line.name}
+    </h1>
+
+    <div class="space-y-6">
+      <p class="text-body-lg text-ink-2 leading-relaxed">
+        {line.description}
+      </p>
+      <p class="text-body-lg text-ink-2 leading-relaxed">
+        <strong>Objetivo:</strong> {line.objective}
+      </p>
+    </div>
+
+    <!-- Research areas -->
+    <div class="mt-16">
+      <SectionTitle>{ui.research.researchAreasTitle}</SectionTitle>
+      <div class="space-y-0 border-t border-rule">
+        {line.areas.map((area) => (
+          <div class="py-6 border-b border-rule/50">
+            <h3 class="text-body-lg font-bold text-ink mb-2">{area.name}</h3>
+            <p class="text-body text-ink-3 leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Advisors -->
+    <div class="mt-16">
+      <SectionTitle>{ui.research.advisorsTitle}</SectionTitle>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3 border-t border-rule pt-8">
+        {line.advisors.map((name) => (
+          <span class="text-body text-ink-2 py-1">{name}</span>
+        ))}
+      </div>
+    </div>
+
+    <PageNav prev={prev} next={next} />
+  </Section>
+</Layout>

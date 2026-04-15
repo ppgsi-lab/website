@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1400 261.87" xmlns="http://www.w3.org/2000/svg">
+  <text x="40" y="190" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif" font-size="200" font-weight="900" fill="none" stroke="#000" stroke-width="14" stroke-linejoin="round">PPgSI</text>
+
+  <line x1="700" y1="0" x2="700" y2="240" stroke="#000" stroke-width="3"/>
+
+  <text x="725" y="85" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" letter-spacing="2" fill="#000">
+    PROGRAMA DE PÓS-GRADUAÇÃO
+  </text>
+  <text x="725" y="125" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" letter-spacing="2" fill="#000">
+    EM SISTEMAS DE INFORMAÇÃO
+  </text>
+  <text x="725" y="172" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="1.5" fill="#000">
+    ESCOLA DE ARTES, CIÊNCIAS E HUMANIDADES
+  </text>
+  <text x="725" y="200" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="1.5" fill="#000">
+    UNIVERSIDADE DE SÃO PAULO
+  </text>
+</svg>

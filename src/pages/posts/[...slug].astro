@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function slugify(text: string): string {
+  return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+const allPosts = (await getCollection('posts')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const currentIndex = allPosts.findIndex(p => p.id === post.id);
+const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
+const formatted = post.data.date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Layout title={post.data.title} description={post.data.summary}>
+  <article class="mx-auto max-w-prose px-8 py-section md:py-section-md">
+    <a href="/posts" class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todos os posts</a>
+
+    {post.data.cover && (
+      <img src={post.data.cover} alt="" class="w-full h-64 md:h-80 object-cover mb-8" />
+    )}
+
+    <p class="text-body-xs text-ink-4 mb-3">{formatted}</p>
+    <h1 class="font-display text-display-post font-bold tracking-tight text-ink leading-tight mb-4">
+      {post.data.title}
+    </h1>
+
+    <div class="flex flex-wrap gap-x-4 gap-y-1 mb-4">
+      {post.data.authors.map((a) => (
+        <p class="text-body-sm">
+          <a href={`/posts/autores/${slugify(a.name)}`} class="text-teal hover:underline font-semibold">{a.name}</a>
+          <span class="text-ink-4 ml-1">{a.email}</span>
+        </p>
+      ))}
+    </div>
+
+    {post.data.tags.length > 0 && (
+      <div class="flex gap-2 flex-wrap mb-8">
+        {post.data.tags.map((tag) => (
+          <a href={`/posts/tags/${tag}`} class="text-tag font-bold text-teal bg-teal-50 px-2.5 py-1 uppercase tracking-wide hover:bg-teal hover:text-white transition-colors">
+            {tag}
+          </a>
+        ))}
+      </div>
+    )}
+
+    {post.data.doi && (
+      <p class="text-body-xs text-ink-4 mb-8">
+        DOI: <a href={`https://doi.org/${post.data.doi}`} target="_blank" rel="noopener" class="text-teal hover:underline">{post.data.doi}</a>
+      </p>
+    )}
+
+    <div class="prose prose-lg max-w-none
+                prose-headings:font-display prose-headings:tracking-tight prose-headings:text-ink
+                prose-p:text-ink-2 prose-p:leading-relaxed
+                prose-a:text-teal prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-ink
+                prose-code:text-ink prose-code:bg-teal-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm
+                prose-table:border-collapse
+                prose-th:border prose-th:border-rule prose-th:px-4 prose-th:py-2 prose-th:bg-teal-50 prose-th:text-left prose-th:font-bold prose-th:text-ink
+                prose-td:border prose-td:border-rule prose-td:px-4 prose-td:py-2 prose-td:text-ink-2
+                prose-img:border prose-img:border-rule
+                prose-iframe:w-full prose-iframe:aspect-video">
+      <Content />
+    </div>
+
+    <nav class="mt-16 pt-8 border-t border-rule grid grid-cols-1 md:grid-cols-2 gap-4">
+      {prevPost ? (
+        <a href={`/posts/${prevPost.id}`} class="block border border-rule p-6 hover:border-teal transition-colors">
+          <p class="eyebrow text-ink-4 mb-2">← Anterior</p>
+          <p class="font-display text-base font-bold text-ink">{prevPost.data.title}</p>
+        </a>
+      ) : <div />}
+      {nextPost && (
+        <a href={`/posts/${nextPost.id}`} class="block border border-rule p-6 hover:border-teal transition-colors text-right">
+          <p class="eyebrow text-ink-4 mb-2">Próximo →</p>
+          <p class="font-display text-base font-bold text-ink">{nextPost.data.title}</p>
+        </a>
+      )}
+    </nav>
+  </article>
+</Layout>

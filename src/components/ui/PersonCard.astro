@@ -1,0 +1,23 @@
+---
+import type { Professor } from '../../types';
+import { getUI } from '../../lib/data';
+
+interface Props {
+  professor: Professor;
+}
+
+const { professor: p } = Astro.props;
+const ui = getUI();
+---
+
+<div class="group p-6 border border-rule hover:border-teal transition-colors">
+  <h3 class="text-base font-bold text-ink">{p.name}</h3>
+  <p class="text-sm text-ink-3 mt-2 leading-relaxed line-clamp-2">{p.researchAreas}</p>
+  <p class="text-xs text-ink-4 mt-2">{p.advisingLevel}</p>
+  <div class="mt-4 flex items-center gap-4">
+    <a href={p.lattesUrl} target="_blank" rel="noopener" class="text-sm text-teal hover:underline">{ui.table.lattes}</a>
+    {p.website && (
+      <a href={p.website} target="_blank" rel="noopener" class="text-sm text-teal hover:underline">{ui.table.personalSite}</a>
+    )}
+  </div>
+</div>

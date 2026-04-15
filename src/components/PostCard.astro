@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  authors: { name: string; email: string }[];
+  date: Date;
+  tags: string[];
+  summary: string;
+  slug: string;
+  cover?: string;
+}
+
+const { title, authors, date, tags, summary, slug, cover } = Astro.props;
+
+function slugify(text: string): string {
+  return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+const formatted = date.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<div class="border border-rule p-6 md:p-8 hover:border-teal transition-colors duration-200 group/post">
+  {cover && (
+    <img src={cover} alt="" class="w-full h-48 object-cover mb-6" />
+  )}
+  <p class="text-body-xs text-ink-4 mb-2">{formatted}</p>
+  <h3 class="font-display text-display-card font-bold tracking-tight leading-display-card">
+    <a href={`/posts/${slug}`} class="text-ink hover:text-teal transition-colors">{title}</a>
+  </h3>
+  <p class="text-body-sm text-ink-3 mt-2">
+    {authors.map((a, i) => (
+      <><a href={`/posts/autores/${slugify(a.name)}`} class="text-teal hover:underline">{a.name}</a>{i < authors.length - 1 ? ', ' : ''}</>
+    ))}
+  </p>
+  <p class="text-body-sm text-ink-3 mt-3 leading-relaxed">{summary}</p>
+  {tags.length > 0 && (
+    <div class="flex gap-2 flex-wrap mt-4">
+      {tags.map((tag) => (
+        <span class="text-tag font-bold text-teal bg-teal-50 px-2.5 py-1 uppercase tracking-wide">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+</div>

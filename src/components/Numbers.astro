@@ -1,0 +1,20 @@
+---
+import { getStats } from '../lib/data';
+
+const stats = getStats();
+---
+
+<section class="px-8 py-20">
+  <div class="mx-auto max-w-container border-y border-rule py-16">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-12">
+      {stats.map((stat) => (
+        <div>
+          <p class="font-display text-stat font-bold text-ink leading-none tracking-tight">
+            {stat.value}
+          </p>
+          <p class="text-body-sm text-ink-4 mt-2">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

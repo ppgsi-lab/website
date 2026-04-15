@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { getCollection } from 'astro:content';
+
+const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout title="Notícias" description="Comunicados, editais e avisos oficiais do PPgSI">
+  <section class="mx-auto max-w-container px-8 py-section md:py-section-md">
+    <p class="eyebrow text-teal mb-3">Comunicados</p>
+    <h1 class="font-display text-display-page font-bold tracking-tight text-ink mb-4">
+      Notícias
+    </h1>
+    <p class="text-ink-3 max-w-2xl mb-12">
+      Editais, avisos oficiais, defesas e eventos institucionais do programa.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {news.map((item) => (
+        <NewsCard
+          title={item.data.title}
+          date={item.data.date}
+          summary={item.data.summary}
+          slug={item.id}
+          source={item.data.source}
+          cover={item.data.cover}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

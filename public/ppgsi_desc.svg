@@ -1,0 +1,15 @@
+<svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg">
+  <text x="380" y="200" font-family="'Arial Black', 'Helvetica Neue', Impact, sans-serif" font-size="220" font-weight="900" text-anchor="middle" fill="none" stroke="#000" stroke-width="14" stroke-linejoin="round" letter-spacing="-8" style="fill:none;stroke:rgb(0, 0, 0);color:rgb(0, 0, 0);stroke-width:14px;stroke-linecap:butt;stroke-linejoin:round;opacity:1;font-family:&quot;Arial Black&quot;, &quot;Helvetica Neue&quot;, Impact, sans-serif;font-size:220px;font-weight:900;text-anchor:middle;dominant-baseline:auto">PPgSI</text>
+
+  <line x1="40" y1="285" x2="720" y2="285" stroke="#000" stroke-width="3" style="fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);color:rgb(0, 0, 0);stroke-width:3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1"/>
+
+  <text x="380" y="318" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#000" text-anchor="middle">
+    PROGRAMA DE PÓS-GRADUAÇÃO EM SISTEMAS DE INFORMAÇÃO
+  </text>
+  <text x="380" y="352" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" letter-spacing="2" fill="#000" text-anchor="middle">
+    ESCOLA DE ARTES, CIÊNCIAS E HUMANIDADES
+  </text>
+  <text x="380" y="380" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" letter-spacing="2" fill="#000" text-anchor="middle">
+    UNIVERSIDADE DE SÃO PAULO
+  </text>
+</svg>

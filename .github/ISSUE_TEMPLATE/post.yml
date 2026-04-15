@@ -1,0 +1,72 @@
+name: ✍️ Novo post
+description: Publicar um artigo autoral de aluno ou professor
+title: "[post] "
+labels: ["tipo:post", "publicação"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os campos abaixo para publicar um novo post no site.
+        Ao submeter esta issue, um **pull request** será aberto automaticamente com o arquivo Markdown já formatado.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: Título exibido no card e na página do post
+      placeholder: "Ex: Treinando um ViT no MNIST com GPUs na nuvem"
+    validations:
+      required: true
+
+  - type: input
+    id: data
+    attributes:
+      label: Data
+      description: Data de publicação no formato AAAA-MM-DD
+      placeholder: "2026-04-15"
+    validations:
+      required: true
+
+  - type: textarea
+    id: autores
+    attributes:
+      label: Autores
+      description: |
+        Um autor por linha, no formato `Nome Completo <email@usp.br>`.
+      placeholder: |
+        Gabriel Francisco <gabriel.francisco@usp.br>
+        Fulano de Tal <fulano@usp.br>
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Tags separadas por vírgula. Cada tag gera uma página própria em `/posts/tags/<tag>`.
+      placeholder: "deep-learning, cloud, keras"
+    validations:
+      required: false
+
+  - type: textarea
+    id: resumo
+    attributes:
+      label: Resumo
+      description: 1-2 frases que aparecem no card da listagem e na home
+      placeholder: "Como usar a biblioteca Skyward para provisionar GPUs na nuvem e treinar um ViT no MNIST."
+    validations:
+      required: true
+
+  - type: textarea
+    id: conteudo
+    attributes:
+      label: Conteúdo
+      description: Corpo do post em Markdown. Suporta títulos (##), listas, blocos de código, imagens e links.
+      placeholder: |
+        Treinar modelos em GPUs na nuvem geralmente envolve muitos passos manuais...
+
+        ## O que é o Skyward?
+
+        Skyward é uma biblioteca Python que...
+    validations:
+      required: true

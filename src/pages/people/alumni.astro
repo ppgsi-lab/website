@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/ui/Section.astro';
+import PageHeader from '../../components/ui/PageHeader.astro';
+import SubNav from '../../components/ui/SubNav.astro';
+import { getAlumni, getUI } from '../../lib/data';
+
+const alumni = getAlumni();
+const ui = getUI();
+const years = [...new Set(alumni.map(a => a.defenseYear))].sort((a, b) => b - a);
+---
+
+<Layout title={ui.pages.alumniTitle} description={`${alumni.length} egressos do PPgSI`}>
+  <Section>
+    <PageHeader
+      eyebrow={ui.people.sectionLabel}
+      title={ui.pages.alumniTitle}
+    />
+    <p class="text-ink-3 max-w-2xl mb-8">
+      {alumni.length} alunos formados pelo programa desde 2012. A lista completa de
+      dissertações defendidas está disponível na
+      <a href="http://www.teses.usp.br" target="_blank" rel="noopener" class="text-teal hover:underline">Biblioteca Digital de Teses e Dissertações da USP</a>.
+    </p>
+
+    <SubNav links={[
+      { label: ui.people.advisorsLabel, href: '/people' },
+      { label: ui.people.studentsLabel, href: '/people/students' },
+      { label: ui.people.ccpLabel, href: '/people/ccp' },
+    ]} />
+
+    <!-- Summary by year -->
+    <div class="flex gap-3 flex-wrap mb-12">
+      {years.map((year) => {
+        const count = alumni.filter(a => a.defenseYear === year).length;
+        return (
+          <a href={`#year-${year}`} class="hover-item text-sm text-ink-2 border border-rule px-4 py-2 transition-colors">
+            {year} <span class="text-ink-4 ml-1">({count})</span>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Alumni table grouped by year -->
+    {years.map((year) => {
+      const yearAlumni = alumni.filter(a => a.defenseYear === year);
+      return (
+        <div id={`year-${year}`} class="mb-12">
+          <h2 class="font-display text-xl font-bold text-ink mb-4 border-b-2 border-ink pb-2">
+            {year} <span class="text-ink-4 font-normal text-base ml-2">{yearAlumni.length} {ui.people.alumniLabel.toLowerCase()}</span>
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-rule">
+                  <th class="py-2 pr-4 font-bold text-ink w-8">{ui.table.number}</th>
+                  <th class="py-2 pr-4 font-bold text-ink">{ui.table.name}</th>
+                  <th class="py-2 pr-4 font-bold text-ink">{ui.table.advisor}</th>
+                  <th class="py-2 pr-4 font-bold text-ink">{ui.table.lattes}</th>
+                  <th class="py-2 font-bold text-ink">{ui.table.email}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {yearAlumni.map((a) => (
+                  <tr class="border-b border-rule">
+                    <td class="py-2 pr-4 text-ink-4">{a.number}</td>
+                    <td class="py-2 pr-4 text-ink font-medium">{a.name}</td>
+                    <td class="py-2 pr-4 text-ink-2">{a.advisor}</td>
+                    <td class="py-2 pr-4">
+                      {a.lattesUrl ? (
+                        <a href={a.lattesUrl} target="_blank" rel="noopener" class="text-teal hover:underline">{ui.table.lattes}</a>
+                      ) : (
+                        <span class="text-ink-4">--</span>
+                      )}
+                    </td>
+                    <td class="py-2 text-ink-3">{a.email}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      );
+    })}
+  </Section>
+</Layout>

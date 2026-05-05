@@ -30,14 +30,14 @@
   --text-display-card: clamp(1.5rem, 2vw, 2rem);
 
   /* ── Typography: Body (Synonym) ── */
-  --text-body-lg: 1.25rem;
-  --text-body-sm: 0.8333rem;
-  --text-body-xs: 0.7222rem;
+  --text-body-lg: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  --text-body-sm: clamp(0.8125rem, 0.79rem + 0.15vw, 0.8333rem);
+  --text-body-xs: clamp(0.75rem, 0.735rem + 0.08vw, 0.7222rem);
 
   /* ── Typography: UI ── */
-  --text-nav: 1.222rem;
-  --text-eyebrow: 0.6111rem;
-  --text-tag: 0.6667rem;
+  --text-nav: clamp(1rem, 0.92rem + 0.4vw, 1.222rem);
+  --text-eyebrow: clamp(0.625rem, 0.61rem + 0.08vw, 0.6111rem);
+  --text-tag: clamp(0.6875rem, 0.675rem + 0.06vw, 0.6667rem);
   --text-stat: clamp(4rem, 6vw, 5rem);
 
   /* ── Line Heights: Display ── */
@@ -52,10 +52,10 @@
   --container-narrative: 60%;
 
   /* ── Section Spacing ── */
-  --spacing-section: 5rem;
-  --spacing-section-md: 7rem;
-  --spacing-section-compact: 3rem;
-  --spacing-section-compact-md: 4rem;
+  --spacing-section: clamp(2.5rem, 5vw + 1rem, 5rem);
+  --spacing-section-md: clamp(3.5rem, 6vw + 1.5rem, 7rem);
+  --spacing-section-compact: clamp(1.75rem, 3vw + 0.75rem, 3rem);
+  --spacing-section-compact-md: clamp(2.25rem, 4vw + 1rem, 4rem);
 
   /* ── On-Primary (footer/teal backgrounds) ── */
   --color-on-primary: #FFFFFF;
@@ -86,6 +86,10 @@
   font-size: var(--text-tag);
 }
 
+@utility px-page {
+  padding-inline: clamp(1rem, 2.5vw + 0.5rem, 2rem);
+}
+
 /* ── Component Classes ── */
 
 @layer components {
@@ -112,7 +116,9 @@
 .hover-item {
   transition: background-color 0.2s, color 0.2s;
 }
-.hover-item:hover {
+.hover-item:hover,
+.hover-item:focus,
+.hover-item:active {
   background-color: var(--color-yellow);
   color: var(--color-ink);
 }
@@ -124,9 +130,24 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile/tablet: containers usam a largura total, centralização só em desktop */
+@media (max-width: 1023px) {
+  :root {
+    --container-content: 100%;
+    --container-narrative: 100%;
+  }
+}
+
 /* Content: justified body text only (not display/title elements) */
 main p, main li, main td {
-  text-align: justify;
+  text-align: left;
+  hyphens: auto;
+}
+@media (min-width: 768px) {
+  main p, main li, main td {
+    text-align: justify;
+    hyphens: manual;
+  }
 }
 main .font-display,
 main h1, main h2, main h3, main h4 {

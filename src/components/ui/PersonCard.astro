@@ -10,7 +10,7 @@ const { professor: p } = Astro.props;
 const ui = getUI();
 ---
 
-<div class="group p-6 border border-rule hover:border-teal transition-colors">
+<div class="group p-4 sm:p-5 md:p-6 border border-rule hover:border-teal transition-colors">
   <h3 class="text-base font-bold text-ink">{p.name}</h3>
   <p class="text-sm text-ink-3 mt-2 leading-relaxed line-clamp-2">{p.researchAreas}</p>
   <p class="text-xs text-ink-4 mt-2">{p.advisingLevel}</p>

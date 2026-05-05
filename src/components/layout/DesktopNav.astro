@@ -35,10 +35,11 @@ import { url } from '../../lib/url';
       )}
 
       {item.children && !hasGroups(item.children) && (
-        <div class="absolute top-full left-0 pt-2 opacity-0 invisible translate-y-1
+        <div class="absolute top-full left-0 xl:left-0 pt-2 opacity-0 invisible translate-y-1
                     group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0
-                    transition-all duration-200">
-          <div class="bg-bone border border-rule shadow-lg py-2 min-w-[280px]">
+                    transition-all duration-200
+                    max-lg:left-auto max-lg:right-0 max-xl:left-auto max-xl:right-0">
+          <div class="bg-bone border border-rule shadow-lg py-2 min-w-[min(280px,calc(100vw-2rem))] max-w-[calc(100vw-2rem)]">
             {(item.children as NavChild[]).map((child) => (
               <a href={url(child.href)}
                  class="hover-item block px-4 py-2.5 text-body font-semibold text-ink-3 uppercase">
@@ -50,10 +51,11 @@ import { url } from '../../lib/url';
       )}
 
       {item.children && hasGroups(item.children) && (
-        <div class="absolute top-full left-0 pt-2 opacity-0 invisible translate-y-1
+        <div class="absolute top-full left-0 xl:left-0 pt-2 opacity-0 invisible translate-y-1
                     group-hover/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0
-                    transition-all duration-200">
-          <div class="bg-bone border border-rule shadow-lg py-4 min-w-[560px]">
+                    transition-all duration-200
+                    max-xl:left-auto max-xl:right-0">
+          <div class="bg-bone border border-rule shadow-lg py-4 min-w-[min(560px,calc(100vw-2rem))] max-w-[calc(100vw-2rem)]">
             <div class="grid grid-cols-2 gap-0">
               {(item.children as (NavChild | NavGroup)[]).filter(c => isGroup(c)).map((child) => (
                 <div class="px-5">

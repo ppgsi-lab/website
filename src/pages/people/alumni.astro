@@ -45,7 +45,7 @@ const years = [...new Set(alumni.map(a => a.defenseYear))].sort((a, b) => b - a)
       const yearAlumni = alumni.filter(a => a.defenseYear === year);
       return (
         <div id={`year-${year}`} class="mb-12">
-          <h2 class="font-display text-xl font-bold text-ink mb-4 border-b-2 border-ink pb-2">
+          <h2 class="font-display text-xl md:text-display-section font-bold text-ink mb-4 border-b-2 border-ink pb-2">
             {year} <span class="text-ink-4 font-normal text-base ml-2">{yearAlumni.length} {ui.people.alumniLabel.toLowerCase()}</span>
           </h2>
           <div class="overflow-x-auto">

@@ -23,11 +23,11 @@ import { url } from '../../lib/url';
 ---
 
 <Layout title={item.data.title} description={item.data.summary}>
-  <article class="mx-auto max-w-prose px-8 py-section md:py-section-md">
+  <article class="mx-auto max-w-prose px-page py-section md:py-section-md">
     <a href={url("/news")} class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todas as notícias</a>
 
     {item.data.cover && (
-      <img src={item.data.cover} alt="" class="w-full h-64 md:h-80 object-cover mb-8" />
+      <img src={item.data.cover} alt="" class="w-full aspect-[21/9] max-h-80 object-cover mb-8" />
     )}
 
     <p class="text-body-xs text-ink-4 mb-3">{formatted}{item.data.source && ` · ${item.data.source}`}</p>

@@ -40,7 +40,7 @@ import { url } from '../../../lib/url';
 ---
 
 <Layout title="Pesquisa" description="Linhas de pesquisa, áreas de pesquisa e áreas de aplicação do PPgSI - EACH/USP">
-  <section class="mx-auto max-w-narrative px-8 py-section md:py-section-md">
+  <section class="mx-auto max-w-narrative px-page py-section md:py-section-md">
     <h1 class="font-display text-display-page font-bold tracking-tight text-ink mb-12">
       Pesquisa
     </h1>
@@ -65,13 +65,13 @@ import { url } from '../../../lib/url';
           line.color === 'teal' ? 'border-teal hover:bg-teal-50' : 'border-yellow hover:bg-yellow-light',
         ]}>
           <h2 class:list={[
-            'absolute -top-[2px] -left-[2px] font-display text-lg md:text-xl font-bold tracking-tight leading-tight px-4 py-2 -translate-y-1/2',
+            'absolute -top-[2px] -left-[2px] font-display text-lg md:text-display-section font-bold tracking-tight leading-tight px-4 py-2 -translate-y-1/2',
             line.color === 'teal' ? 'bg-teal text-white' : 'bg-yellow text-ink',
           ]}>
             {line.name}
           </h2>
 
-          <div class="pt-12 pb-8 px-8 md:px-10 md:pb-10">
+          <div class="pt-12 pb-8 px-6 sm:px-8 md:px-10 md:pb-10">
             <p class="text-body-lg text-ink-2 leading-relaxed mb-6">
               {line.description}
             </p>

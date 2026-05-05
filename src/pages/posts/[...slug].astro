@@ -27,11 +27,11 @@ import { url } from '../../lib/url';
 ---
 
 <Layout title={post.data.title} description={post.data.summary}>
-  <article class="mx-auto max-w-prose px-8 py-section md:py-section-md">
+  <article class="mx-auto max-w-prose px-page py-section md:py-section-md">
     <a href={url("/posts")} class="text-sm text-ink-4 hover:text-ink transition-colors mb-8 inline-block">← Todos os posts</a>
 
     {post.data.cover && (
-      <img src={post.data.cover} alt="" class="w-full h-64 md:h-80 object-cover mb-8" />
+      <img src={post.data.cover} alt="" class="w-full aspect-[21/9] max-h-80 object-cover mb-8" />
     )}
 
     <p class="text-body-xs text-ink-4 mb-3">{formatted}</p>

@@ -2,8 +2,8 @@
 import { url } from '../lib/url';
 ---
 
-<section class="min-h-[100vh] -mt-14 flex flex-col justify-end relative overflow-hidden">
-  <div class="mx-auto max-w-container w-full px-8 pb-8 md:pb-12">
+<section class="relative overflow-hidden">
+  <div class="mx-auto max-w-container w-full px-page pt-6 pb-8 md:pt-10 md:pb-12">
     <div class="flex flex-col md:flex-row gap-8 items-center">
       <!-- Photo -->
       <div class="w-full md:w-[60%] rise">
@@ -11,7 +11,7 @@ import { url } from '../lib/url';
           <img
             src={url("/campus.png")}
             alt="Ilustração do campus da EACH-USP"
-            class="w-full h-[500px] md:h-[700px] object-cover object-center"
+            class="w-full aspect-[4/5] sm:aspect-[3/2] lg:aspect-auto lg:h-[700px] object-cover object-center"
           />
         </div>
       </div>

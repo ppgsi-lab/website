@@ -1,38 +1,38 @@
 ---
-title: "LLMs para imputação de dados tabulares: resultados preliminares"
+title: "Lorem ipsum dolor sit amet: consectetur adipiscing"
 authors:
-  - name: "Gabriel Francisco"
-    email: "gabriel.francisco@usp.br"
-  - name: "Sarajane Marques Peres"
-    email: "sarajane@usp.br"
+  - name: "Amet Consectetur"
+    email: "amet.consectetur@example.edu"
+  - name: "Adipiscing Elit"
+    email: "adipiscing.elit@example.edu"
 date: 2026-04-01
 tags: ["inteligência-artificial", "dados-tabulares", "llm"]
-summary: "Resultados preliminares do uso de Large Language Models para imputação de valores faltantes em datasets tabulares do domínio de saúde."
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
 doi: "10.1234/example.5678"
 ---
 
-Apresentamos os resultados preliminares da pesquisa de mestrado sobre o uso de **Large Language Models** para imputação de dados tabulares, com foco em datasets do domínio de saúde.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation **ullamco laboris** nisi ut aliquip ex ea commodo consequat.
 
-## Motivação
+## Lorem ipsum
 
-Dados faltantes são um problema recorrente em bases de dados reais. Métodos tradicionais como MICE e KNN-Imputer têm limitações quando os padrões de ausência são complexos (MNAR — Missing Not At Random).
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident (LOREM — Lorem Ipsum Dolor Sit Amet).
 
-## Abordagem
+## Sed ut perspiciatis
 
-Avaliamos a capacidade de LLMs de compreender a estrutura semântica de colunas tabulares e gerar valores plausíveis para células faltantes, usando:
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam:
 
-- **GPT-4o** e **Claude 3.5 Sonnet** com prompting estruturado
-- Serialização row-by-row com nomes de colunas como contexto
-- Comparação contra baselines estatísticos (média, mediana, MICE, missForest)
+- **Lorem ipsum** e **dolor sit amet** consectetur adipiscing elit
+- Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+- Ut enim ad minim veniam (quis nostrud, exercitation, ullamco, laboris)
 
-## Resultados preliminares
+## Nemo enim ipsam
 
-| Método | RMSE (normalizado) | R² |
+| Lorem | Ipsum (dolor) | Sit |
 |--------|--------------------|----|
-| Média | 0.342 | 0.41 |
-| MICE | 0.281 | 0.58 |
-| missForest | 0.254 | 0.63 |
-| GPT-4o | 0.238 | 0.67 |
-| Claude 3.5 | **0.221** | **0.71** |
+| Amet | 0.342 | 0.41 |
+| Consectetur | 0.281 | 0.58 |
+| Adipiscing | 0.254 | 0.63 |
+| Elit | 0.238 | 0.67 |
+| Tempor | **0.221** | **0.71** |
 
-Os LLMs superaram os baselines em 4 dos 5 datasets avaliados, com ganho mais expressivo em colunas com alta cardinalidade textual.
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.

@@ -1,27 +1,27 @@
 ---
-title: "Participação no Workshop IHC & CSCW 2026"
+title: "Lorem ipsum dolor sit amet consectetur"
 authors:
-  - name: "João Luiz Bernardes Junior"
-    email: "jlbernardes@usp.br"
-  - name: "Flávio Luiz Coutinho"
-    email: "flcoutinho@usp.br"
+  - name: "Lorem Ipsum"
+    email: "lorem.ipsum@example.edu"
+  - name: "Dolor Sit Amet"
+    email: "dolor.sit@example.edu"
 date: 2026-03-15
 tags: ["ihc", "evento"]
-summary: "Relato da participação do grupo de IHC no Workshop IHC & CSCW 2026, com apresentação de dois artigos sobre interfaces acessíveis."
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 ---
 
-O grupo de pesquisa em Interação Humano-Computador do PPgSI participou do **Workshop IHC & CSCW 2026**, realizado em Florianópolis entre 10 e 12 de março.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-## Artigos apresentados
+## Duis aute irure dolor
 
-Foram aceitos e apresentados dois artigos completos:
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum:
 
-1. **"Avaliação de acessibilidade em aplicações de Realidade Aumentada"** — investigou diretrizes de acessibilidade para experiências imersivas, propondo um framework de avaliação heurística adaptado.
+1. **Lorem ipsum dolor sit amet** — consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-2. **"Rastreamento do olhar como ferramenta de avaliação de usabilidade em dashboards"** — apresentou um estudo empírico com 42 participantes utilizando eye tracking para identificar padrões de exploração visual.
+2. **Ut enim ad minim veniam** — quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-## Próximos passos
+## Sed ut perspiciatis
 
-Os resultados do primeiro artigo estão sendo expandidos para submissão ao **IHC 2026** (Simpósio Brasileiro de Fatores Humanos em Sistemas Computacionais).
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam **Lorem Ipsum 2026** (Lorem Ipsum Dolor Sit Amet Consectetur).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Apresentação do artigo" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Lorem ipsum" frameborder="0" allowfullscreen></iframe>

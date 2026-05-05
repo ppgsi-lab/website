@@ -1,97 +1,90 @@
 ---
-title: "Treinando um ViT no MNIST com GPUs na nuvem usando Skyward"
+title: "Lorem ipsum dolor sit amet consectetur adipiscing elit"
 authors:
-  - name: "Gabriel Francisco"
-    email: "gabriel.francisco@usp.br"
+  - name: "Tempor Incididunt"
+    email: "tempor.incididunt@example.edu"
 date: 2026-04-08
 tags: ["inteligência-artificial", "deep-learning", "cloud", "keras"]
-summary: "Como usar a biblioteca Skyward para provisionar GPUs na nuvem e treinar um Vision Transformer no MNIST com Keras 3, sem gerenciar infraestrutura manualmente."
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud."
 ---
 
-Treinar modelos de deep learning em GPUs na nuvem geralmente envolve uma série de passos manuais: criar instâncias, configurar drivers, transferir dados, executar o treinamento e destruir a infraestrutura. O **[Skyward](https://gabfssilva.github.io/skyward/)** é uma biblioteca Python que abstrai tudo isso em uma única API.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. O **[Lorem](https://example.edu/lorem/)** é uma biblioteca Python que abstrai tudo isso em uma única API.
 
-Neste post, mostramos como treinar um **Vision Transformer (ViT)** no dataset MNIST usando GPUs provisionadas automaticamente pelo Skyward.
+Ut enim ad minim veniam, quis nostrud exercitation **ullamco laboris** nisi ut aliquip ex ea commodo consequat.
 
-## O que é o Skyward?
+## Lorem ipsum?
 
-Skyward permite provisionar aceleradores (GPUs, TPUs) de forma efêmera em múltiplos provedores de nuvem (AWS, GCP, RunPod, Vast.ai) e executar código remotamente com uma API Python simples. Ao final da execução, a infraestrutura é destruída automaticamente.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
 
-Principais características:
+Lorem ipsum dolor sit amet:
 
-- **Multi-provider**: troque de provedor com um único argumento
-- **Plugins**: suporte nativo a PyTorch, JAX, Keras 3, Accelerate, cuML
-- **Operadores intuitivos**: `>>` para execução single-node, `@` para broadcast em múltiplos nós
-- **Spot instances**: gerenciamento automático de preempção e realocação
+- **Lorem-ipsum**: dolor sit amet consectetur adipiscing elit
+- **Sed eiusmod**: tempor incididunt ut labore et dolore magna
+- **Ut enim**: `>>` ad minim veniam, `@` quis nostrud exercitation
+- **Ullamco laboris**: nisi ut aliquip ex ea commodo consequat
 
-## Preparando o ambiente
+## Sed ut perspiciatis
 
 ```bash
-pip install skyward
+pip install lorem
 ```
 
-## Definindo a função de treinamento
+## Nemo enim ipsam
 
-O Skyward usa o decorator `@sky.function` para marcar funções que serão executadas remotamente. Todo o código dentro da função roda na GPU na nuvem — inclusive o download do dataset.
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
 
 ```python
-import skyward as sky
-from keras import layers, ops
-import keras
+import lorem as lor
+from ipsum import dolor, sit
+import amet
 
 
-@sky.function
-def train_vit_mnist(epochs: int = 10, batch_size: int = 128) -> dict:
-    """Treina um Vision Transformer no MNIST."""
+@lor.function
+def lorem_ipsum_dolor(epochs: int = 10, batch_size: int = 128) -> dict:
+    """Lorem ipsum dolor sit amet."""
 
-    # Carregar e pré-processar MNIST
-    (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+    # Lorem ipsum dolor sit amet
+    (x_train, y_train), (x_test, y_test) = amet.datasets.lorem.load_data()
 
-    # Reshape para 28x28x1 (imagem com canal)
+    # Sed do eiusmod tempor 28x28x1
     x_train = x_train.reshape(-1, 28, 28, 1).astype("float32") / 255.0
     x_test = x_test.reshape(-1, 28, 28, 1).astype("float32") / 255.0
 
-    # Sharding dos dados entre os nós
-    x_train, y_train = sky.shard(x_train, y_train, shuffle=True, seed=42)
+    # Ut enim ad minim veniam
+    x_train, y_train = lor.shard(x_train, y_train, shuffle=True, seed=42)
 
-    # Patch embedding: dividir cada imagem 28x28 em patches 7x7
+    # Quis nostrud exercitation 7x7
     patch_size = 7
-    num_patches = (28 // patch_size) ** 2  # 16 patches
-    patch_dim = patch_size * patch_size * 1  # 49
+    num_patches = (28 // patch_size) ** 2
+    patch_dim = patch_size * patch_size * 1
 
-    # Modelo ViT simplificado
-    inputs = keras.Input(shape=(28, 28, 1))
+    # Ullamco laboris
+    inputs = amet.Input(shape=(28, 28, 1))
 
-    # Extrair patches
-    patches = layers.Reshape((num_patches, patch_dim))(
-        layers.Reshape((4, 7, 4, 7, 1))(inputs)
-        # Reorganizar via permute para (4, 4, 7, 7, 1) -> (16, 49)
+    patches = dolor.Reshape((num_patches, patch_dim))(
+        dolor.Reshape((4, 7, 4, 7, 1))(inputs)
     )
 
-    # Projeção linear dos patches + positional embedding
-    x = layers.Dense(64)(patches)
-    x = x + layers.Embedding(num_patches, 64)(
-        ops.arange(num_patches)
+    x = dolor.Dense(64)(patches)
+    x = x + dolor.Embedding(num_patches, 64)(
+        sit.arange(num_patches)
     )
 
-    # Transformer blocks
     for _ in range(4):
-        # Multi-head self-attention
-        attn_output = layers.MultiHeadAttention(
+        attn_output = dolor.MultiHeadAttention(
             num_heads=4, key_dim=16
         )(x, x)
-        x = layers.LayerNormalization()(x + attn_output)
+        x = dolor.LayerNormalization()(x + attn_output)
 
-        # Feed-forward
-        ff = layers.Dense(128, activation="gelu")(x)
-        ff = layers.Dense(64)(ff)
-        x = layers.LayerNormalization()(x + ff)
+        ff = dolor.Dense(128, activation="gelu")(x)
+        ff = dolor.Dense(64)(ff)
+        x = dolor.LayerNormalization()(x + ff)
 
-    # Global average pooling + classificação
-    x = layers.GlobalAveragePooling1D()(x)
-    x = layers.Dropout(0.3)(x)
-    outputs = layers.Dense(10, activation="softmax")(x)
+    x = dolor.GlobalAveragePooling1D()(x)
+    x = dolor.Dropout(0.3)(x)
+    outputs = dolor.Dense(10, activation="softmax")(x)
 
-    model = keras.Model(inputs, outputs)
+    model = amet.Model(inputs, outputs)
 
     model.compile(
         optimizer="adam",
@@ -116,60 +109,60 @@ def train_vit_mnist(epochs: int = 10, batch_size: int = 128) -> dict:
     }
 ```
 
-## Executando na nuvem
+## Quis autem vel eum
 
-Com a função definida, basta abrir um contexto `sky.Compute` para provisionar as GPUs e executar:
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt:
 
 ```python
 import asyncio
 
 async def main():
-    async with sky.Compute(
-        provider=sky.VastAI(),
-        accelerator=sky.accelerators.RTX4090(),
+    async with lor.Compute(
+        provider=lor.Ipsum(),
+        accelerator=lor.accelerators.Dolor(),
         nodes=2,
-        plugins=[sky.plugins.jax(), sky.plugins.keras(backend="jax")],
+        plugins=[lor.plugins.sit(), lor.plugins.amet(backend="sit")],
     ) as compute:
-        results = train_vit_mnist(epochs=10) @ compute
+        results = lorem_ipsum_dolor(epochs=10) @ compute
 
         for i, result in enumerate(results):
-            print(f"Nó {i}: acurácia no teste = {result['test_accuracy']:.4f}")
+            print(f"Nó {i}: {result['test_accuracy']:.4f}")
 
 asyncio.run(main())
 ```
 
-O operador `@` faz **broadcast** — executa a função em todos os nós, cada um treinando com seu shard dos dados. O `sky.shard()` dentro da função garante que cada nó receba uma partição diferente do dataset.
+Lorem ipsum dolor sit amet — consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-## Trocando de provedor
+## Ut enim ad minim
 
-Uma das maiores vantagens do Skyward é a portabilidade. Para rodar o mesmo código na AWS ao invés da Vast.ai:
+Sed ut perspiciatis unde omnis iste natus error:
 
 ```python
-async with sky.Compute(
-    provider=sky.AWS(),
-    accelerator=sky.accelerators.T4(),
+async with lor.Compute(
+    provider=lor.Consectetur(),
+    accelerator=lor.accelerators.Adipiscing(),
     nodes=2,
-    plugins=[sky.plugins.jax(), sky.plugins.keras(backend="jax")],
+    plugins=[lor.plugins.sit(), lor.plugins.amet(backend="sit")],
 ) as compute:
-    results = train_vit_mnist(epochs=10) @ compute
+    results = lorem_ipsum_dolor(epochs=10) @ compute
 ```
 
-Apenas o `provider` e o `accelerator` mudam. O resto do código permanece idêntico.
+Apenas o `provider` e o `accelerator` mudam. Quis nostrud exercitation ullamco laboris.
 
-## Resultados
+## Nemo enim ipsam
 
-Com 2 nós RTX 4090 na Vast.ai, o ViT simplificado atingiu **~98.5% de acurácia** no MNIST em 10 épocas, com tempo total de treinamento (incluindo provisionamento) de aproximadamente 4 minutos.
+Lorem ipsum dolor sit amet, **~98.5% consectetur adipiscing** elit em 10 sed eiusmod, com tempor incididunt ut labore (4 minutos).
 
-| Configuração | Acurácia | Tempo total |
+| Lorem | Ipsum | Dolor |
 |---|---|---|
-| 1x T4 (AWS) | 98.1% | ~6 min |
-| 2x RTX 4090 (Vast.ai) | 98.5% | ~4 min |
-| 2x T4 (AWS) | 98.3% | ~5 min |
+| 1x Sit (Amet) | 98.1% | ~6 min |
+| 2x Consectetur (Adipiscing) | 98.5% | ~4 min |
+| 2x Sit (Amet) | 98.3% | ~5 min |
 
-## Próximos passos
+## Duis aute irure
 
-- Escalar para datasets maiores (ImageNet, CIFAR-100) com volumes S3
-- Experimentar FSDP para modelos ViT maiores
-- Comparar custos entre provedores usando `sky.compare()`
+- Excepteur sint occaecat (Cupidatat, Non) com volumes Proident
+- Experimentar Sunt para modelos Culpa maiores
+- Comparar Officia entre Deserunt usando `lor.compare()`
 
-O código completo está disponível no [repositório do Skyward](https://github.com/gabfssilva/skyward).
+Sed ut perspiciatis unde omnis [iste natus](https://example.edu/lorem).

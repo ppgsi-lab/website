@@ -1,37 +1,37 @@
 ---
-title: "Novo dataset para NER em português brasileiro"
+title: "Lorem ipsum dolor sit amet consectetur adipiscing"
 authors:
-  - name: "Norton Trevisan Roman"
-    email: "norton@usp.br"
+  - name: "Sed Eiusmod"
+    email: "sed.eiusmod@example.edu"
 date: 2026-04-05
 tags: ["pln", "dataset", "ner"]
-summary: "Lançamento de um dataset anotado com 15 mil sentenças para reconhecimento de entidades nomeadas em textos jornalísticos em português brasileiro."
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."
 ---
 
-Anunciamos a disponibilização pública do **NER-PTBR-News**, um dataset para reconhecimento de entidades nomeadas (NER) em português brasileiro.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam: **Lorem-Ipsum-Dolor**.
 
-## Características
+## Lorem ipsum
 
-- **15.000 sentenças** extraídas de portais jornalísticos brasileiros (2020–2025)
-- Anotação manual por 3 anotadores com concordância inter-anotador (Cohen's κ = 0.89)
-- 6 categorias: PER, ORG, LOC, DATE, MONEY, MISC
-- Formato CoNLL-2003
+- **15.000 sed do eiusmod** tempor incididunt ut labore et dolore magna aliqua (2020–2025)
+- Ut enim ad minim veniam, quis nostrud exercitation (ullamco κ = 0.89)
+- 6 categorias: LOR, IPS, DOL, SIT, AME, CON
+- Formato Lorem-2003
 
-## Acesso
+## Duis aute irure
 
-O dataset está disponível no Hugging Face:
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium:
 
 ```python
 from datasets import load_dataset
-ds = load_dataset("ppgsi-each/ner-ptbr-news")
+ds = load_dataset("lorem-ipsum/dolor-sit-amet")
 ```
 
-## Baselines
+## Nemo enim
 
-Treinamos modelos base para referência:
+Excepteur sint occaecat cupidatat non proident:
 
-| Modelo | F1 (micro) |
+| Modelo | Lorem (ipsum) |
 |--------|-----------|
-| BiLSTM-CRF | 0.81 |
-| BERTimbau-base | 0.88 |
-| BERTimbau-large | **0.91** |
+| LoremNet | 0.81 |
+| IpsumBase | 0.88 |
+| DolorLarge | **0.91** |

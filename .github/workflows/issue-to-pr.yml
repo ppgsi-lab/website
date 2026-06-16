@@ -58,7 +58,7 @@ jobs:
               .replace(/[^a-z0-9]+/g, '-')
               .replace(/(^-|-$)/g, '');
             const slug = slugify(titulo);
-            const filename = `${data}-${slug}.md`;
+            const filename = `${data}-${slug}.mdx`;
 
             const q = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, ' ').trim()}"`;
 

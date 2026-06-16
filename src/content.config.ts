@@ -23,12 +23,12 @@ const newsSchema = z.object({
 });
 
 const posts = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
   schema: postSchema,
 });
 
 const news = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/news' }),
   schema: newsSchema,
 });
 

@@ -55,7 +55,7 @@ O português fica sem prefixo (`/website/about`); inglês e espanhol ficam em `/
 
 ```sh
 npm install
-npm run dev          # http://localhost:4321
+npm run dev          # http://localhost:4321/website/
 npm run build        # gera ./dist
 npm run preview
 ```
@@ -131,7 +131,7 @@ Notícias **não têm autor nem tags** por design — a listagem `/news` é cron
 1. No GitHub, clique em **Issues → New issue**.
 2. Escolha **📰 Nova notícia** ou **✍️ Novo post**.
 3. Preencha o formulário (título, data, resumo, conteúdo) e submeta.
-4. Um workflow automático lê a issue, gera o `.md` com frontmatter correto e abre um **pull request**.
+4. Um workflow automático lê a issue, gera o `.mdx` com frontmatter correto e abre um **pull request**.
 5. Um mantenedor revisa e faz o merge — o site é reconstruído e publicado.
 
 O workflow que faz isso vive em [`.github/workflows/issue-to-pr.yml`](.github/workflows/issue-to-pr.yml), e os formulários em [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/).
@@ -139,7 +139,7 @@ O workflow que faz isso vive em [`.github/workflows/issue-to-pr.yml`](.github/wo
 **Fluxo manual (para quem já está editando o repo localmente):**
 
 ```sh
-npm run dev                                    # http://localhost:4321
+npm run dev                                    # http://localhost:4321/website/
 git add src/content/<colecao>/pt-br/<arquivo>.mdx
 git commit -m "post: título curto"             # ou "news: ..."
 git push

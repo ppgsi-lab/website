@@ -1,0 +1,334 @@
+- code: "SIN5000"
+  name:
+    pt-br: "Metodologia da Pesquisa em Sistemas de Informação"
+    en: "Research Methodology in Information Systems"
+    es: "Metodología de la Investigación en Sistemas de Información"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "required"
+- code: "SIN5013"
+  name:
+    pt-br: "Análise de Algoritmos e Estruturas de Dados"
+    en: "Analysis of Algorithms and Data Structures"
+    es: "Análisis de Algoritmos y Estructuras de Datos"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "required"
+- code: "SIN5005"
+  name:
+    pt-br: "Tópicos em Engenharia de Software"
+    en: "Topics in Software Engineering"
+    es: "Tópicos en Ingeniería de Software"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5009"
+  name:
+    pt-br: "Gestão de Processos de Negócio"
+    en: "Business Process Management"
+    es: "Gestión de Procesos de Negocio"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5010"
+  name:
+    pt-br: "Gestão de Projetos em Computação"
+    en: "Project Management in Computing"
+    es: "Gestión de Proyectos en Computación"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5015"
+  name:
+    pt-br: "Economia da Informação"
+    en: "Information Economics"
+    es: "Economía de la Información"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5019"
+  name:
+    pt-br: "Laboratório de Inovação em Sistemas de Informação"
+    en: "Innovation Laboratory in Information Systems"
+    es: "Laboratorio de Innovación en Sistemas de Información"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5022"
+  name:
+    pt-br: "Teste de Software"
+    en: "Software Testing"
+    es: "Prueba de Software"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5025"
+  name:
+    pt-br: "Mineração de Processos"
+    en: "Process Mining"
+    es: "Minería de Procesos"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "both"
+- code: "SIN5027"
+  name:
+    pt-br: "Sistemas de Informação para Ciberdemocracia"
+    en: "Information Systems for Cyberdemocracy"
+    es: "Sistemas de Información para la Ciberdemocracia"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5029"
+  name:
+    pt-br: "Interação Humano-Computador"
+    en: "Human-Computer Interaction"
+    es: "Interacción Humano-Computadora"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5030"
+  name:
+    pt-br: "Estudos Organizacionais em Mundos Virtuais/Metaverso"
+    en: "Organizational Studies in Virtual Worlds/Metaverse"
+    es: "Estudios Organizacionales en Mundos Virtuales/Metaverso"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5034"
+  name:
+    pt-br: "Acessibilidade Digital em Sistemas de Informação"
+    en: "Digital Accessibility in Information Systems"
+    es: "Accesibilidad Digital en Sistemas de Información"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "gestao-e-desenvolvimento"
+- code: "SIN5006"
+  name:
+    pt-br: "Inteligência Computacional"
+    en: "Computational Intelligence"
+    es: "Inteligencia Computacional"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5007"
+  name:
+    pt-br: "Reconhecimento de Padrões"
+    en: "Pattern Recognition"
+    es: "Reconocimiento de Patrones"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5008"
+  name:
+    pt-br: "Estatística Computacional"
+    en: "Computational Statistics"
+    es: "Estadística Computacional"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5014"
+  name:
+    pt-br: "Fundamentos de Processamento Gráfico"
+    en: "Fundamentals of Graphics Processing"
+    es: "Fundamentos de Procesamiento Gráfico"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5016"
+  name:
+    pt-br: "Aprendizado de Máquina"
+    en: "Machine Learning"
+    es: "Aprendizaje Automático"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5017"
+  name:
+    pt-br: "Mineração de Dados"
+    en: "Data Mining"
+    es: "Minería de Datos"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5018"
+  name:
+    pt-br: "Aprendizado Estatístico"
+    en: "Statistical Learning"
+    es: "Aprendizaje Estadístico"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5021"
+  name:
+    pt-br: "Planejamento Probabilístico e Aprendizado por Reforço"
+    en: "Probabilistic Planning and Reinforcement Learning"
+    es: "Planificación Probabilística y Aprendizaje por Refuerzo"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5023"
+  name:
+    pt-br: "Reconhecimento Sintático e Estrutural de Padrões"
+    en: "Syntactic and Structural Pattern Recognition"
+    es: "Reconocimiento Sintáctico y Estructural de Patrones"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5024"
+  name:
+    pt-br: "Laboratório de Otimização Combinatória"
+    en: "Combinatorial Optimization Laboratory"
+    es: "Laboratorio de Optimización Combinatoria"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5026"
+  name:
+    pt-br: "Introdução à Otimização Combinatória"
+    en: "Introduction to Combinatorial Optimization"
+    es: "Introducción a la Optimización Combinatoria"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5028"
+  name:
+    pt-br: "Análise de Redes Sociais"
+    en: "Social Network Analysis"
+    es: "Análisis de Redes Sociales"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5031"
+  name:
+    pt-br: "Tópicos em análise computacional de som e música"
+    en: "Topics in computational analysis of sound and music"
+    es: "Tópicos en análisis computacional de sonido y música"
+  credits: 4
+  weeklyHours:
+    pt-br: "2 horas-aula"
+    en: "2 class hours"
+    es: "2 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5032"
+  name:
+    pt-br: "Experimentação em Aprendizado de Máquina Supervisionado"
+    en: "Experimentation in Supervised Machine Learning"
+    es: "Experimentación en Aprendizaje Automático Supervisado"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"
+- code: "SIN5033"
+  name:
+    pt-br: "Grafos de Conhecimento e Ontologias"
+    en: "Knowledge Graphs and Ontologies"
+    es: "Grafos de Conocimiento y Ontologías"
+  credits: 8
+  weeklyHours:
+    pt-br: "4 horas-aula"
+    en: "4 class hours"
+    es: "4 horas de clase"
+  type: "elective"
+  researchLine: "inteligencia-de-sistemas"

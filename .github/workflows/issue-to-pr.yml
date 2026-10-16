@@ -64,7 +64,7 @@ jobs:
 
             let dir, fmLines;
             if (tipo === 'news') {
-              dir = 'src/content/news';
+              dir = 'src/content/news/pt-br';
               const fonte = get('Fonte / órgão emissor');
               fmLines = [
                 `title: ${q(titulo)}`,
@@ -73,7 +73,7 @@ jobs:
               ];
               if (fonte) fmLines.push(`source: ${q(fonte)}`);
             } else {
-              dir = 'src/content/posts';
+              dir = 'src/content/posts/pt-br';
               const autoresRaw = get('Autores');
               const tagsRaw = get('Tags');
 

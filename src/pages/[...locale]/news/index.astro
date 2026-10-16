@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import EntryList from '../../../components/ds/EntryList.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import { getUI } from '../../../lib/data';
+import { byDateDesc, getLocalized } from '../../../lib/content';
+import { localeOf, localeParams } from '../../../lib/i18n';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const news = byDateDesc(await getLocalized('news', locale));
+const years = [...new Set(news.map(({ entry }) => entry.data.date.getUTCFullYear()))];
+---
+
+<PageLayout title={ui.news.title} sub={ui.news.sub}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={years.map((year) => ({ label: String(year), href: `#ano-${year}` }))} />
+    {years.map((year) => (
+      <Fragment>
+        <h2 id={`ano-${year}`}>{year}</h2>
+        <EntryList items={news.filter(({ entry }) => entry.data.date.getUTCFullYear() === year).map(({ slug, entry }) => ({ date: entry.data.date, title: entry.data.title, href: `/news/${slug}`, meta: entry.data.summary }))} />
+      </Fragment>
+    ))}
+  </DocLayout>
+</PageLayout>

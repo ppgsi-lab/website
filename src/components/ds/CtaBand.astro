@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  text: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<section class="cta"><div class="wrap">
+  <h2>{title}</h2>
+  <p>{text}</p>
+  <slot />
+</div></section>
+
+<style>
+  .cta { background: var(--teal); color: var(--on-dark); text-align: center; padding: var(--cta-pad) 0; margin-top: var(--cta-gap); }
+  h2 { font-family: var(--font-serif); font-size: 52px; font-weight: 400; margin: 0 0 16px; line-height: 1.05; letter-spacing: -0.02em; }
+  p { font-size: 21px; line-height: 1.4; margin: 0 auto 32px; max-width: 34em; }
+
+  @media (max-width: 1099px) {
+    .cta { padding: 72px 0; margin-top: 72px; }
+    h2 { font-size: 44px; }
+    p { font-size: 19px; }
+  }
+
+  @media (max-width: 699px) {
+    .cta { padding: 56px 0; margin-top: 56px; }
+    h2 { font-size: 34px; }
+    p { font-size: 17px; }
+  }
+</style>

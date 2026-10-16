@@ -39,7 +39,6 @@ export interface ResearchLine {
   id: string;
   name: string;
   slug: string;
-  color: "teal" | "yellow";
   description: string;
   objective: string;
   areas: ResearchArea[];
@@ -83,37 +82,67 @@ export interface Alumnus {
   email: string;
 }
 
-export interface OpenCall {
-  title: string;
-  code: string;
-  href: string;
-}
-
-export interface SemesterCourse {
-  code: string;
-  name: string;
-}
-
 export interface CurrentSemester {
   label: string;
-  openCalls: OpenCall[];
-  courses: SemesterCourse[];
+  courses: string[];
 }
 
-export interface NavChild {
+export interface NavLink {
   label: string;
   href: string;
 }
 
-export interface NavGroup {
-  group: string;
-  items: NavChild[];
+export interface DatedLink extends NavLink {
+  date?: string;
 }
 
-export interface NavItem {
+export interface NavPage extends NavLink {
+  description: string;
+}
+
+export interface NavSection {
+  id: string;
   label: string;
-  href?: string;
-  children?: (NavChild | NavGroup)[];
+  href: string;
+  intro: string;
+  /** Topo escuro com ilustração, comum a todas as abas da seção; sem ela, o topo é claro. */
+  image?: { src: string; alt: string };
+  action?: NavLink;
+  links: NavPage[];
+}
+
+export interface FooterColumn {
+  label: string;
+  links: NavLink[];
+}
+
+export interface Navigation {
+  main: NavSection[];
+  footer: FooterColumn[];
+}
+
+export interface Call {
+  title: string;
+  edital: NavLink;
+  /** Complemento depois do número do edital, como "seleção em duas fases". */
+  note: string;
+  status: string;
+  apply: string;
+  /** Linha do edital na faixa de ingresso do Início. */
+  home: { title: string; text: string; badge?: string };
+  schedule: { date: string; event: string }[];
+  documents: NavLink[];
+}
+
+export interface PastProcess {
+  title: string;
+  edital: { label: string; href?: string };
+  links: DatedLink[];
+}
+
+export interface Editais {
+  open: Call[];
+  results: { year: number; processes: PastProcess[] }[];
 }
 
 export interface Stat {
@@ -123,11 +152,40 @@ export interface Stat {
 
 export interface ResearchLineSummary {
   name: string;
-  color: "teal" | "yellow";
+  description: string;
   href: string;
   areas: { name: string; description: string }[];
 }
 
+type Strings<K extends string> = Record<K, string>;
+
 export interface UIStrings {
-  [section: string]: Record<string, string>;
+  site: Strings<"title" | "description">;
+  masthead: Strings<"menu" | "nav" | "open" | "logo" | "usp" | "language">;
+  footer: Strings<"programName" | "institution" | "university" | "address" | "zip" | "copyright" | "domain">;
+  page: Strings<"home" | "crumbs" | "toc" | "documents" | "untranslated">;
+  call: Strings<"edital" | "apply" | "read" | "schedule" | "documents">;
+  cta: Strings<"title" | "text">;
+  home: Strings<
+    | "title" | "deck" | "intro" | "imageAlt" | "apply" | "research" | "doctorateTitle" | "doctorateText" | "doctorateLink"
+    | "admission" | "numbers" | "news" | "allNews" | "linesTitle" | "linesText" | "linesButton" | "advisorsTitle"
+    | "advisorsText" | "advisorsOpen" | "advisorsClose" | "coursesTitle" | "coursesText" | "coursesButton" | "ctaButton"
+  >;
+  editais: Strings<
+    | "title" | "sub" | "ongoing" | "processTitle" | "processText" | "doctorate"
+    | "other" | "international" | "special" | "results" | "older" | "olderMasters" | "olderDoctorate" | "ctaButton"
+  > & { steps: { title: string; text: string }[] };
+  people: Strings<
+    | "advisorsTitle" | "advisorsText" | "site" | "studentsTitle" | "studentsText" | "doctorate" | "doctorateCount" | "masters"
+    | "mastersCount" | "lists" | "listsText" | "alumniTitle" | "alumniText" | "alumniLibrary" | "library" | "alumniCount"
+    | "ccpTitle" | "ccpText" | "composition" | "pastCoordinators" | "meetings" | "meetingsText" | "important" | "importantText"
+  >;
+  table: Strings<
+    | "name" | "advisor" | "entry" | "email" | "number" | "holder" | "role" | "term" | "alternate" | "period" | "date" | "day"
+    | "time" | "code" | "course" | "credits" | "hours"
+  >;
+  courses: Strings<"title" | "sub" | "required" | "electives" | "lineElectives">;
+  research: Strings<"objective" | "areas" | "advisors">;
+  news: Strings<"title" | "sub" | "more">;
+  posts: Strings<"title" | "sub" | "by" | "more" | "topics" | "authorTitle" | "authorSub" | "tagTitle" | "tagSub">;
 }

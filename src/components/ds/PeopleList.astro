@@ -1,0 +1,58 @@
+---
+import { url } from '../../lib/url';
+import { getUI } from '../../lib/data';
+import { localeOf } from '../../lib/i18n';
+
+interface Person {
+  name: string;
+  href: string;
+  areas: string;
+  site?: string;
+}
+
+interface Props {
+  people: Person[];
+  /** Recolhe a lista no tablet e no telefone, atrás de um botão. */
+  toggle?: { id: string; open: string; close: string };
+}
+
+const { people, toggle } = Astro.props;
+const locale = localeOf(Astro.url);
+const siteLabel = getUI(locale).people.site;
+---
+
+{toggle && (
+  <Fragment>
+    <input type="checkbox" id={toggle.id} class="ptog" />
+    <label for={toggle.id} class="pbtn"><span class="o">{toggle.open}</span><span class="c">{toggle.close}</span><i class="plus" aria-hidden="true"></i></label>
+  </Fragment>
+)}
+<div class="people">
+  {people.map((person) => <div><a href={url(person.href, locale)}>{person.name}</a><small>{person.areas}</small>{person.site && <a class="site" href={person.site}>{siteLabel}</a>}</div>)}
+</div>
+
+<style>
+  .people { columns: 3; column-gap: var(--gutter); }
+  .people div { break-inside: avoid; padding: 12px 0; border-top: var(--rule-hairline) var(--hairline); }
+  .people a { color: var(--ink); font-family: var(--font-serif); font-size: 20px; }
+  .people small { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .people .site { display: inline-block; margin-top: 4px; font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: var(--teal); }
+  .ptog { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+  .pbtn { display: none; }
+
+  @media (max-width: 1099px) {
+    .people { columns: 2; }
+    .pbtn { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--panel); border-radius: var(--radius-lg); padding: 16px 20px; cursor: pointer; color: var(--deep); font-family: var(--font-serif); font-size: 20px; line-height: 1.2; user-select: none; }
+    .pbtn .c, .ptog ~ .people { display: none; }
+    .ptog:checked + .pbtn .o { display: none; }
+    .ptog:checked + .pbtn .c { display: inline; }
+    .ptog:checked + .pbtn .plus::after { display: none; }
+    .ptog:checked ~ .people { display: block; margin-top: 20px; }
+    .ptog:focus-visible + .pbtn { outline: 2px solid var(--teal); outline-offset: 2px; }
+  }
+
+  @media (max-width: 699px) {
+    .people { columns: 1; }
+    .pbtn { font-size: 19px; padding: 14px 18px; }
+  }
+</style>

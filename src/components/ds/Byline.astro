@@ -1,0 +1,29 @@
+---
+import { url } from '../../lib/url';
+import { getUI } from '../../lib/data';
+import { formatDate, localeOf } from '../../lib/i18n';
+
+interface Props {
+  /** Autores de um texto; um aviso mostra a fonte no lugar. */
+  authors?: { name: string; href: string }[];
+  source?: string;
+  date: Date;
+}
+
+const { authors, source, date } = Astro.props;
+const locale = localeOf(Astro.url);
+const by = getUI(locale).posts.by;
+---
+
+<p class="byline">
+  {authors && <span>{by} {authors.map((author, i) => <Fragment>{i > 0 && ', '}<a href={url(author.href, locale)}>{author.name}</a></Fragment>)}</span>}
+  {!authors && source && <span>{source}</span>}
+  {(authors || source) && <i>|</i>}
+  <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date, locale)}</time>
+</p>
+
+<style>
+  .byline { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 15px; color: var(--muted); margin: 24px 0 0; }
+  a { font-weight: 700; color: var(--ink); }
+  i { font-style: normal; opacity: .5; }
+</style>

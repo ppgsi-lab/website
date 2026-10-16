@@ -1,0 +1,562 @@
+site:
+  title: "PPgSI, EACH USP"
+  description:
+    pt-br: "Mestrado e Doutorado Acadêmicos em Sistemas de Informação, EACH USP"
+    en: "Academic master's and doctoral programs in Information Systems, EACH USP"
+    es: "Maestría y doctorado académicos en Sistemas de Información, EACH USP"
+
+masthead:
+  menu:
+    pt-br: "Menu"
+    en: "Menu"
+    es: "Menú"
+  nav:
+    pt-br: "Principal"
+    en: "Main"
+    es: "Principal"
+  open:
+    pt-br: "Abrir"
+    en: "Open"
+    es: "Abrir"
+  logo:
+    pt-br: "PPgSI, Programa de Pós-Graduação em Sistemas de Informação, EACH USP"
+    en: "PPgSI, Graduate Program in Information Systems, EACH USP"
+    es: "PPgSI, Programa de Posgrado en Sistemas de Información, EACH USP"
+  usp:
+    pt-br: "Universidade de São Paulo"
+    en: "University of São Paulo"
+    es: "Universidad de São Paulo"
+  language:
+    pt-br: "Idioma"
+    en: "Language"
+    es: "Idioma"
+
+footer:
+  programName:
+    pt-br: "Programa de Pós-Graduação em Sistemas de Informação"
+    en: "Graduate Program in Information Systems"
+    es: "Programa de Posgrado en Sistemas de Información"
+  institution:
+    pt-br: "Escola de Artes, Ciências e Humanidades"
+    en: "School of Arts, Sciences and Humanities"
+    es: "Escuela de Artes, Ciencias y Humanidades"
+  university:
+    pt-br: "Universidade de São Paulo"
+    en: "University of São Paulo"
+    es: "Universidad de São Paulo"
+  address: "Rua Arlindo Béttio, 1000, Ermelino Matarazzo"
+  zip: "03828-000, São Paulo, SP"
+  copyright: "PPgSI, EACH USP"
+  domain: "ppgsi.each.usp.br"
+
+page:
+  home:
+    pt-br: "Início"
+    en: "Home"
+    es: "Inicio"
+  crumbs:
+    pt-br: "Você está em"
+    en: "You are here"
+    es: "Usted está aquí"
+  toc:
+    pt-br: "Nesta página"
+    en: "On this page"
+    es: "En esta página"
+  documents:
+    pt-br: "Documentos"
+    en: "Documents"
+    es: "Documentos"
+  untranslated:
+    pt-br: "Esta página ainda não tem versão em português."
+    en: "This page is not available in English yet; it is shown in Portuguese."
+    es: "Esta página aún no está disponible en español; se muestra en portugués."
+
+call:
+  edital:
+    pt-br: "Edital"
+    en: "Call"
+    es: "Convocatoria"
+  apply:
+    pt-br: "Inscrever-se"
+    en: "Apply"
+    es: "Inscribirse"
+  read:
+    pt-br: "Ler o edital completo"
+    en: "Read the full call"
+    es: "Leer la convocatoria completa"
+  schedule:
+    pt-br: "Cronograma"
+    en: "Schedule"
+    es: "Cronograma"
+  documents:
+    pt-br: "Documentos"
+    en: "Documents"
+    es: "Documentos"
+
+cta:
+  title:
+    pt-br: "Pensando em se inscrever?"
+    en: "Thinking about applying?"
+    es: "¿Está pensando en inscribirse?"
+  text:
+    pt-br: "No mestrado, a seleção avalia histórico, currículo e uma intenção de pesquisa para cada projeto escolhido. A inscrição e o curso são gratuitos."
+    en: "For the master's program, the selection process evaluates the academic transcript, CV, and one statement of research intent for each chosen project. The application and the program are free of charge."
+    es: "En la maestría, la selección evalúa el historial académico, el currículum y una declaración de intención de investigación para cada proyecto elegido. La inscripción y el programa son gratuitos."
+
+home:
+  title:
+    pt-br: "Inscrições abertas para o mestrado com ingresso em 2026/1"
+    en: "Applications open for master's program entry in 2026/1"
+    es: "Inscripciones abiertas para la maestría con ingreso en 2026/1"
+  deck:
+    pt-br: "O edital EACH/CPG 90/2025 recebe inscrições até 30 de novembro, em até três projetos de pesquisa. A seleção avalia histórico, currículo e intenções de pesquisa, e o resultado sai até 30 de dezembro."
+    en: "Call EACH/CPG 90/2025 accepts applications until November 30, for up to three research projects. The selection process evaluates the academic transcript, CV, and statements of research intent, and results are released by December 30."
+    es: "La convocatoria EACH/CPG 90/2025 recibe inscripciones hasta el 30 de noviembre, en hasta tres proyectos de investigación. La selección evalúa el historial académico, el currículum y las declaraciones de intención de investigación, y el resultado se publica a más tardar el 30 de diciembre."
+  intro:
+    pt-br: "O Programa de Pós-Graduação em Sistemas de Informação da EACH-USP forma mestres e doutores em Ciências capazes de integrar conceitos da computação às áreas de aplicação em que atuam. A área de concentração, Metodologia e Técnicas da Computação, propõe, desenvolve e avalia métodos nos principais campos da computação para resolver problemas complexos em saúde, educação, governo, economia, bioinformática, jogos e robótica."
+    en: "The Graduate Program in Information Systems at EACH-USP trains Masters and Doctors of Science able to integrate computing concepts into the application areas in which they work. The area of concentration, Computing Methodology and Techniques, proposes, develops, and evaluates methods in the main fields of computing to solve complex problems in health, education, government, economics, bioinformatics, games, and robotics."
+    es: "El Programa de Posgrado en Sistemas de Información de la EACH-USP forma magísteres y doctores en Ciencias capaces de integrar conceptos de la computación en las áreas de aplicación en las que actúan. El área de concentración, Metodología y Técnicas de la Computación, propone, desarrolla y evalúa métodos en los principales campos de la computación para resolver problemas complejos en salud, educación, gobierno, economía, bioinformática, juegos y robótica."
+  imageAlt:
+    pt-br: "Campus da EACH em Ermelino Matarazzo, São Paulo"
+    en: "EACH campus in Ermelino Matarazzo, São Paulo"
+    es: "Campus de la EACH en Ermelino Matarazzo, São Paulo"
+  apply:
+    pt-br: "Ler o edital e inscrever-se"
+    en: "Read the call and apply"
+    es: "Leer la convocatoria e inscribirse"
+  research:
+    pt-br: "Conheça a pesquisa"
+    en: "Learn about the research"
+    es: "Conozca la investigación"
+  doctorateTitle:
+    pt-br: "Doutorado com ingresso em 2026"
+    en: "Doctoral program, entry in 2026"
+    es: "Doctorado con ingreso en 2026"
+  doctorateText:
+    pt-br: "Edital EACH/CPG 107/2025, com inscrições em fluxo contínuo de 15 de janeiro a 30 de novembro de 2026."
+    en: "Call EACH/CPG 107/2025, with rolling applications from January 15 to November 30, 2026."
+    es: "Convocatoria EACH/CPG 107/2025, con inscripciones en flujo continuo del 15 de enero al 30 de noviembre de 2026."
+  doctorateLink:
+    pt-br: "Ver edital"
+    en: "View call"
+    es: "Ver convocatoria"
+  admission:
+    pt-br: "Ingresso"
+    en: "Admissions"
+    es: "Admisión"
+  numbers:
+    pt-br: "Em números"
+    en: "In numbers"
+    es: "En cifras"
+  news:
+    pt-br: "Notícias"
+    en: "News"
+    es: "Noticias"
+  allNews:
+    pt-br: "Todas as notícias e o blog"
+    en: "All news and the blog"
+    es: "Todas las noticias y el blog"
+  linesTitle:
+    pt-br: "Linhas de pesquisa"
+    en: "Research lines"
+    es: "Líneas de investigación"
+  linesText:
+    pt-br: "Área de concentração em Metodologia e Técnicas da Computação, organizada em duas linhas e sete áreas."
+    en: "Area of concentration in Computing Methodology and Techniques, organized into two lines and seven areas."
+    es: "Área de concentración en Metodología y Técnicas de la Computación, organizada en dos líneas y siete áreas."
+  linesButton:
+    pt-br: "Projetos e orientadores"
+    en: "Projects and advisors"
+    es: "Proyectos y directores de tesis"
+  advisorsTitle:
+    pt-br: "Orientadores"
+    en: "Advisors"
+    es: "Directores de tesis"
+  advisorsText:
+    pt-br: "33 docentes credenciados para orientar no mestrado e no doutorado."
+    en: "33 faculty members accredited to advise master's and doctoral students."
+    es: "33 docentes acreditados para dirigir tesis en la maestría y el doctorado."
+  advisorsOpen:
+    pt-br: "Ver os orientadores"
+    en: "Show advisors"
+    es: "Ver los directores de tesis"
+  advisorsClose:
+    pt-br: "Ocultar os orientadores"
+    en: "Hide advisors"
+    es: "Ocultar los directores de tesis"
+  coursesTitle:
+    pt-br: "Disciplinas do semestre"
+    en: "This semester's courses"
+    es: "Asignaturas del semestre"
+  coursesText:
+    pt-br: "Oferecimento de {semester}. O catálogo completo tem {count} disciplinas."
+    en: "Offered in {semester}. The full catalog has {count} courses."
+    es: "Oferta de {semester}. El catálogo completo tiene {count} asignaturas."
+  coursesButton:
+    pt-br: "Catálogo completo"
+    en: "Full catalog"
+    es: "Catálogo completo"
+  ctaButton:
+    pt-br: "Ver editais e inscrever-se"
+    en: "See calls and apply"
+    es: "Ver convocatorias e inscribirse"
+
+editais:
+  title:
+    pt-br: "Editais e resultados"
+    en: "Calls and results"
+    es: "Convocatorias y resultados"
+  sub:
+    pt-br: "Todos os processos seletivos de mestrado e doutorado, com edital, cronograma e documentos de cada etapa"
+    en: "All master's and doctoral selection processes, with the call, schedule, and documents for each stage"
+    es: "Todos los procesos de selección de maestría y doctorado, con la convocatoria, el cronograma y los documentos de cada etapa"
+  ongoing:
+    pt-br: "Em andamento"
+    en: "Ongoing"
+    es: "En curso"
+  processTitle:
+    pt-br: "Como funciona a seleção"
+    en: "How the selection process works"
+    es: "Cómo funciona la selección"
+  processText:
+    pt-br: "Mestrado, conforme o edital EACH/CPG 90/2025."
+    en: "Master's program, as set out in call EACH/CPG 90/2025."
+    es: "Maestría, según la convocatoria EACH/CPG 90/2025."
+  steps:
+    - title:
+        pt-br: "Projetos e vagas"
+        en: "Projects and openings"
+        es: "Proyectos y vacantes"
+      text:
+        pt-br: "O programa divulga os projetos de pesquisa e as vagas de cada um."
+        en: "The program publishes the research projects and the number of openings in each."
+        es: "El programa publica los proyectos de investigación y las vacantes de cada uno."
+    - title:
+        pt-br: "Inscrição"
+        en: "Application"
+        es: "Inscripción"
+      text:
+        pt-br: "Em até três projetos, com histórico, Lattes, planilha de pontuação e uma intenção de pesquisa por projeto."
+        en: "For up to three projects, with academic transcript, Lattes, scoring spreadsheet, and one statement of research intent per project."
+        es: "En hasta tres proyectos, con historial académico, Lattes, planilla de puntuación y una declaración de intención de investigación por proyecto."
+    - title:
+        pt-br: "Homologação"
+        en: "Approval of applications"
+        es: "Aprobación de inscripciones"
+      text:
+        pt-br: "Lista de inscrições aceitas, com prazo para contestação."
+        en: "List of accepted applications, with a deadline for appeals."
+        es: "Lista de inscripciones aceptadas, con plazo para impugnación."
+    - title:
+        pt-br: "Primeira fase"
+        en: "First stage"
+        es: "Primera fase"
+      text:
+        pt-br: "Histórico, currículo e Poscomp ou SIN5013. Nota mínima 5."
+        en: "Academic transcript, CV, and Poscomp or SIN5013. Minimum score 5."
+        es: "Historial académico, currículum y Poscomp o SIN5013. Nota mínima 5."
+    - title:
+        pt-br: "Segunda fase"
+        en: "Second stage"
+        es: "Segunda fase"
+      text:
+        pt-br: "Intenções de pesquisa, avaliadas pela comissão e pelos docentes de cada projeto. Nota mínima 6."
+        en: "Statements of research intent, evaluated by the committee and by the faculty members of each project. Minimum score 6."
+        es: "Declaraciones de intención de investigación, evaluadas por la comisión y por los docentes de cada proyecto. Nota mínima 6."
+    - title:
+        pt-br: "Resultado"
+        en: "Results"
+        es: "Resultado"
+      text:
+        pt-br: "Classificação por projeto, com a data de matrícula."
+        en: "Ranking by project, with the enrollment date."
+        es: "Clasificación por proyecto, con la fecha de matrícula."
+  doctorate:
+    pt-br: "No doutorado, as inscrições são em fluxo contínuo e a seleção tem fase única: projeto de pesquisa, históricos, currículo, duas cartas de recomendação e Poscomp ou SIN5013. A inscrição exige carta de compromisso de um orientador credenciado."
+    en: "For the doctoral program, applications are accepted on a rolling basis and selection has a single stage: research project, academic transcripts, CV, two letters of recommendation, and Poscomp or SIN5013. The application requires a letter of commitment from an accredited advisor."
+    es: "En el doctorado, las inscripciones son en flujo continuo y la selección tiene una fase única: proyecto de investigación, historiales académicos, currículum, dos cartas de recomendación y Poscomp o SIN5013. La inscripción exige una carta de compromiso de un director de tesis acreditado."
+  other:
+    pt-br: "Candidatos de outros países e interessados em cursar disciplinas como aluno especial têm processos próprios: {international} e {special}."
+    en: "Applicants from other countries and those interested in taking courses as special students have their own processes: {international} and {special}."
+    es: "Los candidatos de otros países y los interesados en cursar asignaturas como estudiantes especiales tienen procesos propios: {international} y {special}."
+  international:
+    pt-br: "alunos estrangeiros"
+    en: "international students"
+    es: "estudiantes extranjeros"
+  special:
+    pt-br: "aluno especial"
+    en: "special student"
+    es: "estudiante especial"
+  results:
+    pt-br: "Resultados anteriores"
+    en: "Past results"
+    es: "Resultados anteriores"
+  older:
+    pt-br: "Processos de 2020 a 2022: {masters} e {doctorate}."
+    en: "Processes from 2020 to 2022: {masters} and {doctorate}."
+    es: "Procesos de 2020 a 2022: {masters} y {doctorate}."
+  olderMasters:
+    pt-br: "editais de mestrado"
+    en: "master's calls"
+    es: "convocatorias de maestría"
+  olderDoctorate:
+    pt-br: "editais de doutorado"
+    en: "doctoral calls"
+    es: "convocatorias de doctorado"
+  ctaButton:
+    pt-br: "Inscrever-se no mestrado 2026/1"
+    en: "Apply to the 2026/1 master's program"
+    es: "Inscribirse en la maestría 2026/1"
+
+people:
+  advisorsTitle:
+    pt-br: "Orientadores"
+    en: "Advisors"
+    es: "Directores de tesis"
+  advisorsText:
+    pt-br: "{count} docentes credenciados, atuando em diversas áreas de pesquisa do programa."
+    en: "{count} accredited faculty members working in various research areas of the program."
+    es: "{count} docentes acreditados, que actúan en diversas áreas de investigación del programa."
+  site:
+    pt-br: "Site pessoal"
+    en: "Personal website"
+    es: "Sitio personal"
+  studentsTitle:
+    pt-br: "Orientandos"
+    en: "Current students"
+    es: "Estudiantes"
+  studentsText:
+    pt-br: "Alunos atualmente matriculados no programa, em nível de mestrado e doutorado."
+    en: "Students currently enrolled in the program at the master's and doctoral levels."
+    es: "Estudiantes actualmente matriculados en el programa, en los niveles de maestría y doctorado."
+  doctorate:
+    pt-br: "Doutorandos"
+    en: "Doctoral students"
+    es: "Doctorandos"
+  doctorateCount:
+    pt-br: "{count} alunos de doutorado."
+    en: "{count} doctoral students."
+    es: "{count} estudiantes de doctorado."
+  masters:
+    pt-br: "Mestrandos"
+    en: "Master's students"
+    es: "Estudiantes de maestría"
+  mastersCount:
+    pt-br: "{count} alunos de mestrado."
+    en: "{count} master's students."
+    es: "{count} estudiantes de maestría."
+  lists:
+    pt-br: "Listas de discussão"
+    en: "Mailing lists"
+    es: "Listas de discusión"
+  listsText:
+    pt-br: "Os alunos comunicam-se através de duas listas: uma oficial e moderada ({official}) para divulgação de mensagens de propósito geral, e outra informal ({informal}) para trocas de mensagens entre os alunos."
+    en: "Students communicate through two lists: an official, moderated one ({official}) for general-purpose announcements, and an informal one ({informal}) for messages among students."
+    es: "Los estudiantes se comunican a través de dos listas: una oficial y moderada ({official}) para la difusión de mensajes de propósito general, y otra informal ({informal}) para el intercambio de mensajes entre los estudiantes."
+  alumniTitle:
+    pt-br: "Egressos"
+    en: "Alumni"
+    es: "Egresados"
+  alumniText:
+    pt-br: "{count} alunos formados pelo programa desde {year}."
+    en: "{count} graduates of the program since {year}."
+    es: "{count} estudiantes titulados por el programa desde {year}."
+  alumniLibrary:
+    pt-br: "A lista completa de dissertações defendidas está disponível na {library}."
+    en: "The full list of defended master's theses is available in the {library}."
+    es: "La lista completa de disertaciones de maestría defendidas está disponible en la {library}."
+  library:
+    pt-br: "Biblioteca Digital de Teses e Dissertações da USP"
+    en: "USP Digital Library of Theses and Dissertations"
+    es: "Biblioteca Digital de Tesis y Disertaciones de la USP"
+  alumniCount:
+    pt-br: "{count} egressos."
+    en: "{count} alumni."
+    es: "{count} egresados."
+  ccpTitle:
+    pt-br: "Comissão Coordenadora do Programa"
+    en: "Program Coordinating Committee"
+    es: "Comisión Coordinadora del Programa"
+  ccpText:
+    pt-br: "A Comissão Coordenadora de Programa (CCP) é responsável pela gestão acadêmica do PPgSI."
+    en: "The Program Coordinating Committee (CCP) is responsible for the academic management of PPgSI."
+    es: "La Comisión Coordinadora del Programa (CCP) es responsable de la gestión académica del PPgSI."
+  composition:
+    pt-br: "Composição atual"
+    en: "Current membership"
+    es: "Composición actual"
+  pastCoordinators:
+    pt-br: "Ex-coordenadores"
+    en: "Former coordinators"
+    es: "Coordinadores anteriores"
+  meetings:
+    pt-br: "Calendário de reuniões"
+    en: "Meeting calendar"
+    es: "Calendario de reuniones"
+  meetingsText:
+    pt-br: "A CCP reúne-se ordinariamente nos meses de fevereiro, março, abril, maio, junho, agosto, setembro, outubro, novembro e dezembro. Não há reuniões ordinárias nos meses de janeiro e julho. As reuniões ordinárias são realizadas na primeira quarta-feira útil/letiva de cada mês."
+    en: "The CCP holds regular meetings in February, March, April, May, June, August, September, October, November, and December. There are no regular meetings in January and July. Regular meetings are held on the first working/class Wednesday of each month."
+    es: "La CCP se reúne en sesión ordinaria en los meses de febrero, marzo, abril, mayo, junio, agosto, septiembre, octubre, noviembre y diciembre. No hay reuniones ordinarias en los meses de enero y julio. Las reuniones ordinarias se realizan el primer miércoles hábil/lectivo de cada mes."
+  important:
+    pt-br: "Informação importante"
+    en: "Important information"
+    es: "Información importante"
+  importantText:
+    pt-br: "A pauta deve ser divulgada com no mínimo 48 horas úteis de antecedência. Documentação de docentes e alunos deve ser entregue até a segunda-feira anterior às 13h30, respeitando feriados e recessos. Casos excepcionais podem ser avaliados conforme justificativa apresentada. Para itens encaminhados à CPG após reunião da CCP, esta costuma se reunir na segunda quinta-feira de cada mês."
+    en: "The agenda must be published at least 48 business hours in advance. Documents from faculty members and students must be submitted by 1:30 p.m. on the preceding Monday, taking holidays and recesses into account. Exceptional cases may be considered based on the justification provided. For items forwarded to the CPG after a CCP meeting, the CPG usually meets on the second Thursday of each month."
+    es: "El orden del día debe publicarse con al menos 48 horas hábiles de anticipación. La documentación de docentes y estudiantes debe entregarse hasta el lunes anterior a las 13:30 h, teniendo en cuenta feriados y recesos. Los casos excepcionales pueden evaluarse según la justificación presentada. Para los asuntos remitidos a la CPG después de una reunión de la CCP, esta suele reunirse el segundo jueves de cada mes."
+
+table:
+  name:
+    pt-br: "Nome"
+    en: "Name"
+    es: "Nombre"
+  advisor:
+    pt-br: "Orientador"
+    en: "Advisor"
+    es: "Director de tesis"
+  entry:
+    pt-br: "Ingresso"
+    en: "Entry"
+    es: "Ingreso"
+  email:
+    pt-br: "E-mail"
+    en: "Email"
+    es: "Correo electrónico"
+  number: "#"
+  holder:
+    pt-br: "Membro titular"
+    en: "Full member"
+    es: "Miembro titular"
+  role:
+    pt-br: "Posição"
+    en: "Position"
+    es: "Cargo"
+  term:
+    pt-br: "Mandato"
+    en: "Term"
+    es: "Mandato"
+  alternate:
+    pt-br: "Membro suplente"
+    en: "Alternate member"
+    es: "Miembro suplente"
+  period:
+    pt-br: "Período"
+    en: "Period"
+    es: "Período"
+  date:
+    pt-br: "Data"
+    en: "Date"
+    es: "Fecha"
+  day:
+    pt-br: "Dia"
+    en: "Day"
+    es: "Día"
+  time:
+    pt-br: "Horário"
+    en: "Time"
+    es: "Horario"
+  code:
+    pt-br: "Código"
+    en: "Code"
+    es: "Código"
+  course:
+    pt-br: "Disciplina"
+    en: "Course"
+    es: "Asignatura"
+  credits:
+    pt-br: "Créditos"
+    en: "Credits"
+    es: "Créditos"
+  hours:
+    pt-br: "Carga horária"
+    en: "Workload"
+    es: "Carga horaria"
+
+courses:
+  title:
+    pt-br: "Catálogo de disciplinas"
+    en: "Course catalog"
+    es: "Catálogo de asignaturas"
+  sub:
+    pt-br: "Disciplinas obrigatórias e optativas do PPgSI, EACH USP"
+    en: "Required and elective courses of PPgSI, EACH USP"
+    es: "Asignaturas obligatorias y optativas del PPgSI, EACH USP"
+  required:
+    pt-br: "Obrigatórias"
+    en: "Required"
+    es: "Obligatorias"
+  electives:
+    pt-br: "Optativas"
+    en: "Electives"
+    es: "Optativas"
+  lineElectives:
+    pt-br: "Optativas da linha {line}"
+    en: "Electives in the {line} line"
+    es: "Optativas de la línea {line}"
+
+research:
+  objective:
+    pt-br: "Objetivo"
+    en: "Objective"
+    es: "Objetivo"
+  areas:
+    pt-br: "Áreas de pesquisa"
+    en: "Research areas"
+    es: "Áreas de investigación"
+  advisors:
+    pt-br: "Orientadores"
+    en: "Advisors"
+    es: "Directores de tesis"
+
+news:
+  title:
+    pt-br: "Avisos"
+    en: "Announcements"
+    es: "Avisos"
+  more:
+    pt-br: "Mais avisos"
+    en: "More announcements"
+    es: "Más avisos"
+  sub:
+    pt-br: "Editais, avisos oficiais, defesas e eventos institucionais do programa."
+    en: "Calls, official announcements, defenses, and institutional events of the program."
+    es: "Convocatorias, avisos oficiales, defensas y eventos institucionales del programa."
+
+posts:
+  title:
+    pt-br: "Textos de alunos e docentes"
+    en: "Writing by students and faculty"
+    es: "Textos de estudiantes y docentes"
+  sub:
+    pt-br: "Publicações de alunos e professores sobre pesquisas, resultados e participação em eventos."
+    en: "Posts by students and faculty about research, results, and participation in events."
+    es: "Publicaciones de estudiantes y profesores sobre investigaciones, resultados y participación en eventos."
+  by:
+    pt-br: "Por"
+    en: "By"
+    es: "Por"
+  more:
+    pt-br: "Mais textos"
+    en: "More posts"
+    es: "Más textos"
+  topics:
+    pt-br: "Temas"
+    en: "Topics"
+    es: "Temas"
+  authorTitle:
+    pt-br: "Textos de {name}"
+    en: "Posts by {name}"
+    es: "Textos de {name}"
+  authorSub:
+    pt-br: "Textos publicados por {name} no blog do programa."
+    en: "Posts published by {name} on the program's blog."
+    es: "Textos publicados por {name} en el blog del programa."
+  tagTitle:
+    pt-br: "Textos sobre {tag}"
+    en: "Posts about {tag}"
+    es: "Textos sobre {tag}"
+  tagSub:
+    pt-br: "Textos de alunos e docentes com o tema {tag}."
+    en: "Writing by students and faculty on the topic {tag}."
+    es: "Textos de estudiantes y docentes sobre el tema {tag}."

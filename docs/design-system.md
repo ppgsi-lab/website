@@ -1,247 +1,114 @@
-# Design System — PPgSI Website
+# Design system — PPgSI
 
-Referencia completa dos tokens, utilitarios e padroes visuais do site.
+Sistema visual do site do Programa de Pós-Graduação em Sistemas de Informação da EACH-USP, tirado da proposta F: estrutura de revista e jornal, títulos em serifa, interface em grotesca, teal e amarelo da USP sobre branco, faixas escuras e fios no lugar de sombras.
 
----
+## Voz e conteúdo
 
-## Cores
+- Escreva em português, com frases curtas, em caixa normal e sem ponto de exclamação.
+- Publique só o que está no edital, no regulamento ou no site oficial. Nunca descreva etapa, data ou requisito de seleção sem conferir no edital vigente.
+- Cite edital pelo número oficial: "Edital EACH/CPG 90/2025".
+- Escreva datas por extenso no texto ("30 de novembro") e abreviadas no cronograma ("30 nov", "1 a 30 nov", "até 30 dez").
+- Comece botões pelo verbo e diga o que acontece: "Ler o edital e inscrever-se", "Inscrever-se", "Ver editais e inscrever-se".
+- Nomeie links com seta pelo destino: "Conheça a pesquisa", "Todas as notícias e o blog".
+- Use rótulos de uma ou duas palavras: Ingresso, Em números, Notícias, Cronograma, Documentos.
+- Numere só o que é sequência: os passos da seleção.
+- Não repita selos óbvios, como "recomendado pela CAPES", em rodapé ou chamada. A informação vai no FAQ.
 
-### Paleta USP
+## Cor
 
-| Token | Valor | Uso |
-|---|---|---|
-| `teal` | `#1094AB` | Cor primaria, links, destaques |
-| `teal-dark` | `#0B7A8F` | Hover em links |
-| `teal-light` | `#64C4D2` | Destaques secundarios |
-| `teal-50` | `#EDF8FA` | Background de tags, hover leve |
-| `yellow` | `#FCB421` | Cor de acento, hover nav |
-| `yellow-light` | `#FFF3D6` | Background de callouts |
-
-### Neutros
-
-| Token | Valor | Uso |
-|---|---|---|
-| `ink` | `#111` | Texto primario, headings |
-| `ink-2` | `#444` | Texto de corpo |
-| `ink-3` | `#777` | Texto terciario |
-| `ink-4` | `#AAA` | Metadados, datas, placeholders |
-| `bone` | `#FFFFFF` | Background principal |
-| `rule` | `#E8E4DF` | Bordas e divisores |
-
-### On-Primary (sobre fundo teal)
-
-| Token | Valor | Uso |
-|---|---|---|
-| `on-primary` | `#FFFFFF` | Texto principal |
-| `on-primary-muted` | `rgba(255,255,255,0.7)` | Links do footer |
-| `on-primary-subtle` | `rgba(255,255,255,0.6)` | Endereco, texto secundario |
-| `on-primary-faint` | `rgba(255,255,255,0.4)` | Labels eyebrow |
-| `on-primary-ghost` | `rgba(255,255,255,0.15)` | Divisores |
-| `on-primary-dim` | `rgba(255,255,255,0.3)` | Copyright |
-
-### Misc
-
-| Token | Valor | Uso |
-|---|---|---|
-| `code-bg` | `#F3F4F6` | Background de codigo inline |
-
----
+- Use `paper` de fundo, `ink` no texto, `deep` nos títulos em serifa e `teal` em tudo que é ação: botão, link, rótulo, sinal de mais.
+- Use `muted` para texto secundário e `deck` só na linha fina da capa.
+- Pinte faixas escuras (faixa do Início, hero de página interna) com o degradê de 100°: `deep` até 55% e `deep-end` na borda direita. O rodapé é `deep` liso.
+- Sobre `deep`, escreva em `on-dark`, rotule em `teal-light`, use `on-dark-soft` na linha de apoio e `rule-on-dark` ou `row-rule-on-dark` nos fios.
+- Reserve `yellow` para o badge de prazo e o botão amarelo da faixa de chamada e do hero. Texto sobre `yellow` é sempre `ink`.
+- Use `teal` como fundo só na faixa de chamada.
+- Não use padrão de pontos, sombra nem degradê fora das faixas escuras.
 
 ## Tipografia
 
-### Fontes
+- Use Newsreader (`font-serif`) em títulos e texto corrido, e Hanken Grotesk (`font-sans`) em interface, números e rótulos.
+- Títulos ficam em peso 400. Os grandes (`display`, `headline`, `cta-title`, `section`) têm tracking negativo e entrelinha perto de 1.
+- Componha texto corrido em `text`, 19px com entrelinha 1,6, numa coluna de até 36em.
+- Use `body` (17px) na interface, `small` (16px) em listas e cronogramas e `meta` (15px) em metadados.
+- Rótulos (`label`) têm 12px, peso 700, caixa alta, tracking de 0,16em, cor `teal` e fio de 1px `ink` embaixo.
+- Use algarismos tabulares em `stat` e `code`.
+- Não destaque uma palavra dentro de um título com cor, itálico ou negrito.
 
-- **Display**: Chillax (headings, titulos, nav) — `font-display`
-- **Body**: Synonym (corpo, listas, metadados) — `font-body`
-- **Base**: 18px (`html { font-size: 18px }`)
+## Grade e espaço
 
-### Escala Display (Chillax)
+- Use o container `.wrap` (`container-max` de 1264px com `page-margin` de 32px, ou seja, 1200px de conteúdo) e a grade `.g12` (12 colunas, `gutter` de 32px).
+- Divida assim: capa 6+6, faixa escura 4+4+4 com divisória no meio da calha, linhas de pesquisa 6+6, disciplinas 6+6, orientadores em três colunas de texto e rodapé 4+2+2+4.
+- No edital em andamento, o título ocupa as colunas 1 a 8 e as ações as colunas 9 a 12. Cronograma e documentos ficam em 6+6.
+- Em resultados anteriores, o ano ocupa as colunas 1 e 2 e cada processo as colunas 3 a 12, divididas 5+5.
+- Abra cada seção com `section-gap` (80px). Deixe `head-gap` (32px) entre o cabeçalho da seção e o conteúdo, e `row-pad` (12px) acima e abaixo de cada linha de lista.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `text-display-hero` | `clamp(2.5rem, 5vw, 5rem)` | Titulos de secoes na homepage |
-| `text-display-page` | `clamp(2rem, 4vw, 4rem)` | Titulos de pagina (h1) |
-| `text-display-post` | `clamp(1.75rem, 3.5vw, 3rem)` | Titulo de post individual |
-| `text-display-section` | `clamp(1.375rem, 2vw, 1.75rem)` | Headings de secao (h2) |
-| `text-display-card` | `clamp(1.5rem, 2vw, 2rem)` | Titulos de cards, editais |
+## Fios, raios e superfícies
 
-### Escala Body (Synonym)
+- `rule-frame` (3px duplo) é moldura: fecha o cabeçalho em `ink` e abre os créditos do rodapé em `frame-on-dark`.
+- `rule-section` (3px) em `ink` abre cada seção, acima do título.
+- `rule-hairline` (1px) separa linhas de lista em `hairline` e fecha rótulos em `ink`.
+- Use raios pequenos e só nestes papéis: `radius-xs` no badge, `radius-sm` em botões e códigos, `radius-md` em imagens e `radius-lg` no acordeão. Faixas e seções não têm raio.
+- Use `panel` para linhas clicáveis do acordeão e `tint` para código de disciplina, hover do acordeão e badge suave.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `text-body-lg` | `1.25rem` (20px) | Prosa principal, FAQ, about |
-| `text-body` (base) | `1rem` (18px) | Corpo padrao |
-| `text-body-sm` | `0.8333rem` (15px) | Texto secundario, footer links |
-| `text-body-xs` | `0.7222rem` (13px) | Metadados, datas, codigos |
+## Imagens
 
-### Escala UI
+- Use as ilustrações do campus do grupo Imagens. Não use fotos de banco.
+- Na capa, a ilustração em retrato preenche a altura da coluna de texto. Ela fica ancorada na base e é desenhada a 118% da altura para cortar o céu, sem cortar o mural do prédio.
+- No topo escuro de seção, use a ilustração noturna em 4:3 no desktop e no telefone e em 16:9 no tablet.
+- Use `radius-md` em toda imagem e não ponha legenda.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `text-nav` | `1.222rem` (22px) | Links de navegacao desktop |
-| `text-eyebrow` | `0.6111rem` (11px) | Labels eyebrow |
-| `text-tag` | `0.6667rem` (12px) | Tags |
-| `text-stat` | `clamp(4rem, 6vw, 5rem)` | Numeros estatisticos |
+## Logos e assinatura
 
-### Line Heights
+- No cabeçalho, a assinatura é conjunta: PPgSI, um fio vertical em `ink` a 35% de opacidade, EACH e USP. No desktop, PPgSI tem 56px, EACH 46px e USP 38px de altura, com 20px de espaço.
+- No tablet, PPgSI fica à esquerda e EACH e USP à direita, com 48px entre eles e sem fio. O menu desce para a linha de baixo, alinhado à esquerda, com fio `hairline` em cima. Alturas: 48, 40 e 34px.
+- No telefone, o PPgSI é recortado ao logotipo (82 por 32px), seguido do fio, de EACH (24px), de USP (20px) e do botão Menu.
+- No rodapé, os três logos ficam brancos, com o filtro `brightness(0) invert(1)`, PPgSI e EACH lado a lado, ocupando a largura da coluna na proporção de 44 para 28px de altura, e o USP embaixo, no centro, com 22% da largura.
+- Os arquivos não seguem `color` do CSS. Use sempre os arquivos do grupo Logos e não redesenhe nenhuma marca.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `leading-display-hero` | `1.0` | Hero e secoes grandes |
-| `leading-display-page` | `1.1` | Titulos de pagina |
-| `leading-display-section` | `1.2` | Headings h2 |
-| `leading-display-card` | `1.25` | Titulos de card |
+## Ícones
 
-### Font Weights
+- Não há biblioteca de ícones nem emoji. Existem dois sinais, desenhados em CSS.
+- A seta (`.arrow`, 22 por 14px, em `currentColor`) vai no fim de botões e links com seta.
+- O sinal de mais (`.plus`, 22px, `teal`) vai nas linhas de acordeão. Sem a barra vertical, ele vira menos.
 
-| Contexto | Peso | Classe |
-|---|---|---|
-| Headings (h1-h3) | 700 | `font-bold` |
-| Elementos interativos (FAQ summary) | 600 | `font-semibold` |
-| Nav dropdown items | 600 | `font-semibold` |
-| Enfase no corpo | 500 | `font-medium` |
-| Corpo normal | 400 | `font-normal` |
+## Responsivo
 
----
+- Os pontos de quebra são `bp-tablet` (1099px) e `bp-phone` (699px).
+- No tablet, a capa vira título, depois imagem em 3:2, depois deck, ações e doutorado à esquerda e texto corrido à direita. A faixa escura mantém 4+4+4. Os orientadores ficam recolhidos atrás da linha "Ver os orientadores" e abrem em duas colunas. Os passos ficam em três colunas.
+- No telefone, a margem é `page-margin-phone` (20px) e tudo empilha. O menu fica atrás do botão Menu. Botões principais ocupam a largura toda. Os passos viram lista numerada e o submenu rola na horizontal, aberto na aba ativa. O espaço entre seções é `section-gap-phone` (56px).
 
-## Spacing
+## Estados
 
-### Secoes
+- No hover, links passam a `deep` com sublinhado, o botão `teal` passa a `deep`, o botão amarelo passa a `paper` e a linha de acordeão passa a `tint`.
+- O foco usa o anel padrão do navegador. A única exceção é a linha de recolher orientadores, com contorno `teal` de 2px. Defina um anel de foco antes de levar a produção.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `py-section` | `5rem` (80px) | Padding vertical padrao |
-| `py-section-md` | `7rem` (112px) | Padding vertical em md+ |
-| `py-section-compact` | `3rem` (48px) | Secoes compactas |
-| `py-section-compact-md` | `4rem` (64px) | Compactas em md+ |
+## No código
 
-### Containers
+- `src/styles/tokens.css`: os tokens do design system como variáveis CSS (`--ink`, `--deep`, `--teal`, `--rule-section`, `--container-max`…). Os breakpoints não viram variável, porque media queries não leem variáveis: escreva `1099px` e `699px`.
+- `src/styles/global.css`: a base e as peças usadas em qualquer seção, na camada `base`: `.wrap`, `.g12`, `.sec`, `.btn` (`.yellow`, `.lg`), `.arrow`, `.plus`, `.more`, `.badge` (`.soft`), `.lbl`, `.rows`, `.docs`, `.dark`, o texto corrido `.prose` e o conteúdo de páginas e posts em `.doc`, com `.tbl`, `.ft`, `.note` e os blocos de código. Dentro de `.doc`, blocos com tipografia própria levam `.not-doc` e ficam fora das regras de parágrafo, link e lista.
+- `src/components/ds/`: um componente por bloco, cada um com o CSS escopado. Como a camada `base` fica abaixo dos estilos escopados, o componente sempre vence a regra global equivalente. Os componentes leem o idioma da URL: links internos passam por `url(rota, idioma)` e os textos fixos vêm de `src/data/ui.yaml`.
+- O Markdown e o MDX passam por três ajustes em `astro.config.mjs`: o Shiki usa o tema `css-variables` e envolve cada bloco no quadro `.code`, com a linguagem em cima; cada tabela ganha o contêiner `.tbl`; e os links internos ganham o base e o idioma da pasta do arquivo.
 
-| Token | Valor | Uso |
-|---|---|---|
-| `max-w-container` | `87.5rem` (1400px) | Layout principal |
-| `max-w-content` | `56rem` (~896px) | Conteudo estruturado (cursos) |
-| `max-w-prose` | `50rem` (800px) | Leitura de posts |
-| `max-w-narrative` | `48rem` (~768px) | Prosa longa (about) |
-
-### Heading Margins (padrao)
-
-- **h2**: `mt-12 mb-4`
-- **h3**: `mt-8 mb-3`
-- **PageHeader h1**: `mb-4` (com eyebrow) ou `mb-12` (standalone)
-
----
-
-## Utilitarios
-
-### `eyebrow`
-
-Label de rotulo: 11px, bold, uppercase, letter-spacing 0.1em.
-
-```html
-<p class="eyebrow text-teal">Secao</p>
-<p class="eyebrow text-ink-4">Categoria</p>
-<p class="eyebrow text-on-primary-faint">Footer label</p>
-```
-
-### `code-inline`
-
-Codigo inline fora do contexto prose.
-
-```html
-<code class="code-inline">SIN5000</code>
-```
-
----
-
-## Componentes
-
-### `.callout`
-
-Caixa de alerta/aviso com borda amarela.
-
-```html
-<div class="callout mt-8">
-  <p>Texto do aviso.</p>
-</div>
-```
-
-### `.hover-item`
-
-Hover com fundo amarelo para elementos interativos (nav, filtros).
-
-```html
-<a href="..." class="hover-item px-4 py-2 text-sm font-medium text-ink">
-  Link
-</a>
-```
-
----
-
-## Padroes de Link
-
-| Padrao | Classes | Onde |
-|---|---|---|
-| **Nav** | `.hover-item` (fundo amarelo) | Header, filtros |
-| **Conteudo** | `text-teal hover:underline` | Links inline em texto |
-| **Card titulo** | `text-ink hover:text-teal transition-colors` | Titulos clicaveis |
-| **Sutil** | `text-ink-4 hover:text-ink transition-colors` | Back links, "ver todos" |
-
----
-
-## Padroes de Card
-
-### Card padrao (posts, editais)
-```html
-<div class="border border-rule p-6 md:p-8 hover:border-teal transition-colors">
-  ...
-</div>
-```
-
-### Card de enfase (linhas de pesquisa)
-```html
-<div class="border-2 border-teal hover:bg-teal-50 transition-colors">
-  ...
-</div>
-```
-
-A borda `border-2` e intencional para enfase visual.
-
----
-
-## Tabelas
-
-O componente `DataTable.astro` padroniza tabelas com:
-- Header: `border-b-2 border-ink`, texto bold
-- Rows: `border-b border-rule`
-- Primeira coluna: `text-ink font-medium`
-- Demais: `text-ink-2`
-
-Para tabelas customizadas em paginas, seguir o mesmo padrao.
-
----
-
-## Regras Globais
-
-1. **`border-radius: 0`** em todos os elementos
-2. **Texto justificado** em `<p>`, `<li>`, `<td>` dentro de `<main>`
-3. **Transicoes**: `transition-fast` (150ms) e `transition-default` (200ms)
-4. **Animacao `.rise`**: entrada com fade + translateY, delays `.rise-d1` a `.rise-d4`
-5. **Selection**: fundo teal, texto branco
-6. **Focus-visible**: outline 2px teal com 3px offset
-
----
-
-## Section.astro
-
-O componente `Section` aceita props:
-- `width`: `'full'` | `'content'` | `'prose'` | `'narrative'`
-- `narrow`: alias para `width="narrative"`
-- `class`: classes adicionais
-
-```html
-<Section>Full width (1400px)</Section>
-<Section narrow>Narrative width (768px)</Section>
-<Section width="prose">Post reading (800px)</Section>
-<Section width="content">Structured content (896px)</Section>
-```
+| Componente | O que é |
+| --- | --- |
+| `Masthead` | Cabeçalho fixo com a assinatura e o menu principal, cada item com um painel de páginas, e o seletor de idioma no fim do menu. A assinatura e o espaço entre os itens diminuem com a tela para tudo caber numa linha de 1100px para cima. Dados em `src/data/navigation.yaml`. |
+| `Footer` | Rodapé escuro. Colunas de links em `navigation.yaml`, endereço em `ui.yaml`. No telefone, as duas colunas de links ficam lado a lado. |
+| `Front` | Capa do Início. |
+| `Band` | Faixa escura de três colunas abaixo da capa, com `.item`, `.rows.nums` e `.rows.news`. |
+| `SectionHead` | Abertura de seção, com ação opcional. |
+| `Accordion` | Coluna de linha de pesquisa com as áreas em acordeão. |
+| `PeopleList` | Orientadores em três colunas; com `toggle`, recolhidos no tablet e no telefone. |
+| `CourseList` | Disciplinas do semestre. |
+| `CtaBand` | Faixa de chamada antes do rodapé. |
+| `PageHero` | Abertura de página interna: escura com ilustração ou clara, com fio fino quando não há submenu (`closed`). O topo é da seção: todas as abas do submenu ficam sob o mesmo, com o nome e a introdução da seção, e a ilustração e o botão vêm de `navigation.yaml`. Páginas fora do menu, como a de um autor, têm topo próprio. A trilha de volta (Início | …) só aparece nelas e nos posts. |
+| `SubNav` | Submenu da seção. As abas trocam só o conteúdo, sem recarregar a página (ClientRouter do Astro), e a tela fica onde estava. |
+| `CallCard` | Edital em andamento. |
+| `Steps` | Etapas numeradas da seleção, três por linha. |
+| `YearResults` | Resultados anteriores por ano. |
+| `DocLayout` | Corpo de página e post: coluna lateral fixa e texto em `.doc`. Editais e resultados também usa, com os editais, as etapas e os resultados em `.not-doc`. |
+| `SideList` | Bloco da coluna lateral: Nesta página, Documentos, Temas. |
+| `Byline` | Autores e data de um post. |
+| `EntryList` | Lista de avisos ou textos: data, título e uma linha abaixo. |
+| `AlsoList` | Mais textos, no fim de um post. |
+| `Table` | Tabela `.tbl` a partir de colunas e linhas; uma célula pode ser link. |
+| `Button`, `ArrowLink`, `Badge` | Botão com seta, link com seta e badge. |

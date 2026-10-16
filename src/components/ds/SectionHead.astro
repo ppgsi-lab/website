@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="sh">
+  <div><h2>{title}</h2>{description && <p>{description}</p>}</div>
+  <slot />
+</div>
+
+<style>
+  .sh { border-top: var(--rule-section) var(--ink); padding-top: 16px; margin-bottom: var(--head-gap); display: flex; align-items: flex-start; gap: 16px 24px; flex-wrap: wrap; justify-content: space-between; }
+  .sh > :global(.btn), .sh > :global(.badge) { margin-top: 2px; }
+  .sh > div { min-width: 0; }
+  h2 { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 48px; font-weight: 400; margin: 0; line-height: 1.02; letter-spacing: -0.02em; color: var(--deep); }
+  p { margin: 8px 0 0; color: var(--muted); font-size: 17px; max-width: 40em; }
+
+  @media (max-width: 1099px) {
+    h2 { font-size: 40px; }
+  }
+
+  @media (max-width: 699px) {
+    h2 { font-size: 32px; }
+    .sh { margin-bottom: var(--head-gap-phone); }
+    p { font-size: 16px; }
+    .sh > :global(.btn) { min-height: 40px; padding: 0 16px; font-size: 14px; }
+  }
+</style>

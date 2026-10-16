@@ -1,0 +1,40 @@
+---
+import { render } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+import DocLayout from '../components/ds/DocLayout.astro';
+import SideList from '../components/ds/SideList.astro';
+import { getUI } from '../lib/data';
+import { getLocalized, type LocalizedEntry } from '../lib/content';
+import { defaultLocale, localeOf, locales } from '../lib/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of locales) {
+    for (const page of await getLocalized('pages', locale)) {
+      paths.push({ params: { path: locale === defaultLocale ? page.slug : `${locale}/${page.slug}` }, props: { page } });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  page: LocalizedEntry<'pages'>;
+}
+
+const { page } = Astro.props;
+const ui = getUI(localeOf(Astro.url)).page;
+const { Content, headings } = await render(page.entry);
+const toc = headings.filter((heading) => heading.depth === 2).map((heading) => ({ label: heading.text, href: `#${heading.slug}` }));
+const { title, sub, documents } = page.entry.data;
+---
+
+<PageLayout title={title} sub={sub}>
+  <DocLayout>
+    <Fragment slot="side">
+      {toc.length > 0 && <SideList toc label={ui.toc} items={toc} />}
+      {documents.length > 0 && <SideList docs label={ui.documents} items={documents} />}
+    </Fragment>
+    {page.fallback && <p class="note">{ui.untranslated}</p>}
+    <Content />
+  </DocLayout>
+</PageLayout>

@@ -1,0 +1,25 @@
+- value: "33"
+  label:
+    pt-br: "Orientadores"
+    en: "Advisors"
+    es: "Directores de tesis"
+- value: "7"
+  label:
+    pt-br: "Áreas de pesquisa"
+    en: "Research areas"
+    es: "Áreas de investigación"
+- value: "28"
+  label:
+    pt-br: "Disciplinas"
+    en: "Courses"
+    es: "Asignaturas"
+- value: "60+"
+  label:
+    pt-br: "Alunos matriculados"
+    en: "Enrolled students"
+    es: "Estudiantes matriculados"
+- value: "177+"
+  label:
+    pt-br: "Egressos"
+    en: "Alumni"
+    es: "Egresados"

@@ -1,0 +1,43 @@
+---
+import type { Call } from '../../types';
+import { getUI } from '../../lib/data';
+import { localeOf } from '../../lib/i18n';
+import ArrowLink from './ArrowLink.astro';
+import Badge from './Badge.astro';
+import Button from './Button.astro';
+
+interface Props {
+  call: Call;
+}
+
+const { call } = Astro.props;
+const t = getUI(localeOf(Astro.url)).call;
+---
+
+<article class="g12 call not-doc">
+  <header><h3>{call.title}</h3><p class="meta">{t.edital} <a href={call.edital.href}>{call.edital.label}</a>, {call.note}. <Badge>{call.status}</Badge></p></header>
+  <div class="acts"><Button href={call.apply}>{t.apply}</Button><ArrowLink href={call.edital.href}>{t.read}</ArrowLink></div>
+  <div><span class="lbl">{t.schedule}</span><div class="rows sched">{call.schedule.map((row) => <div><b>{row.date}</b><span>{row.event}</span></div>)}</div></div>
+  <div><span class="lbl">{t.documents}</span><ul class="rows docs">{call.documents.map((doc) => <li><a href={doc.href}>{doc.label}</a></li>)}</ul></div>
+</article>
+
+<style>
+  .call { row-gap: 24px; padding: 32px 0 36px; border-top: var(--rule-hairline) var(--hairline); }
+  .call:first-of-type { border-top: 0; padding-top: 0; }
+  header { grid-column: 1 / 9; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  h3 { font-family: var(--font-serif); font-size: 34px; font-weight: 400; margin: 0; line-height: 1.1; color: var(--deep); }
+  .meta { font-size: 15px; color: var(--muted); margin: 0; }
+  .meta :global(a) { font-weight: 700; }
+  .call > div { grid-column: span 6; }
+  .call > .acts { grid-column: 9 / 13; display: flex; flex-direction: column; gap: 14px; align-items: flex-end; }
+  .acts :global(.more) { margin: 0; }
+  .sched > div { display: grid; grid-template-columns: 124px 1fr; gap: 12px; font-size: 16px; }
+  .sched b { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .sched span { color: var(--muted); }
+
+  @media (max-width: 699px) {
+    .call > div, header, .call > .acts { grid-column: 1 / -1; }
+    h3 { font-size: 28px; }
+    .call > .acts { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px; }
+  }
+</style>

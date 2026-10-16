@@ -1,0 +1,41 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
+---
+
+<section class="band dark" id={id}><div class="wrap g12 rail3"><slot /></div></section>
+
+<style>
+  .band { background: linear-gradient(100deg, var(--deep), var(--deep) 55%, var(--deep-end)); color: var(--on-dark); padding: var(--band-pad-top) 0 var(--band-pad-bottom); position: relative; }
+  .band .wrap { position: relative; }
+  .rail3 > :global(div) { grid-column: span 4; position: relative; }
+  .rail3 > :global(div + div)::before { content: ''; position: absolute; left: -16px; top: 0; bottom: 0; width: 1px; background: var(--rule-on-dark); }
+
+  .band :global(.item b) { display: block; font-family: var(--font-serif); font-weight: 400; font-size: 26px; line-height: 1.15; }
+  .band :global(.item .sub) { display: block; font-size: 15px; color: var(--on-dark-soft); margin: 8px 0 6px; }
+  .band :global(.item .badge) { display: inline-block; font-size: 13px; padding: 2px 7px; margin-left: 2px; }
+  .band :global(.item .more) { margin-top: 4px; }
+  .band :global(.nums li) { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; }
+  .band :global(.nums b) { font-size: 36px; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .band :global(.news time) { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-light); display: block; margin-bottom: 6px; font-weight: 700; }
+  .band :global(.news a) { font-family: var(--font-serif); font-size: 21px; line-height: 1.2; }
+
+  @media (max-width: 1099px) {
+    .band :global(.item b) { font-size: 22px; }
+    .band :global(.nums b) { font-size: 30px; }
+    .band :global(.news a) { font-size: 18px; }
+  }
+
+  @media (max-width: 699px) {
+    .band { padding: 48px 0 56px; }
+    .rail3 > :global(div) { grid-column: 1 / -1; }
+    .rail3 > :global(div + div)::before { display: none; }
+    .rail3 > :global(div + div) { border-top: var(--rule-hairline) var(--rule-on-dark); margin-top: 28px; padding-top: 24px; }
+    .band :global(.item b) { font-size: 24px; }
+    .band :global(.nums b) { font-size: 30px; }
+    .band :global(.news a) { font-size: 19px; }
+  }
+</style>

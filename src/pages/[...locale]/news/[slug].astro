@@ -1,0 +1,34 @@
+---
+import { render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+import { getUI } from '../../../lib/data';
+import { byDateDesc, getLocalized, type LocalizedEntry } from '../../../lib/content';
+import { localeOf, localeParam, locales } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of locales) {
+    const news = byDateDesc(await getLocalized('news', locale));
+    for (const item of news) {
+      paths.push({ params: { locale: localeParam(locale), slug: item.slug }, props: { item, others: news.filter((other) => other !== item).slice(0, 3) } });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  item: LocalizedEntry<'news'>;
+  others: LocalizedEntry<'news'>[];
+}
+
+const { item, others } = Astro.props;
+const ui = getUI(localeOf(Astro.url));
+const { Content, headings } = await render(item.entry);
+const { title, summary, date, source } = item.entry.data;
+const toc = headings.filter((heading) => heading.depth === 2).map((heading) => ({ label: heading.text, href: `#${heading.slug}` }));
+const more = others.map(({ slug, entry }) => ({ date: entry.data.date, title: entry.data.title, href: `/news/${slug}`, meta: entry.data.summary }));
+---
+
+<PostLayout title={title} summary={summary} list="/news" date={date} source={source} toc={toc} fallback={item.fallback} more={{ title: ui.news.more, items: more }}>
+  <Content />
+</PostLayout>

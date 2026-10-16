@@ -1,0 +1,49 @@
+---
+import Layout from './Layout.astro';
+import AlsoList from '../components/ds/AlsoList.astro';
+import Byline from '../components/ds/Byline.astro';
+import DocLayout from '../components/ds/DocLayout.astro';
+import PageHero from '../components/ds/PageHero.astro';
+import SideList from '../components/ds/SideList.astro';
+import type { Entry } from '../components/ds/EntryList.astro';
+import { getNavPage, getUI } from '../lib/data';
+import { localeOf } from '../lib/i18n';
+import type { NavLink } from '../types';
+
+interface Props {
+  title: string;
+  summary: string;
+  /** Rota da lista a que o texto pertence, /news ou /posts. */
+  list: string;
+  date: Date;
+  authors?: { name: string; href: string }[];
+  source?: string;
+  toc: NavLink[];
+  topics?: NavLink[];
+  doi?: string;
+  /** O texto é de outro idioma, porque falta a tradução. */
+  fallback: boolean;
+  more: { title: string; items: Entry[] };
+}
+
+const { title, summary, list, date, authors, source, toc, topics = [], doi, fallback, more } = Astro.props;
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const entry = getNavPage(list, locale);
+if (!entry) throw new Error(`A rota ${list} não está no menu (navigation.yaml).`);
+const crumbs = [{ label: ui.page.home, href: '/' }, { label: entry.page.label, href: entry.page.href }];
+---
+
+<Layout title={title} description={summary} section={entry.section.id}>
+  <PageHero title={title} sub={summary} crumbs={crumbs} closed><Byline authors={authors} source={source} date={date} /></PageHero>
+  <DocLayout>
+    <Fragment slot="side">
+      {toc.length > 0 && <SideList toc label={ui.page.toc} items={toc} />}
+      {topics.length > 0 && <SideList label={ui.posts.topics} items={topics} />}
+      {doi && <SideList docs label="DOI" items={[{ label: doi, href: `https://doi.org/${doi}` }]} />}
+    </Fragment>
+    {fallback && <p class="note">{ui.page.untranslated}</p>}
+    <slot />
+    <Fragment slot="after">{more.items.length > 0 && <AlsoList title={more.title} items={more.items} />}</Fragment>
+  </DocLayout>
+</Layout>

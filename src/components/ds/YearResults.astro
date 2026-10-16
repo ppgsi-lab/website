@@ -1,0 +1,52 @@
+---
+import type { Editais } from '../../types';
+import { getUI } from '../../lib/data';
+import { localeOf } from '../../lib/i18n';
+
+interface Props {
+  years: Editais['results'];
+}
+
+const { years } = Astro.props;
+const edital = getUI(localeOf(Astro.url)).call.edital;
+---
+
+{years.map(({ year, processes }) => (
+  <div class="g12 yr not-doc"><h3 class="year">{year}</h3><div class="ent">
+    {processes.map((process) => (
+      <div class="past">
+        <div><h3>{process.title}</h3><p class="meta">{process.edital.href ? <Fragment>{`${edital} `}<a href={process.edital.href}>{process.edital.label}</a></Fragment> : `${edital} ${process.edital.label}`}</p></div>
+        <ul>{process.links.map((link) => <li><a href={link.href}>{link.label}</a>{link.date && <time>{link.date}</time>}</li>)}</ul>
+      </div>
+    ))}
+  </div></div>
+))}
+{Astro.slots.has('default') && <p class="older not-doc"><slot /></p>}
+
+<style>
+  .yr { row-gap: 16px; padding: 28px 0 12px; border-top: var(--rule-hairline) var(--ink); align-items: start; }
+  :global(h2) + .yr { border-top: 0; padding-top: 0; }
+  .year { grid-column: 1 / 3; font-family: var(--font-serif); font-size: 40px; font-weight: 400; margin: 0; line-height: 1; color: var(--deep); }
+  .ent { grid-column: 3 / 13; }
+  .past { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 8px; padding: 16px 0; border-top: var(--rule-hairline) var(--hairline); }
+  .past:first-child { border-top: 0; padding-top: 0; }
+  .past > * { min-width: 0; }
+  .past > div { grid-column: span 5; }
+  .past > ul { grid-column: span 5; list-style: none; margin: 0; padding: 0; font-size: 16px; display: flex; flex-direction: column; gap: 4px; }
+  .past h3 { font-family: var(--font-serif); font-size: 24px; font-weight: 400; margin: 0; line-height: 1.2; }
+  .meta { font-size: 14px; color: var(--muted); margin: 4px 0 0; }
+  time { color: var(--muted); font-size: 13px; margin-left: 8px; font-variant-numeric: tabular-nums; }
+  .older { margin: 28px 0 0; font-size: 15px; color: var(--muted); }
+
+  @media (max-width: 1099px) {
+    .year { font-size: 32px; }
+  }
+
+  @media (max-width: 699px) {
+    .past > div, .past > ul { grid-column: 1 / -1; }
+    .yr { row-gap: 12px; }
+    .year, .ent { grid-column: 1 / -1; }
+    .year { font-size: 28px; }
+    .past { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

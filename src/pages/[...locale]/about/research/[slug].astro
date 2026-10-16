@@ -1,0 +1,38 @@
+---
+import PageLayout from '../../../../layouts/PageLayout.astro';
+import DocLayout from '../../../../components/ds/DocLayout.astro';
+import SideList from '../../../../components/ds/SideList.astro';
+import { getResearchLines, getUI } from '../../../../lib/data';
+import { localeOf, localeParams } from '../../../../lib/i18n';
+
+export function getStaticPaths() {
+  return localeParams().flatMap(({ params }) =>
+    getResearchLines('pt-br').map((line) => ({ params: { ...params, slug: line.slug } })),
+  );
+}
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const line = getResearchLines(locale).find((candidate) => candidate.slug === Astro.params.slug);
+if (!line) throw new Error(`Linha de pesquisa desconhecida: ${Astro.params.slug}`);
+const toc = [
+  { label: ui.research.areas, href: '#areas' },
+  { label: ui.research.advisors, href: '#orientadores' },
+];
+---
+
+<PageLayout title={line.name} sub={line.description}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={toc} />
+    <p><strong>{ui.research.objective}:</strong> {line.objective}</p>
+    <h2 id="areas">{ui.research.areas}</h2>
+    {line.areas.map((area) => (
+      <Fragment>
+        <h3>{area.name}</h3>
+        <p>{area.description}</p>
+      </Fragment>
+    ))}
+    <h2 id="orientadores">{ui.research.advisors}</h2>
+    <ul>{line.advisors.map((name) => <li>{name}</li>)}</ul>
+  </DocLayout>
+</PageLayout>

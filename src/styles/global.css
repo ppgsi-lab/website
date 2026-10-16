@@ -1,205 +1,127 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import './tokens.css';
 
-@theme {
-  /* USP Official Palette */
-  --color-teal: #1094AB;
-  --color-teal-dark: #0B7A8F;
-  --color-teal-light: #64C4D2;
-  --color-teal-50: #EDF8FA;
-  --color-yellow: #FCB421;
-  --color-yellow-light: #FFF3D6;
+/* Camada abaixo dos estilos escopados: um componente sempre vence a regra global equivalente, como no CSS do design system. */
+@layer base {
+  /* O cabeçalho fica preso no topo: as âncoras param abaixo dele, no desktop na altura da coluna lateral fixa do DocLayout. */
+  html { scroll-padding-top: 120px; }
 
-  /* Neutrals */
-  --color-ink: #111;
-  --color-ink-2: #444;
-  --color-ink-3: #777;
-  --color-ink-4: #AAA;
-  --color-bone: #FFFFFF;
-  --color-rule: #E8E4DF;
-
-  /* Fonts */
-  --font-display: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Space Grotesk', system-ui, sans-serif;
-
-  /* ── Typography: Display (Chillax) ── */
-  --text-display-hero: clamp(2.5rem, 5vw, 5rem);
-  --text-display-page: clamp(2rem, 4vw, 4rem);
-  --text-display-post: clamp(1.75rem, 3.5vw, 3rem);
-  --text-display-section: clamp(1.375rem, 2vw, 1.75rem);
-  --text-display-card: clamp(1.5rem, 2vw, 2rem);
-
-  /* ── Typography: Body (Synonym) ── */
-  --text-body-lg: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
-  --text-body-sm: clamp(0.8125rem, 0.79rem + 0.15vw, 0.8333rem);
-  --text-body-xs: clamp(0.75rem, 0.735rem + 0.08vw, 0.7222rem);
-
-  /* ── Typography: UI ── */
-  --text-nav: clamp(1rem, 0.92rem + 0.4vw, 1.222rem);
-  --text-eyebrow: clamp(0.625rem, 0.61rem + 0.08vw, 0.6111rem);
-  --text-tag: clamp(0.6875rem, 0.675rem + 0.06vw, 0.6667rem);
-  --text-stat: clamp(4rem, 6vw, 5rem);
-
-  /* ── Line Heights: Display ── */
-  --leading-display-hero: 1.0;
-  --leading-display-page: 1.1;
-  --leading-display-section: 1.2;
-  --leading-display-card: 1.25;
-
-  /* ── Container Widths ── */
-  --container-container: 87.5rem;
-  --container-content: 75%;
-  --container-narrative: 60%;
-
-  /* ── Section Spacing ── */
-  --spacing-section: clamp(2.5rem, 5vw + 1rem, 5rem);
-  --spacing-section-md: clamp(3.5rem, 6vw + 1.5rem, 7rem);
-  --spacing-section-compact: clamp(1.75rem, 3vw + 0.75rem, 3rem);
-  --spacing-section-compact-md: clamp(2.25rem, 4vw + 1rem, 4rem);
-
-  /* ── On-Primary (footer/teal backgrounds) ── */
-  --color-on-primary: #FFFFFF;
-  --color-on-primary-muted: rgba(255, 255, 255, 0.7);
-  --color-on-primary-subtle: rgba(255, 255, 255, 0.6);
-  --color-on-primary-faint: rgba(255, 255, 255, 0.4);
-  --color-on-primary-ghost: rgba(255, 255, 255, 0.15);
-  --color-on-primary-dim: rgba(255, 255, 255, 0.3);
-
-  /* ── Misc ── */
-  --color-code-bg: #F3F4F6;
-  --transition-fast: 150ms;
-  --transition-default: 200ms;
-}
-
-/* ── Utilities ── */
-
-@utility eyebrow {
-  font-size: var(--text-eyebrow);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-@utility code-inline {
-  background-color: var(--color-code-bg);
-  padding: 0.125rem 0.375rem;
-  font-size: var(--text-tag);
-}
-
-@utility px-page {
-  padding-inline: clamp(1rem, 2.5vw + 0.5rem, 2rem);
-}
-
-/* ── Component Classes ── */
-
-@layer components {
-  .callout {
-    border-left: 4px solid var(--color-yellow);
-    background-color: var(--color-yellow-light);
-    padding: 1.5rem;
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-  .callout p {
-    font-size: var(--text-body-lg);
-    color: var(--color-ink-2);
-    line-height: 1.625;
+
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { color: var(--deep); text-decoration: underline; }
+
+  /* Grade */
+
+  .wrap { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--page-margin); box-sizing: border-box; }
+  .g12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+  .g12 > * { min-width: 0; }
+  .sec { padding-top: var(--section-gap); }
+
+  /* Peças de qualquer seção */
+
+  .btn { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; padding: 0 22px; border-radius: var(--radius-sm); background: var(--teal); color: var(--on-dark); font-weight: 700; font-size: 15px; line-height: 1.2; white-space: nowrap; }
+  .btn:hover { background: var(--deep); color: var(--on-dark); text-decoration: none; }
+  .btn.yellow { background: var(--yellow); color: var(--ink); }
+  .btn.yellow:hover { background: var(--paper); color: var(--ink); }
+  .btn.lg { min-height: 58px; padding: 0 30px; font-size: 17px; }
+
+  .arrow { width: 22px; height: 14px; position: relative; flex: none; display: block; }
+  .arrow::before { content: ''; position: absolute; left: 0; top: 6px; width: 20px; height: 2px; background: currentColor; }
+  .arrow::after { content: ''; position: absolute; right: 2px; top: 2.5px; width: 7px; height: 7px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); }
+
+  .plus { width: 22px; height: 22px; position: relative; flex: none; display: block; }
+  .plus::before, .plus::after { content: ''; position: absolute; background: var(--teal); left: 0; top: 10px; width: 22px; height: 2px; }
+  .plus::after { transform: rotate(90deg); }
+
+  .more { display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 14px; font-weight: 700; }
+
+  .badge { display: inline-block; background: var(--yellow); color: var(--ink); font-weight: 700; padding: 3px 8px; border-radius: var(--radius-xs); line-height: 1.3; white-space: nowrap; font-size: 14px; }
+  .badge.soft { background: var(--tint); color: var(--deep); }
+
+  .lbl { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; display: block; margin: 0 0 14px; padding-bottom: 10px; border-bottom: var(--rule-hairline) var(--ink); color: var(--teal); }
+
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .rows > li, .rows > div { padding: var(--row-pad) 0; border-top: var(--rule-hairline) var(--hairline); }
+  .rows > *:first-child { border-top: 0; padding-top: 0; }
+
+  .docs { font-size: 16px; }
+  .docs a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .docs a:hover { color: var(--teal); }
+
+  .dark .lbl { border-bottom-color: var(--label-rule-on-dark); color: var(--teal-light); }
+  .dark .rows > li, .dark .rows > div { border-top-color: var(--row-rule-on-dark); }
+  .dark a { color: var(--on-dark); }
+
+  /* Texto corrido: prosa curta e conteúdo de páginas e posts */
+
+  .prose { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 19px; line-height: 1.6; max-width: 36em; margin-top: 28px; }
+  .prose p { margin: 0; }
+  .prose p + p { margin-top: 16px; }
+
+  .doc h2 { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 34px; font-weight: 400; line-height: 1.1; color: var(--deep); margin: 56px 0 20px; padding-top: 16px; border-top: var(--rule-section) var(--ink); text-wrap: balance; }
+  .doc h2:first-child { margin-top: 0; }
+  .doc h3 { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 24px; font-weight: 400; line-height: 1.2; margin: 32px 0 8px; text-wrap: balance; }
+  .doc h2 + h3 { margin-top: 24px; }
+  /* Blocos com tipografia própria dentro do texto, como os editais, levam .not-doc e ficam fora das regras de parágrafo, link e lista. */
+  .doc p:where(:not(.not-doc, .not-doc *)) { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 19px; line-height: 1.6; margin: 0 0 16px; max-width: 36em; }
+  .doc a:where(:not(.not-doc, .not-doc *)) { text-decoration: underline; text-underline-offset: 3px; }
+  .doc ul:where(:not(.not-doc, .not-doc *)), .doc ol:where(:not(.not-doc, .not-doc *)) { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 19px; line-height: 1.6; margin: 0 0 16px; padding-left: 1.25em; max-width: 36em; }
+  .doc li > ul, .doc li > ol { margin: 6px 0 0; }
+  .doc li + li:where(:not(.not-doc, .not-doc *)) { margin-top: 6px; }
+  .doc li:where(:not(.not-doc, .not-doc *))::marker { color: var(--teal); }
+  .doc code { font-family: var(--font-mono); font-size: .82em; background: var(--tint); color: var(--deep); border-radius: var(--radius-xs); padding: 1px 5px; }
+  .doc .note { font-family: var(--font-sans); font-size: 17px; line-height: 1.5; background: var(--panel); border-radius: var(--radius-lg); padding: 20px 24px; max-width: none; }
+
+  .ft { font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: var(--muted); border: var(--rule-hairline) var(--hairline); border-radius: var(--radius-xs); padding: 1px 5px; margin-left: 8px; vertical-align: 2px; white-space: nowrap; }
+
+  .tbl { overflow-x: auto; margin: 16px 0 24px; }
+  .tbl table { width: 100%; border-collapse: collapse; font-size: 16px; font-variant-numeric: tabular-nums; }
+  .tbl th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); padding: 0 16px 10px 0; border-bottom: var(--rule-hairline) var(--ink); white-space: nowrap; }
+  .tbl td { padding: 12px 16px 12px 0; border-bottom: var(--rule-hairline) var(--hairline); color: var(--muted); white-space: nowrap; }
+  .tbl td:first-child { color: var(--ink); font-weight: 700; }
+
+  /* Código em bloco, com o tema css-variables do Shiki (astro.config.mjs) */
+  .code {
+    --astro-code-foreground: var(--ink);
+    --astro-code-background: var(--panel);
+    --astro-code-token-keyword: var(--deep);
+    --astro-code-token-constant: var(--teal);
+    --astro-code-token-string: var(--teal);
+    --astro-code-token-string-expression: var(--teal);
+    --astro-code-token-comment: var(--muted);
+    --astro-code-token-function: var(--ink);
+    --astro-code-token-parameter: var(--ink);
+    --astro-code-token-punctuation: var(--ink);
+    --astro-code-token-link: var(--teal);
+    margin: 8px 0 24px; background: var(--panel); border-radius: var(--radius-md);
   }
-}
+  .code .lang { display: block; font-size: 13px; color: var(--muted); padding: 10px 20px; border-bottom: var(--rule-hairline) var(--hairline); }
+  .code pre { margin: 0; padding: 16px 20px; overflow-x: auto; font-family: var(--font-mono); font-size: 14px; line-height: 1.6; }
+  .code pre code { font: inherit; background: none; color: inherit; padding: 0; border-radius: 0; }
+  .code [style*="--astro-code-token-keyword"] { font-weight: 700; }
+  .code [style*="--astro-code-token-comment"] { font-style: italic; }
 
-/* ── Design System ── */
-
-/* Global: no rounded corners anywhere */
-*, *::before, *::after {
-  border-radius: 0 !important;
-}
-
-/* Reusable hover for interactive items (nav dropdowns, links, etc.) */
-.hover-item {
-  transition: background-color 0.2s, color 0.2s;
-}
-.hover-item:hover,
-.hover-item:focus,
-.hover-item:active {
-  background-color: var(--color-yellow);
-  color: var(--color-ink);
-}
-
-html {
-  font-size: 18px;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Mobile/tablet: containers usam a largura total, centralização só em desktop */
-@media (max-width: 1023px) {
-  :root {
-    --container-content: 100%;
-    --container-narrative: 100%;
+  @media (max-width: 1099px) {
+    html { scroll-padding-top: 160px; }
   }
-}
 
-/* Content: justified body text only (not display/title elements) */
-main p, main li, main td {
-  text-align: left;
-  hyphens: auto;
-}
-@media (min-width: 768px) {
-  main p, main li, main td {
-    text-align: justify;
-    hyphens: manual;
+  @media (max-width: 699px) {
+    html { scroll-padding-top: 88px; }
+    .wrap { padding: 0 var(--page-margin-phone); }
+    .sec { padding-top: var(--section-gap-phone); }
+    .doc h2 { font-size: 28px; margin-top: 48px; }
+    .doc h3 { font-size: 21px; }
+    .doc p:where(:not(.not-doc, .not-doc *)), .doc ul:where(:not(.not-doc, .not-doc *)), .doc ol:where(:not(.not-doc, .not-doc *)) { font-size: 18px; }
+    .doc .note { padding: 16px 20px; }
+    .code pre { font-size: 13px; padding: 14px 16px; }
+    .code .lang { padding: 10px 16px; }
   }
-}
-main .font-display,
-main h1, main h2, main h3, main h4 {
-  text-align: left;
-}
-
-@view-transition { navigation: auto; }
-
-::selection {
-  background-color: var(--color-teal);
-  color: white;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-teal);
-  outline-offset: 3px;
-}
-
-/* Staggered entrance */
-@keyframes rise {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.rise {
-  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.rise-d1 { animation-delay: 0.08s; }
-.rise-d2 { animation-delay: 0.16s; }
-.rise-d3 { animation-delay: 0.24s; }
-.rise-d4 { animation-delay: 0.4s; }
-
-/* Prose code blocks: let Shiki handle styling */
-.prose pre code {
-  background-color: transparent !important;
-}
-
-/* Mobile: active state for touch-based area expansion */
-.area-active > div {
-  background-color: var(--color-teal);
-  color: white;
-  padding: 1.25rem 1.5rem;
-}
-.area-active > div span:first-child {
-  color: white;
-}
-.area-active > div span:last-child {
-  opacity: 1;
-  color: white;
-}
-.area-active > div p {
-  margin-top: 0.75rem;
-  max-height: 6rem;
-  opacity: 1;
-  color: rgba(255, 255, 255, 0.8);
 }

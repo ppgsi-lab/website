@@ -1,0 +1,15 @@
+---
+import { url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+
+interface Props {
+  href: string;
+  yellow?: boolean;
+  large?: boolean;
+}
+
+const { href, yellow, large } = Astro.props;
+const locale = localeOf(Astro.url);
+---
+
+<a class:list={['btn', { yellow, lg: large }]} href={url(href, locale)}><slot /><span class="arrow" aria-hidden="true"></span></a>

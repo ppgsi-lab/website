@@ -1,0 +1,182 @@
+---
+import type { NavSection } from '../../types';
+import { asset, route, url } from '../../lib/url';
+import { getUI } from '../../lib/data';
+import { languageCode, languageName, languageTag, localeOf, locales } from '../../lib/i18n';
+
+interface Props {
+  nav: NavSection[];
+  current?: string;
+  /** Rota para a qual o seletor de idioma leva; por padrão, a mesma página nos outros idiomas. */
+  alternate?: string;
+}
+
+const { nav, current, alternate } = Astro.props;
+const locale = localeOf(Astro.url);
+const t = getUI(locale).masthead;
+const path = alternate ?? route(Astro.url);
+---
+
+<header class="hdr"><div class="wrap">
+  <div class="row">
+    <div class="sig">
+      <a href={url('/', locale)}><img class="lp" src={asset('/ppgsi.svg')} alt={t.logo} /></a>
+      <span class="sep"></span>
+      <a href="https://each.usp.br"><img class="each" src={asset('/logoeach.png')} alt="EACH USP" /></a>
+      <a href="https://www.usp.br"><img class="usp" src={asset('/logo_usp.png')} alt={t.usp} /></a>
+    </div>
+    <input type="checkbox" id="mnav" class="mtog" />
+    <label for="mnav" class="mbtn"><i class="burger" aria-hidden="true"></i>{t.menu}</label>
+    <nav class="nav" aria-label={t.nav}>
+      {nav.map((section) => (
+        <div class="ni">
+          <a class="nl" href={url(section.href, locale)} aria-current={section.id === current ? 'page' : undefined}>{section.label}</a>
+          <input type="checkbox" id={`dd-${section.id}`} class="dtog" />
+          <label for={`dd-${section.id}`} class="dbtn" aria-label={`${t.open} ${section.label}`}></label>
+          <div class="dd"><div class="wrap g12 ddg">
+            <div class="ddi"><p class="ddt">{section.label}</p><p>{section.intro}</p></div>
+            <ul class="ddl">
+              {section.links.map((link) => (
+                <li><a href={url(link.href, locale)}><span class="ddn">{link.label}</span><span class="ddd">{link.description}</span></a></li>
+              ))}
+            </ul>
+          </div></div>
+        </div>
+      ))}
+      <div class="lang">
+        <button type="button" class="lbtn" aria-label={`${t.language}: ${languageName[locale]}`}>{languageCode[locale]}<i aria-hidden="true"></i></button>
+        <ul class="lmenu">
+          {locales.map((other) => <li><a href={url(path, other)} lang={languageTag[other]} hreflang={languageTag[other]} aria-current={other === locale ? 'true' : undefined}><span class="ddn">{languageName[other]}</span></a></li>)}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div></header>
+
+<style>
+  .hdr { position: sticky; top: 0; z-index: 5; background: var(--paper); }
+  .hdr .row { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 16px 0; border-bottom: var(--rule-frame) var(--ink); flex-wrap: wrap; }
+  .hdr a { display: block; }
+  .hdr img { display: block; width: auto; max-width: 100%; }
+
+  /* Os logos ficam acima da ponte de hover do painel aberto, para continuarem clicáveis. */
+  /* A assinatura e o espaço entre os itens diminuem com a tela para o menu, com o seletor de idioma, caber ao lado dela de 1100px para cima em todos os idiomas; o espanhol é o mais largo. */
+  .sig { display: flex; align-items: center; gap: min(20px, 1.39vw); position: relative; z-index: 2; }
+  .sig img.lp { height: min(50px, 3.45vw); }
+  .sig .sep { width: 1px; height: min(39px, 2.71vw); background: var(--ink); opacity: .35; }
+  .sig img.each { height: min(41px, 2.83vw); }
+  .sig img.usp { height: min(34px, 2.34vw); }
+
+  .nav { display: flex; align-items: center; gap: min(18px, 1.25vw); flex-wrap: wrap; font-size: 14px; font-weight: 700; }
+  .nav a { color: var(--ink); }
+  .nav a:hover { color: var(--teal); text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
+  .nav a[aria-current] { color: var(--teal); }
+
+  .ni { display: flex; align-items: center; }
+  .nav .nl { position: relative; }
+  .nav .nl:hover { text-decoration: none; }
+  .nav .nl::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--teal); transform: scaleX(0); transform-origin: left center; transition: transform .24s cubic-bezier(.2, .7, .2, 1); }
+  .ni:hover > .nl, .ni:focus-within > .nl { color: var(--teal); }
+  .ni:hover > .nl::after, .ni:focus-within > .nl::after, .nav .nl[aria-current]::after { transform: scaleX(1); }
+  .dtog, .dbtn { display: none; }
+
+  /* O painel abre 0,12s depois de o mouse parar no item e espera o mesmo tempo para fechar: descer em diagonal por cima de outro item não troca de seção. */
+  .dd { position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: var(--rule-hairline) var(--hairline); box-shadow: var(--shadow-menu); font-size: 15px; font-weight: 400; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .15s ease .12s, transform .26s cubic-bezier(.2, .7, .2, 1) .12s, visibility 0s linear .27s; }
+  .dd::before { content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: 36px; }
+  .ni:hover .dd, .ni:focus-within .dd { visibility: visible; opacity: 1; transform: none; transition-delay: .12s; z-index: 1; }
+  .ddg { padding-top: 32px; padding-bottom: 40px; row-gap: 24px; }
+  .ddi { grid-column: 1 / 5; }
+  .ddi p { margin: 0; font-size: 15px; color: var(--muted); max-width: 22em; }
+  .ddi .ddt { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 34px; line-height: 1.1; color: var(--deep); margin: 0 0 10px; }
+  .ddl { grid-column: 5 / 13; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gutter); align-content: start; }
+  .ddl li { border-top: var(--rule-hairline) var(--hairline); min-width: 0; }
+  .nav .ddl a { display: block; padding: 12px 0 18px; color: var(--ink); text-decoration: none; }
+  .ddn { display: block; margin: 0 -8px; padding: 3px 8px; border-radius: var(--radius-xs); font-size: 17px; font-weight: 700; line-height: 1.3; }
+  .ddd { display: block; margin-top: 4px; font-size: 15px; line-height: 1.45; color: var(--muted); }
+  .nav .ddl a:hover .ddn, .nav .ddl a:focus-visible .ddn { background: var(--yellow); }
+
+  /* Seletor de idioma no fim do menu. O painel pende do pé do cabeçalho, como os das seções, alinhado à margem direita do conteúdo. */
+  .lang { display: flex; align-items: center; gap: inherit; }
+  .lang::before { content: ''; width: 1px; height: 18px; background: var(--ink); opacity: .35; }
+  .lbtn { display: inline-flex; align-items: center; gap: 7px; padding: 0; border: 0; background: none; font: inherit; color: var(--ink); cursor: pointer; }
+  .lbtn i { width: 6px; height: 6px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+  .lang:hover .lbtn, .lang:focus-within .lbtn { color: var(--teal); }
+  .lmenu { position: absolute; top: 100%; right: calc((100% - min(100%, var(--container-max))) / 2 + var(--page-margin)); min-width: 200px; margin: 0; padding: 8px 20px 12px; list-style: none; background: var(--paper); border: var(--rule-hairline) var(--hairline); border-top: 0; box-shadow: var(--shadow-menu); font-size: 15px; font-weight: 400; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .15s ease .12s, transform .26s cubic-bezier(.2, .7, .2, 1) .12s, visibility 0s linear .27s; }
+  .lmenu::before { content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: 36px; }
+  .lang:hover .lmenu, .lang:focus-within .lmenu { visibility: visible; opacity: 1; transform: none; transition-delay: .12s; z-index: 1; }
+  .lmenu li + li { border-top: var(--rule-hairline) var(--hairline); }
+  .nav .lmenu a { display: block; padding: 10px 0; color: var(--ink); text-decoration: none; }
+  .nav .lmenu a[aria-current] { color: var(--teal); }
+  .nav .lmenu a:hover .ddn, .nav .lmenu a:focus-visible .ddn { background: var(--yellow); }
+
+  .mtog { display: none; }
+  .mbtn { display: none; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; cursor: pointer; color: var(--ink); padding: 8px 0 8px 8px; margin-left: auto; user-select: none; }
+  .burger { position: relative; width: 20px; height: 2px; background: var(--ink); flex: none; transition: background .15s; }
+  .burger::before, .burger::after { content: ''; position: absolute; left: 0; width: 20px; height: 2px; background: var(--ink); transition: transform .15s, top .15s; }
+  .burger::before { top: -6px; }
+  .burger::after { top: 6px; }
+  .mtog:checked + .mbtn .burger { background: transparent; }
+  .mtog:checked + .mbtn .burger::before { top: 0; transform: rotate(45deg); }
+  .mtog:checked + .mbtn .burger::after { top: 0; transform: rotate(-45deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dd, .lmenu { transform: none; transition: visibility 0s linear .27s, opacity 0s linear .27s; }
+    .nav .nl::after { transition: none; }
+  }
+
+  @media (max-width: 1099px) {
+    .hdr .row { row-gap: 12px; }
+    .sig { flex: 1 1 100%; gap: 48px; }
+    .sig img.lp { height: 48px; }
+    .sig img.each { height: 40px; }
+    .sig img.usp { height: 34px; }
+    .sig .sep { display: none; }
+    .sig > a:nth-of-type(2) { margin-left: auto; }
+    .nav { flex-basis: 100%; order: 3; gap: 20px; border-top: var(--rule-hairline) var(--hairline); padding-top: 12px; }
+    .dd::before, .lmenu::before { height: 19px; }
+    .lang { margin-left: auto; }
+    .ddg { padding-top: 24px; padding-bottom: 32px; row-gap: 16px; }
+    .ddi, .ddl { grid-column: 1 / -1; }
+    .ddi .ddt { font-size: 28px; }
+    .ddi p { max-width: none; }
+  }
+
+  @media (max-width: 699px) {
+    .hdr .row { padding: 12px 0; gap: 10px; }
+    .sig { flex: 0 1 auto; gap: 10px; }
+    .sig > a:nth-of-type(2) { margin-left: 0; }
+    .sig img.lp { height: 32px; width: 82px; object-fit: cover; object-position: left center; }
+    .sig .sep { display: block; height: 28px; }
+    .sig img.each { height: 24px; }
+    .sig img.usp { height: 20px; }
+    .mbtn { display: inline-flex; }
+    .nav { display: none; flex-direction: column; align-items: stretch; gap: 0; border-top: 0; padding-top: 0; margin-top: 2px; font-size: 17px; }
+    .mtog:checked ~ .nav { display: flex; }
+    .nav a { padding: 13px 0; border-top: var(--rule-hairline) var(--hairline); }
+    .nav .ni { display: grid; grid-template-columns: 1fr auto; align-items: center; border-top: var(--rule-hairline) var(--hairline); }
+    .nav .nl { padding: 13px 0; border-top: 0; }
+    .nav .nl::after { display: none; }
+    .dbtn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -12px; cursor: pointer; }
+    .dbtn::before { content: ''; width: 8px; height: 8px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: translateY(-2px) rotate(45deg); }
+    .dtog:checked + .dbtn::before { transform: translateY(2px) rotate(-135deg); }
+    .ni:hover .dd, .ni:focus-within .dd { display: none; }
+    .ni .dtog:checked ~ .dd { display: block; }
+    .dd { position: static; grid-column: 1 / -1; box-shadow: none; border: 0; background: none; display: none; visibility: visible; opacity: 1; transform: none; transition: none; }
+    .dd::before { display: none; }
+    .dd .wrap { padding: 0; }
+    .ddg { display: block; padding: 0 0 12px; }
+    .ddi { display: none; }
+    .nav .ddl { display: block; }
+    .ddl li { border-top: 0; }
+    .nav .ddl a { padding: 6px 0 6px 16px; border-top: 0; }
+    .ddn { margin: 0 0 0 -8px; font-size: 16px; font-weight: 600; }
+    .ddd { display: none; }
+    .lang { display: block; margin-left: 0; border-top: var(--rule-hairline) var(--hairline); }
+    .lang::before, .lbtn { display: none; }
+    .lmenu { position: static; display: flex; gap: 24px; min-width: 0; padding: 0; border: 0; background: none; box-shadow: none; font-size: 16px; visibility: visible; opacity: 1; transform: none; transition: none; }
+    .lmenu::before { display: none; }
+    .lmenu li + li { border-top: 0; }
+    .nav .lmenu a { padding: 13px 0; border-top: 0; }
+    .lmenu .ddn { font-size: 16px; font-weight: 600; }
+  }
+</style>

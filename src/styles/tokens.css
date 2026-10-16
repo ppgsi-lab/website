@@ -1,0 +1,62 @@
+:root {
+  /* Cor */
+  --paper: #ffffff;
+  --ink: #0e1a1d;
+  --deep: #06343f;
+  --deep-end: #021a21;
+  --teal: #0b7a8f;
+  --teal-light: #64c4d2;
+  --yellow: #fcb421;
+  --muted: #4b5b60;
+  --deck: #3a4a4f;
+  --hairline: #dce6e9;
+  --panel: #f2f6f7;
+  --tint: #edf8fa;
+  --on-dark: #ffffff;
+  --on-dark-soft: rgba(255,255,255,0.85);
+  --footer-ink: #bfe9f0;
+  --rule-on-dark: rgba(255,255,255,0.2);
+  --row-rule-on-dark: rgba(255,255,255,0.14);
+  --label-rule-on-dark: rgba(255,255,255,0.35);
+  --frame-on-dark: rgba(255,255,255,0.3);
+
+  /* Tipo */
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Espaço */
+  --gutter: 32px;
+  --page-margin: 32px;
+  --page-margin-phone: 20px;
+  --section-gap: 80px;
+  --section-gap-phone: 56px;
+  --head-gap: 32px;
+  --head-gap-phone: 24px;
+  --row-pad: 12px;
+  --front-pad-top: 48px;
+  --front-pad-bottom: 64px;
+  --band-pad-top: 64px;
+  --band-pad-bottom: 72px;
+  --hero-pad-top: 40px;
+  --hero-pad-bottom: 88px;
+  --cta-pad: 88px;
+  --cta-gap: 96px;
+
+  /* Raio */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* Fio */
+  --rule-frame: 3px double;
+  --rule-section: 3px solid;
+  --rule-hairline: 1px solid;
+
+  /* Grade (os breakpoints 1099px e 699px vão escritos nas media queries) */
+  --container-max: 1264px;
+
+  /* Sombra do painel do menu */
+  --shadow-menu: 0 16px 32px rgba(6, 52, 63, 0.08);
+}

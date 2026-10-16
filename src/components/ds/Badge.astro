@@ -1,0 +1,9 @@
+---
+interface Props {
+  soft?: boolean;
+}
+
+const { soft } = Astro.props;
+---
+
+<span class:list={['badge', { soft }]}><slot /></span>

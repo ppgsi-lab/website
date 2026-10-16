@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Template from '../../../components/Template.astro';
+import Button from '../../../components/ds/Button.astro';
+import CallCard from '../../../components/ds/CallCard.astro';
+import CtaBand from '../../../components/ds/CtaBand.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import Steps from '../../../components/ds/Steps.astro';
+import YearResults from '../../../components/ds/YearResults.astro';
+import { getEditais, getUI } from '../../../lib/data';
+import { localeOf, localeParams } from '../../../lib/i18n';
+import { url } from '../../../lib/url';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const t = ui.editais;
+const { open, results } = getEditais(locale);
+const toc = [
+  { label: t.ongoing, href: '#andamento' },
+  { label: t.processTitle, href: '#processo' },
+  { label: t.results, href: '#resultados' },
+];
+---
+
+<PageLayout title={t.title} sub={t.sub}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={toc} />
+    <h2 id="andamento">{t.ongoing}</h2>
+    {open.map((call) => <CallCard call={call} />)}
+    <h2 id="processo">{t.processTitle}</h2>
+    <p>{t.processText}</p>
+    <Steps steps={t.steps} />
+    <p>{t.doctorate}</p>
+    <p><Template text={t.other}><a slot="international" href={url('/admission/international', locale)}>{t.international}</a><a slot="special" href={url('/admission/special', locale)}>{t.special}</a></Template></p>
+    <h2 id="resultados">{t.results}</h2>
+    <YearResults years={results}><Template text={t.older}><a slot="masters" href="http://ppgsi.each.usp.br/editais-mestrado/">{t.olderMasters}</a><a slot="doctorate" href="http://ppgsi.each.usp.br/editais-doutorado/">{t.olderDoctorate}</a></Template></YearResults>
+  </DocLayout>
+
+  <CtaBand title={ui.cta.title} text={ui.cta.text}><Button yellow large href="#andamento">{t.ctaButton}</Button></CtaBand>
+</PageLayout>

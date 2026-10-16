@@ -1,0 +1,92 @@
+- name:
+    pt-br: "Gestão e Desenvolvimento de Sistemas"
+    en: "Systems Management and Development"
+    es: "Gestión y Desarrollo de Sistemas"
+  description:
+    pt-br: "Metodologias e técnicas da computação aplicadas a sistemas de informação de valor estratégico."
+    en: "Computing methodologies and techniques applied to information systems of strategic value."
+    es: "Metodologías y técnicas de la computación aplicadas a sistemas de información de valor estratégico."
+  href: "/about/research/gestao-e-desenvolvimento"
+  areas:
+    - name:
+        pt-br: "Banco de Dados"
+        en: "Databases"
+        es: "Bases de datos"
+      description:
+        pt-br: "Big Data, NoSQL, Business Intelligence, Data Warehouse, Mineração de Dados, Data Provenance, Análise de Redes Sociais."
+        en: "Big data, NoSQL, business intelligence, data warehousing, data mining, data provenance, social network analysis."
+        es: "Big data, NoSQL, inteligencia de negocios, almacenes de datos, minería de datos, procedencia de datos, análisis de redes sociales."
+    - name:
+        pt-br: "Engenharia de Software"
+        en: "Software engineering"
+        es: "Ingeniería de software"
+      description:
+        pt-br: "Processos, técnicas e ferramentas para teste, depuração, arquitetura, manutenção e qualidade de artefatos de software."
+        en: "Processes, techniques, and tools for testing, debugging, architecture, maintenance, and quality of software artifacts."
+        es: "Procesos, técnicas y herramientas para prueba, depuración, arquitectura, mantenimiento y calidad de artefactos de software."
+    - name:
+        pt-br: "Gestão de TI"
+        en: "IT management"
+        es: "Gestión de TI"
+      description:
+        pt-br: "Aspectos sociotécnicos e econômicos de SI. Governança, governo eletrônico, processos de negócio, economia da informação."
+        en: "Sociotechnical and economic aspects of IS. Governance, e-government, business processes, information economics."
+        es: "Aspectos sociotécnicos y económicos de los SI. Gobernanza, gobierno electrónico, procesos de negocio, economía de la información."
+    - name:
+        pt-br: "Interação Humano-Computador"
+        en: "Human-computer interaction"
+        es: "Interacción humano-computadora"
+      description:
+        pt-br: "Interfaces naturais, acessibilidade, UX, Realidade Virtual e Aumentada, avaliação de interfaces."
+        en: "Natural interfaces, accessibility, UX, virtual and augmented reality, interface evaluation."
+        es: "Interfaces naturales, accesibilidad, UX, realidad virtual y aumentada, evaluación de interfaces."
+    - name:
+        pt-br: "Redes de Computadores"
+        en: "Computer networks"
+        es: "Redes de computadoras"
+      description:
+        pt-br: "Protocolos, desempenho, segurança e infraestrutura de redes aplicados a Sistemas de Informação."
+        en: "Network protocols, performance, security, and infrastructure applied to information systems."
+        es: "Protocolos, desempeño, seguridad e infraestructura de redes aplicados a sistemas de información."
+- name:
+    pt-br: "Inteligência de Sistemas"
+    en: "Systems Intelligence"
+    es: "Inteligencia de Sistemas"
+  description:
+    pt-br: "Soluções algorítmicas avançadas como núcleos de processamento inteligente em sistemas de informação."
+    en: "Advanced algorithmic solutions as intelligent processing cores in information systems."
+    es: "Soluciones algorítmicas avanzadas como núcleos de procesamiento inteligente en sistemas de información."
+  href: "/about/research/inteligencia-de-sistemas"
+  areas:
+    - name:
+        pt-br: "Inteligência Artificial"
+        en: "Artificial intelligence"
+        es: "Inteligencia artificial"
+      description:
+        pt-br: "Sistemas inteligentes que aprendem autonomamente — machine learning, PLN, robótica, bioinformática."
+        en: "Intelligent systems that learn autonomously — machine learning, NLP, robotics, bioinformatics."
+        es: "Sistemas inteligentes que aprenden de forma autónoma — aprendizaje automático, PLN, robótica, bioinformática."
+    - name:
+        pt-br: "Processamento Gráfico"
+        en: "Graphics processing"
+        es: "Procesamiento gráfico"
+      description:
+        pt-br: "Modelos geométricos, visualização de dados, imagens médicas, Realidade Virtual, jogos, simulação."
+        en: "Geometric models, data visualization, medical imaging, virtual reality, games, simulation."
+        es: "Modelos geométricos, visualización de datos, imágenes médicas, realidad virtual, juegos, simulación."
+    - name:
+        pt-br: "Reconhecimento de Padrões"
+        en: "Pattern recognition"
+        es: "Reconocimiento de patrones"
+      description:
+        pt-br: "Abordagens estatísticas, inteligência computacional e linguagens formais para classificação e análise."
+        en: "Statistical approaches, computational intelligence, and formal languages for classification and analysis."
+        es: "Enfoques estadísticos, inteligencia computacional y lenguajes formales para clasificación y análisis."
+    - name:
+        pt-br: "Computação Sonora e Musical"
+        en: "Sound and music computing"
+        es: "Computación sonora y musical"
+      description:
+        pt-br: "Recuperação de informação sonora e musical, personalização e imersão audiovisual, música digital."
+        en: "Sound and music information retrieval, audiovisual personalization and immersion, digital music."
+        es: "Recuperación de información sonora y musical, personalización e inmersión audiovisual, música digital."

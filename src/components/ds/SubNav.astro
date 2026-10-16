@@ -1,0 +1,59 @@
+---
+import type { NavLink } from '../../types';
+import { url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+
+interface Props {
+  label: string;
+  items: NavLink[];
+  current: string;
+}
+
+const { label, items, current } = Astro.props;
+const locale = localeOf(Astro.url);
+---
+
+<nav class="subnav" aria-label={label}><div class="wrap"><ul>
+  {items.map((item) => <li><a href={url(item.href, locale)} aria-current={item.href === current ? 'page' : undefined}>{item.label}</a></li>)}
+</ul></div></nav>
+
+<script>
+  import { TransitionBeforePreparationEvent } from 'astro:transitions/client';
+
+  // O título da página não aparece no topo da seção, então a aba ativa precisa ficar à vista quando o submenu rola no telefone.
+  function revealActiveTab() {
+    const list = document.querySelector<HTMLElement>('.subnav ul');
+    const active = list?.querySelector<HTMLElement>('[aria-current]');
+    if (!list || !active) return;
+    const offset = active.getBoundingClientRect().left - list.getBoundingClientRect().left;
+    list.scrollLeft = offset - (list.clientWidth - active.offsetWidth) / 2;
+  }
+
+  // Trocar de aba mantém a tela onde estava; os outros links abrem a página nova no topo. Quem troca pelo teclado continua com o
+  // foco no submenu. Com o mouse o foco não volta, porque o navegador desenharia o anel na aba nova.
+  let tab: { scroll: number; keyboard: boolean } | undefined;
+  document.addEventListener('astro:before-preparation', (event) => {
+    const source = event instanceof TransitionBeforePreparationEvent ? event.sourceElement : undefined;
+    tab = source?.closest('.subnav') ? { scroll: scrollY, keyboard: source.matches(':focus-visible') } : undefined;
+  });
+  document.addEventListener('astro:after-swap', () => {
+    revealActiveTab();
+    if (!tab) return;
+    scrollTo({ top: tab.scroll, behavior: 'instant' });
+    if (tab.keyboard) document.querySelector<HTMLElement>('.subnav [aria-current]')?.focus({ preventScroll: true });
+  });
+  revealActiveTab();
+</script>
+
+<style>
+  .subnav { border-bottom: var(--rule-hairline) var(--hairline); background: var(--paper); }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 32px; font-size: 15px; font-weight: 700; overflow-x: auto; scrollbar-width: none; }
+  a { display: block; padding: 18px 0 15px; color: var(--ink); border-bottom: var(--rule-section) transparent; white-space: nowrap; }
+  a:hover { color: var(--teal); text-decoration: none; }
+  a[aria-current] { color: var(--teal); border-bottom-color: var(--teal); }
+
+  @media (max-width: 699px) {
+    ul { gap: 24px; }
+    a { padding: 14px 0 11px; }
+  }
+</style>

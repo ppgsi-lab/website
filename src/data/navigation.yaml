@@ -1,0 +1,351 @@
+main:
+  - id: "programa"
+    label:
+      pt-br: "Programa"
+      en: "Program"
+      es: "Programa"
+    href: "/about"
+    intro:
+      pt-br: "Mestrado desde 2010 e doutorado desde 2019 na Escola de Artes, Ciências e Humanidades da USP."
+      en: "Master's program since 2010 and doctoral program since 2019 at the School of Arts, Sciences and Humanities of USP."
+      es: "Maestría desde 2010 y doctorado desde 2019 en la Escuela de Artes, Ciencias y Humanidades de la USP."
+    links:
+      - label:
+          pt-br: "Apresentação"
+          en: "Overview"
+          es: "Presentación"
+        href: "/about"
+        description:
+          pt-br: "Para quem está conhecendo o programa agora."
+          en: "For those getting to know the program."
+          es: "Para quienes están conociendo el programa."
+      - label:
+          pt-br: "Normas e regimentos"
+          en: "Rules and regulations"
+          es: "Normas y reglamentos"
+        href: "/about/regulations"
+        description:
+          pt-br: "O regulamento de 2022 e os antigos, para quem entrou antes."
+          en: "The 2022 regulations and the earlier ones, for students who entered before."
+          es: "El reglamento de 2022 y los anteriores, para quienes ingresaron antes."
+      - label:
+          pt-br: "Comissão Coordenadora"
+          en: "Coordinating Committee"
+          es: "Comisión Coordinadora"
+        href: "/people/ccp"
+        description:
+          pt-br: "Quem faz parte da CCP e quando ela se reúne."
+          en: "Who is on the CCP and when it meets."
+          es: "Quiénes integran la CCP y cuándo se reúne."
+  - id: "pesquisa"
+    label:
+      pt-br: "Pesquisa"
+      en: "Research"
+      es: "Investigación"
+    href: "/about/research"
+    intro:
+      pt-br: "Área de concentração em Metodologia e Técnicas da Computação, organizada em duas linhas de pesquisa."
+      en: "Area of concentration in Computing Methodology and Techniques, organized into two research lines."
+      es: "Área de concentración en Metodología y Técnicas de la Computación, organizada en dos líneas de investigación."
+    links:
+      - label:
+          pt-br: "Linhas e áreas de pesquisa"
+          en: "Research lines and areas"
+          es: "Líneas y áreas de investigación"
+        href: "/about/research"
+        description:
+          pt-br: "As duas linhas do programa e as áreas de cada uma."
+          en: "The program's two lines and the areas in each."
+          es: "Las dos líneas del programa y las áreas de cada una."
+      - label:
+          pt-br: "Gestão e Desenvolvimento de Sistemas"
+          en: "Systems Management and Development"
+          es: "Gestión y Desarrollo de Sistemas"
+        href: "/about/research/gestao-e-desenvolvimento"
+        description:
+          pt-br: "Cinco áreas, entre elas banco de dados e engenharia de software."
+          en: "Five areas, including databases and software engineering."
+          es: "Cinco áreas, entre ellas bases de datos e ingeniería de software."
+      - label:
+          pt-br: "Inteligência de Sistemas"
+          en: "Systems Intelligence"
+          es: "Inteligencia de Sistemas"
+        href: "/about/research/inteligencia-de-sistemas"
+        description:
+          pt-br: "Quatro áreas, entre elas inteligência artificial e processamento gráfico."
+          en: "Four areas, including artificial intelligence and graphics processing."
+          es: "Cuatro áreas, entre ellas inteligencia artificial y procesamiento gráfico."
+      - label:
+          pt-br: "Produção acadêmica"
+          en: "Academic output"
+          es: "Producción académica"
+        href: "/about/production"
+        description:
+          pt-br: "Publicações dos orientadores, atualizadas a cada seis meses."
+          en: "Advisors' publications, updated every six months."
+          es: "Publicaciones de los directores de tesis, actualizadas cada seis meses."
+  - id: "pessoas"
+    label:
+      pt-br: "Pessoas"
+      en: "People"
+      es: "Personas"
+    href: "/people"
+    intro:
+      pt-br: "Docentes, alunos e egressos do programa."
+      en: "Faculty, students, and alumni of the program."
+      es: "Docentes, estudiantes y egresados del programa."
+    links:
+      - label:
+          pt-br: "Orientadores"
+          en: "Advisors"
+          es: "Directores de tesis"
+        href: "/people"
+        description:
+          pt-br: "Docentes que orientam no mestrado e no doutorado."
+          en: "Faculty members who advise master's and doctoral students."
+          es: "Docentes que dirigen tesis en la maestría y el doctorado."
+      - label:
+          pt-br: "Orientandos"
+          en: "Current students"
+          es: "Estudiantes"
+        href: "/people/students"
+        description:
+          pt-br: "Quem está fazendo mestrado ou doutorado agora."
+          en: "Students currently in the master's or doctoral program."
+          es: "Quienes cursan la maestría o el doctorado actualmente."
+      - label:
+          pt-br: "Egressos"
+          en: "Alumni"
+          es: "Egresados"
+        href: "/people/alumni"
+        description:
+          pt-br: "Quem já defendeu no programa, ano a ano, desde 2012."
+          en: "Those who have defended in the program, year by year, since 2012."
+          es: "Quienes ya defendieron en el programa, año por año, desde 2012."
+  - id: "ingresso"
+    label:
+      pt-br: "Ingresso"
+      en: "Admissions"
+      es: "Admisión"
+    href: "/admission/open"
+    intro:
+      pt-br: "Processos seletivos de mestrado e doutorado, aluno especial e alunos estrangeiros."
+      en: "Selection processes for the master's and doctoral programs, special students, and international students."
+      es: "Procesos de selección de maestría y doctorado, estudiante especial y estudiantes extranjeros."
+    image:
+      src: "/images/campus-noite.jpg"
+      alt:
+        pt-br: "Campus da EACH à noite, com a passarela iluminada"
+        en: "EACH campus at night, with the walkway lit up"
+        es: "Campus de la EACH de noche, con la pasarela iluminada"
+    action:
+      label:
+        pt-br: "Inscrever-se no mestrado"
+        en: "Apply to the master's program"
+        es: "Inscribirse en la maestría"
+      href: "/admission/open#andamento"
+    links:
+      - label:
+          pt-br: "Editais e resultados"
+          en: "Calls and results"
+          es: "Convocatorias y resultados"
+        href: "/admission/open"
+        description:
+          pt-br: "O que está aberto agora e os resultados das seleções anteriores."
+          en: "What is open now and the results of past selections."
+          es: "Lo que está abierto ahora y los resultados de las selecciones anteriores."
+      - label:
+          pt-br: "Processo seletivo"
+          en: "Selection process"
+          es: "Proceso de selección"
+        href: "/admission"
+        description:
+          pt-br: "Como se inscrever no mestrado e no doutorado."
+          en: "How to apply to the master's and doctoral programs."
+          es: "Cómo inscribirse en la maestría y el doctorado."
+      - label:
+          pt-br: "Aluno especial"
+          en: "Special student"
+          es: "Estudiante especial"
+        href: "/admission/special"
+        description:
+          pt-br: "Para cursar disciplinas sem estar matriculado no programa."
+          en: "For taking courses without being enrolled in the program."
+          es: "Para cursar asignaturas sin estar matriculado en el programa."
+      - label:
+          pt-br: "Alunos estrangeiros"
+          en: "International students"
+          es: "Estudiantes extranjeros"
+        href: "/admission/international"
+        description:
+          pt-br: "Carta de aceite para estrangeiros que vão concorrer a bolsa."
+          en: "Letter of acceptance for international applicants competing for a scholarship."
+          es: "Carta de aceptación para extranjeros que postularán a una beca."
+      - label:
+          pt-br: "Perguntas frequentes"
+          en: "Frequently asked questions"
+          es: "Preguntas frecuentes"
+        href: "/faq"
+        description:
+          pt-br: "Prazos, dedicação, disciplinas e outras dúvidas comuns."
+          en: "Deadlines, time commitment, courses, and other common questions."
+          es: "Plazos, dedicación, asignaturas y otras dudas comunes."
+  - id: "curso"
+    label:
+      pt-br: "Durante o curso"
+      en: "During the program"
+      es: "Durante el curso"
+    href: "/courses"
+    intro:
+      pt-br: "Disciplinas, formulários e procedimentos para quem está matriculado."
+      en: "Courses, forms, and procedures for enrolled students."
+      es: "Asignaturas, formularios y procedimientos para quienes están matriculados."
+    links:
+      - label:
+          pt-br: "Disciplinas"
+          en: "Courses"
+          es: "Asignaturas"
+        href: "/courses"
+        description:
+          pt-br: "As duas obrigatórias e as optativas de cada linha."
+          en: "The two required courses and the electives of each line."
+          es: "Las dos obligatorias y las optativas de cada línea."
+      - label:
+          pt-br: "Formulários"
+          en: "Forms"
+          es: "Formularios"
+        href: "/academic/forms"
+        description:
+          pt-br: "Relatório semestral, pedido de créditos e outros documentos."
+          en: "Semester report, credit requests, and other documents."
+          es: "Informe semestral, solicitud de créditos y otros documentos."
+      - label:
+          pt-br: "Proficiência"
+          en: "Language proficiency"
+          es: "Suficiencia en idiomas"
+        href: "/academic/proficiency"
+        description:
+          pt-br: "Notas mínimas de inglês e datas das provas do Centro de Línguas."
+          en: "Minimum English scores and Language Center exam dates."
+          es: "Notas mínimas de inglés y fechas de los exámenes del Centro de Idiomas."
+      - label:
+          pt-br: "Qualificação"
+          en: "Qualifying exam"
+          es: "Examen de calificación"
+        href: "/academic/qualification"
+        description:
+          pt-br: "Como pedir o exame e quem pode estar na banca."
+          en: "How to request the exam and who can serve on the examining committee."
+          es: "Cómo solicitar el examen y quién puede integrar el tribunal."
+      - label:
+          pt-br: "Defesa"
+          en: "Defense"
+          es: "Defensa"
+        href: "/academic/defense"
+        description:
+          pt-br: "Do depósito no Janus ao dia da banca."
+          en: "From thesis submission in Janus to the day of the defense."
+          es: "Del depósito en Janus al día de la defensa."
+      - label:
+          pt-br: "Bolsas e PROAP"
+          en: "Scholarships and PROAP"
+          es: "Becas y PROAP"
+        href: "/academic/funding"
+        description:
+          pt-br: "Bolsas Capes e Fapesp, e como usar a verba PROAP."
+          en: "Capes and Fapesp scholarships, and how to use PROAP funds."
+          es: "Becas Capes y Fapesp, y cómo usar los fondos PROAP."
+      - label:
+          pt-br: "Estágio PAE"
+          en: "PAE teaching internship"
+          es: "Práctica docente PAE"
+        href: "/academic/pae"
+        description:
+          pt-br: "Estágio de docência na graduação, obrigatório para bolsistas Capes."
+          en: "Undergraduate teaching internship, required for Capes scholarship holders."
+          es: "Práctica docente en el pregrado, obligatoria para becarios Capes."
+  - id: "noticias"
+    label:
+      pt-br: "Notícias"
+      en: "News"
+      es: "Noticias"
+    href: "/news"
+    intro:
+      pt-br: "Avisos do programa e textos de alunos e docentes."
+      en: "Program announcements and writing by students and faculty."
+      es: "Avisos del programa y textos de estudiantes y docentes."
+    links:
+      - label:
+          pt-br: "Avisos"
+          en: "Announcements"
+          es: "Avisos"
+        href: "/news"
+        description:
+          pt-br: "Editais, resultados, prêmios e palestras do programa."
+          en: "Calls, results, awards, and talks from the program."
+          es: "Convocatorias, resultados, premios y charlas del programa."
+      - label:
+          pt-br: "Textos de alunos e docentes"
+          en: "Writing by students and faculty"
+          es: "Textos de estudiantes y docentes"
+        href: "/posts"
+        description:
+          pt-br: "Textos escritos por quem pesquisa no programa."
+          en: "Writing by people who do research in the program."
+          es: "Textos escritos por quienes investigan en el programa."
+footer:
+  - label:
+      pt-br: "Programa"
+      en: "Program"
+      es: "Programa"
+    links:
+      - label:
+          pt-br: "Apresentação"
+          en: "Overview"
+          es: "Presentación"
+        href: "/about"
+      - label:
+          pt-br: "Pesquisa"
+          en: "Research"
+          es: "Investigación"
+        href: "/about/research"
+      - label:
+          pt-br: "Disciplinas"
+          en: "Courses"
+          es: "Asignaturas"
+        href: "/courses"
+      - label:
+          pt-br: "Regulamentos"
+          en: "Regulations"
+          es: "Reglamentos"
+        href: "/about/regulations"
+      - label:
+          pt-br: "Blog"
+          en: "Blog"
+          es: "Blog"
+        href: "/posts"
+  - label:
+      pt-br: "Ingresso"
+      en: "Admissions"
+      es: "Admisión"
+    links:
+      - label:
+          pt-br: "Editais"
+          en: "Calls"
+          es: "Convocatorias"
+        href: "/admission/open"
+      - label:
+          pt-br: "Processo seletivo"
+          en: "Selection process"
+          es: "Proceso de selección"
+        href: "/admission"
+      - label:
+          pt-br: "Bolsas"
+          en: "Scholarships"
+          es: "Becas"
+        href: "/academic/funding"
+      - label:
+          pt-br: "Perguntas frequentes"
+          en: "Frequently asked questions"
+          es: "Preguntas frecuentes"
+        href: "/faq"

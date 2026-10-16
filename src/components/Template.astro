@@ -1,0 +1,18 @@
+---
+interface Props {
+  /** Texto traduzido com marcadores {nome}; cada marcador vira o slot de mesmo nome. */
+  text: string;
+}
+
+const { text } = Astro.props;
+const parts = await Promise.all(
+  text.split(/(\{\w+\})/).map(async (part) => {
+    const name = part.match(/^\{(\w+)\}$/)?.[1];
+    if (!name) return { text: part };
+    if (!Astro.slots.has(name)) throw new Error(`Falta o slot "${name}" para o texto "${text}".`);
+    return { html: await Astro.slots.render(name) };
+  }),
+);
+---
+
+{parts.map((part) => ('html' in part ? <Fragment set:html={part.html} /> : part.text))}

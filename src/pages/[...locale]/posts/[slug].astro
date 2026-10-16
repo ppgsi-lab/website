@@ -1,0 +1,45 @@
+---
+import { render } from 'astro:content';
+import PostLayout from '../../../layouts/PostLayout.astro';
+import { getUI } from '../../../lib/data';
+import { byDateDesc, getLocalized, slugify, tagLabel, type LocalizedEntry } from '../../../lib/content';
+import { localeOf, localeParam, locales } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of locales) {
+    const posts = byDateDesc(await getLocalized('posts', locale));
+    for (const post of posts) {
+      paths.push({ params: { locale: localeParam(locale), slug: post.slug }, props: { post, others: posts.filter((other) => other !== post).slice(0, 3) } });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  post: LocalizedEntry<'posts'>;
+  others: LocalizedEntry<'posts'>[];
+}
+
+const { post, others } = Astro.props;
+const ui = getUI(localeOf(Astro.url));
+const { Content, headings } = await render(post.entry);
+const { title, summary, date, authors, tags, doi } = post.entry.data;
+const toc = headings.filter((heading) => heading.depth === 2).map((heading) => ({ label: heading.text, href: `#${heading.slug}` }));
+const more = others.map(({ slug, entry }) => ({ date: entry.data.date, title: entry.data.title, href: `/posts/${slug}`, meta: entry.data.authors.map((author) => author.name).join(', ') }));
+---
+
+<PostLayout
+  title={title}
+  summary={summary}
+  list="/posts"
+  date={date}
+  authors={authors.map((author) => ({ name: author.name, href: `/posts/autores/${slugify(author.name)}` }))}
+  toc={toc}
+  topics={tags.map((tag) => ({ label: tagLabel(tag), href: `/posts/tags/${tag}` }))}
+  doi={doi}
+  fallback={post.fallback}
+  more={{ title: ui.posts.more, items: more }}
+>
+  <Content />
+</PostLayout>

@@ -1,0 +1,25 @@
+---
+interface Course {
+  code: string;
+  name: string;
+}
+
+interface Props {
+  courses: Course[];
+}
+
+const { courses } = Astro.props;
+---
+
+<div class="g12 courses">
+  {courses.map((course) => <div><code>{course.code}</code><span>{course.name}</span></div>)}
+</div>
+
+<style>
+  .courses > div { grid-column: span 6; display: flex; gap: 14px; align-items: center; padding: 12px 0; border-top: var(--rule-hairline) var(--hairline); font-size: 17px; }
+  code { font-family: inherit; font-size: 13px; font-weight: 700; color: var(--deep); background: var(--tint); border-radius: var(--radius-sm); padding: 4px 8px; flex: none; font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 699px) {
+    .courses > div { grid-column: 1 / -1; }
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Accordion from '../../components/ds/Accordion.astro';
+import ArrowLink from '../../components/ds/ArrowLink.astro';
+import Badge from '../../components/ds/Badge.astro';
+import Band from '../../components/ds/Band.astro';
+import Button from '../../components/ds/Button.astro';
+import CourseList from '../../components/ds/CourseList.astro';
+import CtaBand from '../../components/ds/CtaBand.astro';
+import Front from '../../components/ds/Front.astro';
+import PeopleList from '../../components/ds/PeopleList.astro';
+import SectionHead from '../../components/ds/SectionHead.astro';
+import { getCourses, getCurrentSemester, getEditais, getProfessors, getResearchLineSummaries, getSemesterCourses, getStats, getUI } from '../../lib/data';
+import { byDateDesc, getLocalized } from '../../lib/content';
+import { fill, formatDate, localeOf, localeParams } from '../../lib/i18n';
+import { asset, url } from '../../lib/url';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const t = ui.home;
+const calls = getEditais(locale).open;
+const stats = getStats(locale);
+const lines = getResearchLineSummaries(locale);
+const people = getProfessors(locale).map((professor) => ({ name: professor.name, href: professor.lattesUrl, areas: professor.researchAreas }));
+const courses = getSemesterCourses(locale);
+const coursesText = fill(t.coursesText, { semester: getCurrentSemester(locale).label, count: getCourses(locale).length });
+const news = byDateDesc(await getLocalized('news', locale)).slice(0, 3);
+---
+
+<Layout title={ui.page.home}>
+  <section class="wrap" id="programa">
+    <Front title={t.title} deck={t.deck} image={{ src: asset('/images/campus-retrato.jpg'), alt: t.imageAlt }}>
+      <p>{t.intro}</p>
+      <Fragment slot="actions"><Button href="/admission/open#andamento">{t.apply}</Button><ArrowLink href="/about/research">{t.research}</ArrowLink></Fragment>
+      <Fragment slot="second"><h2>{t.doctorateTitle}</h2><p>{t.doctorateText} <a href={url('/admission/open#andamento', locale)}>{t.doctorateLink}</a></p></Fragment>
+    </Front>
+  </section>
+
+  <Band id="ingresso">
+    <div>
+      <h2 class="lbl">{t.admission}</h2>
+      <div class="rows">
+        {calls.map((call) => (
+          <div class="item"><b>{call.home.title}</b><span class="sub">{call.home.text}{call.home.badge && <Fragment> <Badge>{call.home.badge}</Badge></Fragment>}</span><ArrowLink href={call.edital.href}>{`${ui.call.edital} ${call.edital.label}`}</ArrowLink></div>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h2 class="lbl">{t.numbers}</h2>
+      <ul class="rows nums">{stats.map((stat) => <li><span>{stat.label}</span><b>{stat.value}</b></li>)}</ul>
+    </div>
+    <div id="noticias">
+      <h2 class="lbl">{t.news}</h2>
+      <ul class="rows news">
+        {news.map(({ slug, entry }) => <li><time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date, locale)}</time><a href={url(`/news/${slug}`, locale)}>{entry.data.title}</a></li>)}
+      </ul>
+      <ArrowLink href="/news">{t.allNews}</ArrowLink>
+    </div>
+  </Band>
+
+  <section class="wrap sec" id="pesquisa">
+    <SectionHead title={t.linesTitle} description={t.linesText}><Button href="/about/research">{t.linesButton}</Button></SectionHead>
+    <div class="g12">
+      {lines.map((line) => <Accordion title={line.name} description={line.description} items={line.areas.map((area) => ({ label: area.name, href: line.href }))} />)}
+    </div>
+  </section>
+
+  <section class="wrap sec" id="pessoas">
+    <SectionHead title={t.advisorsTitle} description={t.advisorsText} />
+    <PeopleList toggle={{ id: 'mppl', open: t.advisorsOpen, close: t.advisorsClose }} people={people} />
+  </section>
+
+  <section class="wrap sec" id="disciplinas">
+    <SectionHead title={t.coursesTitle} description={coursesText}><Button href="/courses">{t.coursesButton}</Button></SectionHead>
+    <CourseList courses={courses} />
+  </section>
+
+  <CtaBand title={ui.cta.title} text={ui.cta.text}><Button yellow large href="/admission/open">{t.ctaButton}</Button></CtaBand>
+</Layout>

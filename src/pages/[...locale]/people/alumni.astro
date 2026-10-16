@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Template from '../../../components/Template.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import Table from '../../../components/ds/Table.astro';
+import { getAlumni, getUI } from '../../../lib/data';
+import { fill, localeOf, localeParams } from '../../../lib/i18n';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const t = ui.people;
+const alumni = getAlumni(locale);
+const years = [...new Set(alumni.map((alumnus) => alumnus.defenseYear))].sort((a, b) => b - a);
+const groups = years.map((year) => ({ year, alumni: alumni.filter((alumnus) => alumnus.defenseYear === year) }));
+const columns = [ui.table.number, ui.table.name, ui.table.advisor, ui.table.email];
+---
+
+<PageLayout title={t.alumniTitle} sub={fill(t.alumniText, { count: alumni.length, year: Math.min(...years) })}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={years.map((year) => ({ label: String(year), href: `#ano-${year}` }))} />
+    <p><Template text={t.alumniLibrary}><a slot="library" href="http://www.teses.usp.br">{t.library}</a></Template></p>
+    {groups.map((group) => (
+      <Fragment>
+        <h2 id={`ano-${group.year}`}>{group.year}</h2>
+        <p>{fill(t.alumniCount, { count: group.alumni.length })}</p>
+        <Table fluid columns={columns} rows={group.alumni.map((alumnus) => [alumnus.number, alumnus.lattesUrl ? { label: alumnus.name, href: alumnus.lattesUrl } : alumnus.name, alumnus.advisor, alumnus.email])} />
+      </Fragment>
+    ))}
+  </DocLayout>
+</PageLayout>

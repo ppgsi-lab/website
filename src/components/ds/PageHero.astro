@@ -1,0 +1,99 @@
+---
+import { url } from '../../lib/url';
+import { getUI } from '../../lib/data';
+import { localeOf } from '../../lib/i18n';
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  sub: string;
+  /** Trilha de volta, só em páginas fora do menu e posts: no topo da seção, o menu e o submenu já mostram onde se está. */
+  crumbs?: Crumb[];
+  /** Hero escuro com ilustração; sem imagem, o topo é claro. */
+  image?: { src: string; alt: string };
+  /** Fecha o topo claro com fio fino, para páginas sem submenu. */
+  closed?: boolean;
+}
+
+const { title, sub, crumbs, image, closed } = Astro.props;
+const locale = localeOf(Astro.url);
+---
+
+<section class:list={['phero', { light: !image, solo: closed }]}><div class="wrap">
+  {crumbs && (
+    <nav class="crumb" aria-label={getUI(locale).page.crumbs}>
+      {crumbs.map((crumb, i) => (
+        <Fragment>
+          {i > 0 && <i>|</i>}
+          {crumb.href ? <a href={url(crumb.href, locale)}>{crumb.label}</a> : <span>{crumb.label}</span>}
+        </Fragment>
+      ))}
+    </nav>
+  )}
+  {image ? (
+    <div class="g">
+      <div>
+        <h1>{title}</h1>
+        <div class="rule"></div>
+        <p class="sub">{sub}</p>
+        <slot />
+      </div>
+      <img class="photo" src={image.src} alt={image.alt} />
+    </div>
+  ) : (
+    <Fragment>
+      <h1>{title}</h1>
+      <p class="sub">{sub}</p>
+      <slot />
+    </Fragment>
+  )}
+</div></section>
+
+<style>
+  .phero { background: linear-gradient(100deg, var(--deep), var(--deep) 55%, var(--deep-end)); color: var(--on-dark); padding: var(--hero-pad-top) 0 var(--hero-pad-bottom); position: relative; }
+  .crumb { display: flex; gap: 14px; font-size: 15px; flex-wrap: wrap; align-items: center; margin-bottom: 64px; }
+  .crumb a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .crumb i { font-style: normal; opacity: .5; }
+  .g { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; align-items: center; }
+  .g > * { min-width: 0; }
+  h1 { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 96px; font-weight: 400; line-height: .95; letter-spacing: -0.025em; margin: 0 0 36px; text-wrap: balance; }
+  .rule { height: 1px; background: var(--teal-light); margin: 0 0 36px; }
+  .sub { font-size: 26px; font-weight: 300; line-height: 1.35; margin: 0 0 40px; max-width: 24em; }
+  .photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 40% 50%; border-radius: var(--radius-md); max-width: 100%; }
+
+  .light { background: var(--paper); color: var(--ink); padding: 40px 0 48px; }
+  .light .crumb a { color: var(--ink); }
+  .light .crumb { margin-bottom: 40px; }
+  .light .crumb span { color: var(--muted); }
+  .light h1 { font-size: 60px; line-height: 1.02; letter-spacing: -0.02em; color: var(--deep); margin: 0 0 20px; max-width: 16em; }
+  .light .sub { font-size: 22px; line-height: 1.4; color: var(--deck); margin: 0; max-width: 34em; }
+  .solo { border-bottom: var(--rule-hairline) var(--hairline); }
+
+  @media (max-width: 1099px) {
+    .crumb { margin-bottom: 40px; }
+    .g { grid-template-columns: 1fr; row-gap: 32px; }
+    h1 { font-size: 64px; }
+    .sub { font-size: 22px; }
+    .photo { aspect-ratio: 16 / 9; }
+    .light { padding: 32px 0 40px; }
+    .light .crumb { margin-bottom: 32px; }
+    .light h1 { font-size: 52px; }
+    .light .sub { font-size: 20px; }
+  }
+
+  @media (max-width: 699px) {
+    .phero { padding: 24px 0 56px; }
+    h1 { font-size: 44px; margin-bottom: 24px; }
+    .rule { margin-bottom: 24px; }
+    .sub { font-size: 19px; margin-bottom: 28px; }
+    .photo { aspect-ratio: 4 / 3; }
+    .light { padding: 24px 0 32px; }
+    .light .crumb { margin-bottom: 24px; }
+    .light h1 { font-size: 40px; margin-bottom: 16px; }
+    .light .sub { font-size: 18px; }
+  }
+</style>

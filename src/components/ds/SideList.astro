@@ -1,0 +1,29 @@
+---
+import { url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+import type { NavLink } from '../../types';
+
+interface Props {
+  label: string;
+  items: (NavLink & { file?: string })[];
+  /** Navegação dentro da página, como "Nesta página". */
+  toc?: boolean;
+  /** Documentos para baixar, sublinhados e com o tipo de arquivo. */
+  docs?: boolean;
+}
+
+const { label, items, toc, docs } = Astro.props;
+const Tag = toc ? 'nav' : 'div';
+const locale = localeOf(Astro.url);
+---
+
+<Tag class:list={[{ toc: !docs, docs }]} aria-label={toc ? label : undefined}>
+  <span class="lbl">{label}</span>
+  <ul>{items.map((item) => <li><a href={url(item.href, locale)}>{item.label}</a>{item.file && <span class="ft">{item.file}</span>}</li>)}</ul>
+</Tag>
+
+<style>
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+  .toc a { color: var(--ink); }
+  .toc a:hover { color: var(--teal); }
+</style>

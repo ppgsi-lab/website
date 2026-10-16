@@ -1,0 +1,371 @@
+open:
+  - title:
+      pt-br: "Mestrado, ingresso em 2026/1"
+      en: "Master's program, entry in 2026/1"
+      es: "Maestría, ingreso en 2026/1"
+    edital:
+      label: "EACH/CPG 90/2025"
+      href: "https://drive.google.com/file/d/139sPhrdwmTX_ZU_ccXzYTJJswAyM_Ix4/view"
+    note:
+      pt-br: "seleção em duas fases"
+      en: "two-stage selection"
+      es: "selección en dos fases"
+    status:
+      pt-br: "Inscrições abertas até 30 de novembro"
+      en: "Applications open until November 30"
+      es: "Inscripciones abiertas hasta el 30 de noviembre"
+    apply: "https://ppgsi.each.usp.br/inscricao/"
+    home:
+      title:
+        pt-br: "Mestrado 2026/1"
+        en: "Master's program 2026/1"
+        es: "Maestría 2026/1"
+      text:
+        pt-br: "Inscrições até"
+        en: "Applications until"
+        es: "Inscripciones hasta el"
+      badge:
+        pt-br: "30 de novembro"
+        en: "November 30"
+        es: "30 de noviembre"
+    schedule:
+      - date:
+          pt-br: "20 a 24 out"
+          en: "Oct 20–24"
+          es: "20 al 24 de oct."
+        event:
+          pt-br: "Projetos de pesquisa e vagas divulgados"
+          en: "Research projects and openings published"
+          es: "Proyectos de investigación y vacantes publicados"
+      - date:
+          pt-br: "1 a 30 nov"
+          en: "Nov 1–30"
+          es: "1 al 30 de nov."
+        event:
+          pt-br: "Inscrições"
+          en: "Applications"
+          es: "Inscripciones"
+      - date:
+          pt-br: "3 a 5 dez"
+          en: "Dec 3–5"
+          es: "3 al 5 de dic."
+        event:
+          pt-br: "Lista de inscrições homologadas"
+          en: "List of accepted applications"
+          es: "Lista de inscripciones aceptadas"
+      - date:
+          pt-br: "8 e 9 dez"
+          en: "Dec 8 and 9"
+          es: "8 y 9 de dic."
+        event:
+          pt-br: "Contestação da homologação"
+          en: "Appeals against the approval of applications"
+          es: "Impugnación de la aprobación de inscripciones"
+      - date:
+          pt-br: "até 30 dez"
+          en: "by Dec 30"
+          es: "hasta el 30 de dic."
+        event:
+          pt-br: "Resultado, com a data de matrícula"
+          en: "Results, with the enrollment date"
+          es: "Resultado, con la fecha de matrícula"
+      - date:
+          pt-br: "mar"
+          en: "Mar"
+          es: "mar."
+        event:
+          pt-br: "Início das aulas"
+          en: "Classes begin"
+          es: "Inicio de clases"
+    documents:
+      - label:
+          pt-br: "Edital completo"
+          en: "Full call"
+          es: "Convocatoria completa"
+        href: "https://drive.google.com/file/d/139sPhrdwmTX_ZU_ccXzYTJJswAyM_Ix4/view"
+      - label:
+          pt-br: "Projetos de pesquisa e vagas"
+          en: "Research projects and openings"
+          es: "Proyectos de investigación y vacantes"
+        href: "http://ppgsi.each.usp.br/editais-abertos/"
+      - label:
+          pt-br: "Formulário de inscrição"
+          en: "Application form"
+          es: "Formulario de inscripción"
+        href: "https://ppgsi.each.usp.br/inscricao/"
+      - label:
+          pt-br: "Planilha de pontuação da primeira fase"
+          en: "First-stage scoring spreadsheet"
+          es: "Planilla de puntuación de la primera fase"
+        href: "https://ppgsi.each.usp.br/inscricao/"
+      - label:
+          pt-br: "Modelo de intenção de pesquisa"
+          en: "Statement of research intent template"
+          es: "Modelo de declaración de intención de investigación"
+        href: "https://ppgsi.each.usp.br/inscricao/"
+  - title:
+      pt-br: "Doutorado, ingresso em 2026"
+      en: "Doctoral program, entry in 2026"
+      es: "Doctorado, ingreso en 2026"
+    edital:
+      label: "EACH/CPG 107/2025"
+      href: "https://drive.google.com/file/d/1QwvdoKqy2xeGpAHg5KCjbESqjkiSt5lz/view"
+    note:
+      pt-br: "para doutorado e doutorado direto, seleção em fase única"
+      en: "for the doctorate and direct-entry doctorate, single-stage selection"
+      es: "para doctorado y doctorado directo, selección en fase única"
+    status:
+      pt-br: "Fluxo contínuo"
+      en: "Rolling applications"
+      es: "Flujo continuo"
+    apply: "http://ppgsi.each.usp.br/inscricao/"
+    home:
+      title:
+        pt-br: "Doutorado 2026"
+        en: "Doctoral program 2026"
+        es: "Doctorado 2026"
+      text:
+        pt-br: "Fluxo contínuo, de 15 de janeiro a 30 de novembro"
+        en: "Rolling applications, from January 15 to November 30"
+        es: "Flujo continuo, del 15 de enero al 30 de noviembre"
+    schedule:
+      - date:
+          pt-br: "15 jan a 30 nov"
+          en: "Jan 15–Nov 30"
+          es: "15 de ene. al 30 de nov."
+        event:
+          pt-br: "Inscrições por e-mail, em fluxo contínuo"
+          en: "Applications by email, on a rolling basis"
+          es: "Inscripciones por correo electrónico, en flujo continuo"
+      - date:
+          pt-br: "até 30 dias"
+          en: "within 30 days"
+          es: "hasta 30 días"
+        event:
+          pt-br: "Homologação, contados da inscrição"
+          en: "Approval of applications, counted from the application date"
+          es: "Aprobación de inscripciones, contados desde la inscripción"
+      - date:
+          pt-br: "até 45 dias"
+          en: "within 45 days"
+          es: "hasta 45 días"
+        event:
+          pt-br: "Resultado, contados da homologação"
+          en: "Results, counted from the approval of the application"
+          es: "Resultado, contados desde la aprobación de la inscripción"
+      - date:
+          pt-br: "até 180 dias"
+          en: "within 180 days"
+          es: "hasta 180 días"
+        event:
+          pt-br: "Matrícula, contados do resultado"
+          en: "Enrollment, counted from the results"
+          es: "Matrícula, contados desde el resultado"
+    documents:
+      - label:
+          pt-br: "Edital completo"
+          en: "Full call"
+          es: "Convocatoria completa"
+        href: "https://drive.google.com/file/d/1QwvdoKqy2xeGpAHg5KCjbESqjkiSt5lz/view"
+      - label:
+          pt-br: "Ficha de inscrição"
+          en: "Application form"
+          es: "Ficha de inscripción"
+        href: "http://ppgsi.each.usp.br/inscricao/"
+      - label:
+          pt-br: "Modelo de carta de recomendação"
+          en: "Recommendation letter template"
+          es: "Modelo de carta de recomendación"
+        href: "http://ppgsi.each.usp.br/"
+      - label:
+          pt-br: "Modelo de carta de compromisso de orientação"
+          en: "Advisor commitment letter template"
+          es: "Modelo de carta de compromiso de dirección de tesis"
+        href: "http://ppgsi.each.usp.br/"
+results:
+  - year: 2025
+    processes:
+      - title:
+          pt-br: "Mestrado, ingresso em 2025/2"
+          en: "Master's program, entry in 2025/2"
+          es: "Maestría, ingreso en 2025/2"
+        edital:
+          label: "EACH/CPG 91/2024"
+          href: "http://ppgsi.each.usp.br/arquivos/PPG-SI-Edital-Selecao-Mestrado-2025.pdf"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado-02sem-2025/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-2oSem2025.pdf"
+            date: "27/06/2025"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado-02sem-2025/PPgSI-ProcessoSeletivo-Homologacao-Inscricoes-2oSem2025.pdf"
+            date: "05/06/2025"
+          - label:
+              pt-br: "Projetos e vagas"
+              en: "Projects and openings"
+              es: "Proyectos y vacantes"
+            href: "http://ppgsi.each.usp.br/projetos-e-vagas-02-2025/"
+            date: "19/04/2025"
+      - title:
+          pt-br: "Doutorado, ingresso em 2025"
+          en: "Doctoral program, entry in 2025"
+          es: "Doctorado, ingreso en 2025"
+        edital:
+          label: "EACH/CPG 104/2024"
+          href: "http://ppgsi.each.usp.br/arquivos/PPG-SI-Edital-SelecaoDoutorado2025.pdf"
+        links:
+          - label:
+              pt-br: "Resultados do processo seletivo"
+              en: "Selection process results"
+              es: "Resultados del proceso de selección"
+            href: "http://ppgsi.each.usp.br/selecao-doutorado-2025/"
+      - title:
+          pt-br: "Mestrado, ingresso em 2025/1"
+          en: "Master's program, entry in 2025/1"
+          es: "Maestría, ingreso en 2025/1"
+        edital:
+          label: "EACH/CPG 91/2024"
+          href: "http://ppgsi.each.usp.br/arquivos/PPG-SI-Edital-Selecao-Mestrado-2025.pdf"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado-01sem-2025/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-1oSem2025.pdf"
+            date: "19/12/2024"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado-01sem-2025/PPgSI-ProcessoSeletivo-Homologacao-Inscricoes-1oSem2025.pdf"
+            date: "06/12/2024"
+          - label:
+              pt-br: "Projetos e vagas"
+              en: "Projects and openings"
+              es: "Proyectos y vacantes"
+            href: "http://ppgsi.each.usp.br/projetos-e-vagas-01-2025/"
+            date: "22/10/2024"
+  - year: 2024
+    processes:
+      - title:
+          pt-br: "Mestrado, ingresso em 2024/2"
+          en: "Master's program, entry in 2024/2"
+          es: "Maestría, ingreso en 2024/2"
+        edital:
+          label: "EACH/CPG 074/2023"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado2024/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-2oSem2024.pdf"
+            date: "28/06/2024"
+          - label:
+              pt-br: "Resultado da contestação"
+              en: "Appeal results"
+              es: "Resultado de la impugnación"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado2024/PPgSI-ProcessoSeletivo-ResultadoContestacao-2oSem2024.pdf"
+            date: "10/06/2024"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/mestrado2024/PPgSI-ProcessoSeletivo-Homologacao-Inscricoes-2oSem2024.pdf"
+            date: "04/06/2024"
+      - title:
+          pt-br: "Mestrado, ingresso em 2024/1"
+          en: "Master's program, entry in 2024/1"
+          es: "Maestría, ingreso en 2024/1"
+        edital:
+          label: "EACH/CPG 074/2023"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-1oSem2024.pdf"
+            date: "21/12/2023"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-Homologacao-Inscricoes-1oSem2024.pdf"
+            date: "05/12/2023"
+      - title:
+          pt-br: "Doutorado, ingresso em 2024"
+          en: "Doctoral program, entry in 2024"
+          es: "Doctorado, ingreso en 2024"
+        edital:
+          label: "EACH/CPG 01/2024"
+        links:
+          - label:
+              pt-br: "Resultados do processo seletivo"
+              en: "Selection process results"
+              es: "Resultados del proceso de selección"
+            href: "http://ppgsi.each.usp.br/selecao-doutorado-2024/"
+  - year: 2023
+    processes:
+      - title:
+          pt-br: "Mestrado, ingresso em 2023/2"
+          en: "Master's program, entry in 2023/2"
+          es: "Maestría, ingreso en 2023/2"
+        edital:
+          label: "EACH/CPG 36/2023"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-2oSem2023.pdf"
+            date: "04/07/2023"
+          - label:
+              pt-br: "Resultado da contestação"
+              en: "Appeal results"
+              es: "Resultado de la impugnación"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-ResultadoContestacao-2oSem2023.pdf"
+            date: "21/06/2023"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-InscricoesHomologadas-2oSem2023.pdf"
+            date: "12/06/2023"
+      - title:
+          pt-br: "Doutorado, ingresso em 2023"
+          en: "Doctoral program, entry in 2023"
+          es: "Doctorado, ingreso en 2023"
+        edital:
+          label: "EACH/CPG 05/2023"
+        links:
+          - label:
+              pt-br: "Resultados do processo seletivo"
+              en: "Selection process results"
+              es: "Resultados del proceso de selección"
+            href: "http://ppgsi.each.usp.br/selecao-doutorado-2023/"
+      - title:
+          pt-br: "Mestrado, ingresso em 2023/1"
+          en: "Master's program, entry in 2023/1"
+          es: "Maestría, ingreso en 2023/1"
+        edital:
+          label: "EACH/CPG 41/2022"
+        links:
+          - label:
+              pt-br: "Resultado do processo seletivo"
+              en: "Selection process results"
+              es: "Resultado del proceso de selección"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-ResultadoProcessoSeletivo-1oSem2023.pdf"
+          - label:
+              pt-br: "Resultado da contestação"
+              en: "Appeal results"
+              es: "Resultado de la impugnación"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-ResultadoContestacao-1oSem2023.pdf"
+          - label:
+              pt-br: "Inscrições homologadas e não homologadas"
+              en: "Accepted and rejected applications"
+              es: "Inscripciones aceptadas y no aceptadas"
+            href: "http://ppgsi.each.usp.br/arquivos/PPgSI-ProcessoSeletivo-InscricoesHomologadas-1oSem2023.pdf"

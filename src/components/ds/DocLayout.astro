@@ -1,0 +1,27 @@
+---
+---
+
+<div class="wrap pgw"><div class="g12 pgc">
+  <aside class="side"><slot name="side" /></aside>
+  <article class="doc"><slot /></article>
+  <slot name="after" />
+</div></div>
+
+<style>
+  .pgw { padding-bottom: 96px; }
+  .pgc { padding-top: 56px; row-gap: 40px; align-items: start; }
+  .side { grid-column: 1 / 3; position: sticky; top: 120px; display: flex; flex-direction: column; gap: 32px; }
+  .pgc > .doc, .pgc > :global(.doc) { grid-column: 4 / 13; }
+
+  @media (max-width: 1099px) {
+    .pgc { padding-top: 40px; }
+    .pgc > .doc, .pgc > :global(.doc) { grid-column: 1 / -1; }
+    .side { grid-column: 1 / -1; position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  }
+
+  @media (max-width: 699px) {
+    .pgw { padding-bottom: 64px; }
+    .pgc { padding-top: 32px; row-gap: 32px; }
+    .side { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

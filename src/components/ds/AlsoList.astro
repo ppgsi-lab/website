@@ -1,0 +1,15 @@
+---
+import EntryList, { type Entry } from './EntryList.astro';
+
+interface Props {
+  title: string;
+  items: Entry[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="doc also">
+  <h2>{title}</h2>
+  <EntryList items={items} />
+</section>

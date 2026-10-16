@@ -1,0 +1,67 @@
+---
+import type { FooterColumn } from '../../types';
+import { getUI } from '../../lib/data';
+import { asset, url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+
+interface Props {
+  columns: FooterColumn[];
+}
+
+const { columns } = Astro.props;
+const locale = localeOf(Astro.url);
+const t = getUI(locale).footer;
+---
+
+<footer class="ftr dark"><div class="wrap">
+  <div class="g12">
+    <div class="f1">
+      <span class="pn">{t.programName}</span>
+      <span>{t.institution}<br />{t.university}<br />{t.address}<br />{t.zip}</span>
+    </div>
+    {columns.map((column, i) => (
+      <div class={i === 0 ? 'f2' : 'f3'}>
+        <span class="lbl">{column.label}</span>
+        {column.links.map((link) => <a href={url(link.href, locale)}>{link.label}</a>)}
+      </div>
+    ))}
+    <div class="f4">
+      <div class="logos">
+        <img class="lp" src={asset('/ppgsi.svg')} alt="PPgSI" />
+        <img class="each" src={asset('/logoeach.png')} alt="EACH USP" />
+        <img class="usp" src={asset('/logo_usp.png')} alt="USP" />
+      </div>
+    </div>
+  </div>
+  <div class="copy"><span>{new Date().getFullYear()} {t.copyright}</span><span>{t.domain}</span></div>
+</div></footer>
+
+<style>
+  .ftr { background: var(--deep); color: var(--footer-ink); padding: 56px 0 32px; font-size: 15px; }
+  .ftr .g12 { row-gap: 28px; }
+  .ftr .g12 > div { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .f1 { grid-column: 1 / 5; }
+  .f2 { grid-column: 5 / 7; }
+  .f3 { grid-column: 7 / 9; }
+  .f4 { grid-column: 9 / 13; }
+  .ftr a { color: var(--on-dark); }
+  .ftr a:hover { color: var(--yellow); text-decoration: none; }
+  .pn { font-family: var(--font-serif); font-size: 24px; color: var(--on-dark); line-height: 1.2; }
+  .ftr .lbl { margin-bottom: 6px; border-bottom: 0; padding-bottom: 0; }
+  /* PPgSI e EACH ocupam a largura da coluna, nas larguras que têm com 44 e 28px de altura; o USP fica embaixo, no centro. */
+  .logos { width: 100%; display: grid; grid-template-columns: minmax(0, 235fr) minmax(0, 110fr); gap: 20px; align-items: center; }
+  .logos img { width: 100%; height: auto; display: block; filter: brightness(0) invert(1); }
+  .logos img.usp { width: 22%; grid-column: 1 / -1; justify-self: center; }
+  .copy { margin-top: 48px; padding-top: 20px; border-top: var(--rule-frame) var(--frame-on-dark); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+  @media (max-width: 1099px) {
+    .f1 { grid-column: 1 / 7; grid-row: 1; }
+    .f4 { grid-column: 7 / 13; grid-row: 1; }
+    .f2 { grid-column: 1 / 7; }
+    .f3 { grid-column: 7 / 13; }
+  }
+
+  @media (max-width: 699px) {
+    .f1, .f4 { grid-column: 1 / -1; grid-row: auto; }
+  }
+</style>

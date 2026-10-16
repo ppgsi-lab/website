@@ -1,0 +1,42 @@
+---
+import { url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+import type { NavLink } from '../../types';
+
+interface Props {
+  title: string;
+  description: string;
+  items: NavLink[];
+}
+
+const { title, description, items } = Astro.props;
+const locale = localeOf(Astro.url);
+---
+
+<div class="line">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <div class="acc">
+    {items.map((item) => <a class="row" href={url(item.href, locale)}><span>{item.label}</span><i class="plus" aria-hidden="true"></i></a>)}
+  </div>
+</div>
+
+<style>
+  .line { grid-column: span 6; }
+  h3 { font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin: 0 0 6px; line-height: 1.1; }
+  p { margin: 0 0 20px; color: var(--muted); font-size: 16px; }
+  .acc { display: flex; flex-direction: column; gap: 12px; }
+  .row { background: var(--panel); border-radius: var(--radius-lg); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--deep); font-family: var(--font-serif); font-size: 24px; line-height: 1.2; min-width: 0; }
+  .row:hover { background: var(--tint); text-decoration: none; }
+
+  @media (max-width: 1099px) {
+    .row { font-size: 20px; padding: 16px 20px; }
+  }
+
+  @media (max-width: 699px) {
+    .line { grid-column: 1 / -1; }
+    .line + .line { margin-top: 40px; }
+    h3 { font-size: 26px; }
+    .row { font-size: 19px; padding: 14px 18px; }
+  }
+</style>

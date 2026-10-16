@@ -1,0 +1,40 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import Table from '../../../components/ds/Table.astro';
+import { getCourses, getResearchLines, getUI } from '../../../lib/data';
+import { fill, localeOf, localeParams } from '../../../lib/i18n';
+import type { Course } from '../../../types';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const t = ui.courses;
+const courses = getCourses(locale);
+const electives = courses.filter((course) => course.type === 'elective');
+const groups = [
+  { id: 'obrigatorias', title: t.required, courses: courses.filter((course) => course.type === 'required') },
+  ...getResearchLines(locale).map((line) => ({
+    id: line.slug,
+    title: fill(t.lineElectives, { line: line.name }),
+    courses: electives.filter((course) => course.researchLine === line.slug || course.researchLine === 'both'),
+  })),
+  { id: 'optativas', title: t.electives, courses: electives.filter((course) => !course.researchLine) },
+].filter((group) => group.courses.length > 0);
+const columns = [ui.table.code, ui.table.course, ui.table.credits, ui.table.hours];
+const rows = (list: Course[]) => list.map((course) => [course.code, course.name, course.credits, course.weeklyHours]);
+---
+
+<PageLayout title={t.title} sub={t.sub}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={groups.map((group) => ({ label: group.title, href: `#${group.id}` }))} />
+    {groups.map((group) => (
+      <Fragment>
+        <h2 id={group.id}>{group.title}</h2>
+        <Table columns={columns} rows={rows(group.courses)} />
+      </Fragment>
+    ))}
+  </DocLayout>
+</PageLayout>

@@ -1,0 +1,134 @@
+- id: "gestao-e-desenvolvimento"
+  name:
+    pt-br: "Gestão e Desenvolvimento de Sistemas"
+    en: "Systems Management and Development"
+    es: "Gestión y Desarrollo de Sistemas"
+  slug: "gestao-e-desenvolvimento"
+  description:
+    pt-br: "Esta linha de pesquisa está relacionada ao estudo, à proposta, à aplicação e à avaliação de metodologias e técnicas da Computação no contexto de desenvolvimento de Sistemas de Informação de valor estratégico para diversas áreas de aplicação."
+    en: "This research line covers the study, proposal, application, and evaluation of computing methodologies and techniques in the context of developing information systems of strategic value for various application areas."
+    es: "Esta línea de investigación está relacionada con el estudio, la propuesta, la aplicación y la evaluación de metodologías y técnicas de la computación en el contexto del desarrollo de sistemas de información de valor estratégico para diversas áreas de aplicación."
+  objective:
+    pt-br: "Propor novas abordagens e analisar sistematicamente abordagens já existentes, cobrindo processos de gestão relacionados a Sistemas de Informação, incluindo processos de negócio relacionados à Tecnologia da Informação."
+    en: "To propose new approaches and systematically analyze existing ones, covering management processes related to information systems, including business processes related to information technology."
+    es: "Proponer nuevos enfoques y analizar sistemáticamente los enfoques existentes, abarcando procesos de gestión relacionados con sistemas de información, incluidos los procesos de negocio relacionados con la tecnología de la información."
+  areas:
+    - name:
+        pt-br: "Banco de Dados"
+        en: "Databases"
+        es: "Bases de datos"
+      description:
+        pt-br: "Motivada pela contínua expansão de dados em diversos setores, esta área foca na aquisição, organização e filtragem de dados, rastreamento, visualização e interação, mineração de dados e novos algoritmos para consultas e análises. Os dados requerem organização estruturada para descoberta de conhecimento, compreensão de fenômenos, melhoria de processos e descobertas científicas. As aplicações incluem bioinformática e saúde, ambientes corporativos e processos de negócio, redes sociais e governo eletrônico."
+        en: "Motivated by the continuous growth of data across many sectors, this area focuses on data acquisition, organization, and filtering, tracking, visualization and interaction, data mining, and new algorithms for queries and analysis. Data require structured organization for knowledge discovery, understanding phenomena, process improvement, and scientific discovery. Applications include bioinformatics and health, corporate environments and business processes, social networks, and e-government."
+        es: "Motivada por la continua expansión de los datos en diversos sectores, esta área se centra en la adquisición, organización y filtrado de datos, el rastreo, la visualización y la interacción, la minería de datos y nuevos algoritmos para consultas y análisis. Los datos requieren una organización estructurada para el descubrimiento de conocimiento, la comprensión de fenómenos, la mejora de procesos y los descubrimientos científicos. Las aplicaciones incluyen bioinformática y salud, entornos corporativos y procesos de negocio, redes sociales y gobierno electrónico."
+    - name:
+        pt-br: "Engenharia de Software"
+        en: "Software engineering"
+        es: "Ingeniería de software"
+      description:
+        pt-br: "Projetos de pesquisa voltados ao desenvolvimento de processos, técnicas e ferramentas para apoiar a análise e o desenvolvimento de artefatos de software — incluindo documentos de requisitos, diagramas e modelos, código-fonte e objeto, conjuntos de testes, frameworks, linhas de produto, interfaces de usuário e métricas. O objetivo é analisar e modificar artefatos para auxiliar teste, depuração, projeto arquitetural e manutenção, além de definir e experimentar processos e metodologias para maior qualidade e produtividade."
+        en: "Research projects aimed at developing processes, techniques, and tools to support the analysis and development of software artifacts — including requirements documents, diagrams and models, source and object code, test suites, frameworks, product lines, user interfaces, and metrics. The goal is to analyze and modify artifacts to support testing, debugging, architectural design, and maintenance, and to define and experiment with processes and methodologies for higher quality and productivity."
+        es: "Proyectos de investigación orientados al desarrollo de procesos, técnicas y herramientas para apoyar el análisis y el desarrollo de artefactos de software — incluidos documentos de requisitos, diagramas y modelos, código fuente y objeto, conjuntos de pruebas, frameworks, líneas de productos, interfaces de usuario y métricas. El objetivo es analizar y modificar artefactos para apoyar la prueba, la depuración, el diseño arquitectónico y el mantenimiento, además de definir y experimentar procesos y metodologías para lograr mayor calidad y productividad."
+    - name:
+        pt-br: "Gestão de Tecnologia da Informação"
+        en: "Information technology management"
+        es: "Gestión de tecnologías de la información"
+      description:
+        pt-br: "Foco nos aspectos sociotécnicos e econômicos de Sistemas de Informação, com o objetivo de criar soluções inovadoras para diferentes organizações. Investiga processos de negócio automatizados, terceirização e consultoria de TI, integrações e colaborações organizacionais, gestão de projetos de TI e SI, alinhamento estratégico negócio-TI, governança de TI, governo eletrônico, economia da informação, assimetrias informacionais e regulação econômica, e mercados de TI e informação."
+        en: "Focuses on the sociotechnical and economic aspects of information systems, with the aim of creating innovative solutions for different organizations. It investigates automated business processes, IT outsourcing and consulting, organizational integration and collaboration, IT and IS project management, strategic business-IT alignment, IT governance, e-government, information economics, information asymmetries and economic regulation, and IT and information markets."
+        es: "Se centra en los aspectos sociotécnicos y económicos de los sistemas de información, con el objetivo de crear soluciones innovadoras para diferentes organizaciones. Investiga procesos de negocio automatizados, tercerización y consultoría de TI, integraciones y colaboraciones organizacionales, gestión de proyectos de TI y SI, alineación estratégica negocio-TI, gobernanza de TI, gobierno electrónico, economía de la información, asimetrías de información y regulación económica, y mercados de TI y de información."
+    - name:
+        pt-br: "Interação Humano-Computador"
+        en: "Human-computer interaction"
+        es: "Interacción humano-computadora"
+      description:
+        pt-br: "Visa definir, implementar e validar técnicas inovadoras de interação entre humanos e máquinas, melhorando a comunicação entre computadores e usuários. Os temas de pesquisa incluem Interfaces Naturais (corpo humano como meio de interação), Dispositivos Especializados (estereoscopia, feedback háptico), Avaliação de Interfaces Gráficas, Teste de Software para programas com saídas visuais e Ambientes Multidimensionais (espaços 2D e 3D, Realidade Virtual e Aumentada)."
+        en: "Aims to define, implement, and validate innovative techniques for interaction between humans and machines, improving communication between computers and users. Research topics include natural interfaces (the human body as a means of interaction), specialized devices (stereoscopy, haptic feedback), evaluation of graphical interfaces, software testing for programs with visual output, and multidimensional environments (2D and 3D spaces, virtual and augmented reality)."
+        es: "Busca definir, implementar y validar técnicas innovadoras de interacción entre humanos y máquinas, mejorando la comunicación entre computadoras y usuarios. Los temas de investigación incluyen interfaces naturales (el cuerpo humano como medio de interacción), dispositivos especializados (estereoscopía, retroalimentación háptica), evaluación de interfaces gráficas, prueba de software para programas con salidas visuales y entornos multidimensionales (espacios 2D y 3D, realidad virtual y aumentada)."
+    - name:
+        pt-br: "Redes de Computadores"
+        en: "Computer networks"
+        es: "Redes de computadoras"
+      description:
+        pt-br: "Pesquisa em protocolos, desempenho, segurança e infraestrutura de redes aplicados ao contexto de Sistemas de Informação. Abrange temas como computação em nuvem, redes definidas por software, segurança de redes e comunicação distribuída."
+        en: "Research on network protocols, performance, security, and infrastructure applied in the context of information systems. It covers topics such as cloud computing, software-defined networking, network security, and distributed communication."
+        es: "Investigación en protocolos, desempeño, seguridad e infraestructura de redes aplicados al contexto de los sistemas de información. Abarca temas como computación en la nube, redes definidas por software, seguridad de redes y comunicación distribuida."
+  advisors:
+    - "André Carlos Busanelli de Aquino"
+    - "Daniel de Angelis Cordeiro"
+    - "Edmir Parada Vasques Prado"
+    - "Fátima de Lourdes dos Santos Nunes Marques"
+    - "Luciano Antonio Digiampietri"
+    - "Luciano Vieira de Araújo"
+    - "Marcelo Fantinato"
+    - "Marcelo Medeiros Eler"
+    - "Marcelo Morandini"
+    - "Marcos Lordello Chaim"
+    - "Marislei Nishijima"
+    - "Renata Mendes de Araújo"
+- id: "inteligencia-de-sistemas"
+  name:
+    pt-br: "Inteligência de Sistemas"
+    en: "Systems Intelligence"
+    es: "Inteligencia de Sistemas"
+  slug: "inteligencia-de-sistemas"
+  description:
+    pt-br: "Esta linha de pesquisa está relacionada ao estudo, à proposta, à aplicação e à avaliação de metodologias e técnicas da Computação no desenvolvimento de soluções algorítmicas avançadas e inovadoras para problemas de diversas áreas de aplicação."
+    en: "This research line covers the study, proposal, application, and evaluation of computing methodologies and techniques in the development of advanced and innovative algorithmic solutions to problems in various application areas."
+    es: "Esta línea de investigación está relacionada con el estudio, la propuesta, la aplicación y la evaluación de metodologías y técnicas de la computación en el desarrollo de soluciones algorítmicas avanzadas e innovadoras para problemas de diversas áreas de aplicación."
+  objective:
+    pt-br: "Propor novas abordagens para resolução de problemas, avaliar e aprimorar abordagens existentes, e inovar no uso de tais abordagens na criação de soluções avançadas que podem ser incorporadas como núcleos de processamento inteligente em Sistemas de Informação."
+    en: "To propose new problem-solving approaches, evaluate and improve existing ones, and innovate in the use of these approaches to create advanced solutions that can be incorporated as intelligent processing cores in information systems."
+    es: "Proponer nuevos enfoques para la resolución de problemas, evaluar y mejorar los enfoques existentes, e innovar en el uso de dichos enfoques en la creación de soluciones avanzadas que puedan incorporarse como núcleos de procesamiento inteligente en sistemas de información."
+  areas:
+    - name:
+        pt-br: "Inteligência Artificial"
+        en: "Artificial intelligence"
+        es: "Inteligencia artificial"
+      description:
+        pt-br: "Foco no projeto, desenvolvimento, aplicação e avaliação de métodos e técnicas para criação de sistemas inteligentes capazes de adquirir e integrar conhecimento, melhorando progressivamente seu desempenho em objetivos específicos. As bases teóricas incluem Estatística, Matemática Aplicada, Ciência da Computação e Engenharia. As aplicações abrangem bioinformática, biometria, economia, educação, linguística, saúde, análise de redes sociais, jogos e robótica."
+        en: "Focuses on the design, development, application, and evaluation of methods and techniques for creating intelligent systems that can acquire and integrate knowledge, progressively improving their performance on specific goals. Theoretical foundations include statistics, applied mathematics, computer science, and engineering. Applications cover bioinformatics, biometrics, economics, education, linguistics, health, social network analysis, games, and robotics."
+        es: "Se centra en el diseño, desarrollo, aplicación y evaluación de métodos y técnicas para la creación de sistemas inteligentes capaces de adquirir e integrar conocimiento, mejorando progresivamente su desempeño en objetivos específicos. Las bases teóricas incluyen estadística, matemática aplicada, ciencias de la computación e ingeniería. Las aplicaciones abarcan bioinformática, biometría, economía, educación, lingüística, salud, análisis de redes sociales, juegos y robótica."
+    - name:
+        pt-br: "Processamento Gráfico"
+        en: "Graphics processing"
+        es: "Procesamiento gráfico"
+      description:
+        pt-br: "Estudo de processos e técnicas computacionais envolvendo modelos geométricos e imagens digitais. Inclui a transformação de dados geométricos em imagens, conversão de imagens em diferentes formatos, apresentação visual eficiente de grandes volumes de informação, algoritmos para descoberta de estruturas em imagens, representação e manipulação de modelos 3D e técnicas de visualização em Realidade Virtual e Aumentada. As aplicações incluem sistemas de auxílio diagnóstico, plataformas de treinamento médico, jogos sérios para reabilitação, análise morfológica de organismos e reconhecimento de língua de sinais."
+        en: "Study of computational processes and techniques involving geometric models and digital images. It includes transforming geometric data into images, converting images between formats, efficient visual presentation of large volumes of information, algorithms for discovering structures in images, representation and manipulation of 3D models, and visualization techniques in virtual and augmented reality. Applications include computer-aided diagnosis systems, medical training platforms, serious games for rehabilitation, morphological analysis of organisms, and sign language recognition."
+        es: "Estudio de procesos y técnicas computacionales que involucran modelos geométricos e imágenes digitales. Incluye la transformación de datos geométricos en imágenes, la conversión de imágenes a diferentes formatos, la presentación visual eficiente de grandes volúmenes de información, algoritmos para el descubrimiento de estructuras en imágenes, la representación y manipulación de modelos 3D y técnicas de visualización en realidad virtual y aumentada. Las aplicaciones incluyen sistemas de apoyo al diagnóstico, plataformas de entrenamiento médico, juegos serios para rehabilitación, análisis morfológico de organismos y reconocimiento de lengua de señas."
+    - name:
+        pt-br: "Reconhecimento de Padrões"
+        en: "Pattern recognition"
+        es: "Reconocimiento de patrones"
+      description:
+        pt-br: "Desenvolvimento de métodos para análise de características que descrevem objetos, categorizando-os em classes conhecidas ou grupos específicos. Os fundamentos teóricos envolvem três abordagens: Estatística (reconhecimento estatístico de padrões), Inteligência Computacional (paradigmas conexionistas, evolucionários e baseados em incerteza) e Linguagens Formais (reconhecimento sintático e estruturado de padrões). As aplicações incluem bioinformática, sistemas biométricos, auxílio diagnóstico por imagens médicas e sinais biológicos, processamento de linguagem natural, jogos e análise de redes sociais."
+        en: "Development of methods for analyzing the features that describe objects, categorizing them into known classes or specific groups. The theoretical foundations involve three approaches: statistics (statistical pattern recognition), computational intelligence (connectionist, evolutionary, and uncertainty-based paradigms), and formal languages (syntactic and structural pattern recognition). Applications include bioinformatics, biometric systems, computer-aided diagnosis from medical images and biological signals, natural language processing, games, and social network analysis."
+        es: "Desarrollo de métodos para el análisis de características que describen objetos, categorizándolos en clases conocidas o grupos específicos. Los fundamentos teóricos involucran tres enfoques: estadística (reconocimiento estadístico de patrones), inteligencia computacional (paradigmas conexionistas, evolutivos y basados en incertidumbre) y lenguajes formales (reconocimiento sintáctico y estructural de patrones). Las aplicaciones incluyen bioinformática, sistemas biométricos, apoyo al diagnóstico mediante imágenes médicas y señales biológicas, procesamiento de lenguaje natural, juegos y análisis de redes sociales."
+    - name:
+        pt-br: "Computação Sonora e Musical"
+        en: "Sound and music computing"
+        es: "Computación sonora y musical"
+      description:
+        pt-br: "Área voltada à recuperação de informação sonora e musical, personalização e imersão audiovisual, e música digital. Envolve técnicas de processamento de sinais, aprendizado de máquina e interação humano-computador aplicadas a áudio, combinando análise computacional com aspectos perceptuais e culturais do som e da música."
+        en: "An area devoted to sound and music information retrieval, audiovisual personalization and immersion, and digital music. It involves signal processing, machine learning, and human-computer interaction techniques applied to audio, combining computational analysis with perceptual and cultural aspects of sound and music."
+        es: "Área orientada a la recuperación de información sonora y musical, la personalización y la inmersión audiovisual, y la música digital. Involucra técnicas de procesamiento de señales, aprendizaje automático e interacción humano-computadora aplicadas al audio, combinando el análisis computacional con aspectos perceptuales y culturales del sonido y la música."
+  advisors:
+    - "Ariane Machado Lima"
+    - "Clodoaldo Aparecido de Moraes Lima"
+    - "Esteban Fernandez Tuesta"
+    - "Fátima de Lourdes dos Santos Nunes Marques"
+    - "Flávio Luiz Coutinho"
+    - "Helton Hideraldo Bíscaro"
+    - "Ivandré Paraboni"
+    - "Karina Valdivia Delgado"
+    - "Karla Roberta Pereira Sampaio Lima"
+    - "Káthia Maria Honório"
+    - "Luciano Antonio Digiampietri"
+    - "Luciano Vieira de Araújo"
+    - "Norton Trevisan Roman"
+    - "Patrícia Rufino Oliveira"
+    - "Régis Rossi Alves Faria"
+    - "Sarajane Marques Peres"
+    - "Solange Nice Alves de Souza"
+    - "Valdinei Freire da Silva"

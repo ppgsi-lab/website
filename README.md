@@ -6,15 +6,16 @@
 
 O site atual do PPgSI cumpre a função, mas a navegação é fragmentada, o conteúdo está espalhado entre páginas estáticas, e não há separação clara entre **dados** (pessoas, disciplinas, linhas de pesquisa, editais) e **apresentação**. Esta POC demonstra uma alternativa:
 
-- **Dados como fonte de verdade** — professores, alunos, egressos, CCP, disciplinas, linhas de pesquisa e estatísticas do programa vivem em arquivos YAML versionados (`src/data/pt-br/`). Atualizar o site = editar YAML + PR.
+- **Dados como fonte de verdade** — professores, alunos, egressos, CCP, disciplinas, linhas de pesquisa e estatísticas do programa vivem em arquivos YAML versionados (`src/data/`). Atualizar o site = editar YAML + PR.
 - **Conteúdo editorial em Markdown** — posts/notícias como coleção de conteúdo Astro, com autores, tags e slug dinâmico.
 - **Build estático** — sem CMS, sem banco, sem servidor. Deploy é um bucket ou GitHub Pages.
-- **Design coerente** — sistema de componentes reutilizáveis (`PageHeader`, `Section`, `DataTable`, `PersonCard`, etc.) em vez de HTML duplicado por página.
+- **Design coerente** — componentes do design system (`src/components/ds/`, ver [docs/design-system.md](docs/design-system.md)) em vez de HTML duplicado por página.
+- **Três idiomas** — português, inglês e espanhol, com o português como padrão.
 
 ## Stack
 
 - [Astro 6](https://astro.build) — static site generator
-- [Tailwind CSS 4](https://tailwindcss.com) — styling
+- CSS com os tokens do design system e estilos escopados do Astro — styling ([docs/design-system.md](docs/design-system.md))
 - Markdown + YAML — conteúdo
 - Node ≥ 22.12
 
@@ -22,27 +23,33 @@ O site atual do PPgSI cumpre a função, mas a navegação é fragmentada, o con
 
 ```
 src/
-├── data/pt-br/       # Fonte de verdade: professores, alunos, disciplinas, linhas...
+├── data/             # Fonte de verdade: professores, alunos, disciplinas, editais, menu, textos da interface
 ├── content/
-│   ├── posts/        # Artigos autorais (alunos, professores) — collection `posts`
-│   └── news/         # Comunicados oficiais do programa — collection `news`
-├── pages/            # Rotas
-│   ├── about/        # Sobre, pesquisa, produção, regimentos
-│   ├── academic/     # Defesa, qualificação, PAE, proficiência, bolsas, formulários
-│   ├── admission/    # Editais abertos, aluno especial, estrangeiros
-│   ├── courses/      # Catálogo de disciplinas
-│   ├── people/       # Orientadores, orientandos, CCP, egressos
-│   ├── posts/        # Blog com rota dinâmica, autores e tags
-│   ├── news/         # Notícias com rota dinâmica
-│   └── faq/
+│   ├── pages/<idioma>/  # Páginas de texto (apresentação, normas, FAQ...) — collection `pages`
+│   ├── posts/<idioma>/  # Textos de alunos e docentes — collection `posts`
+│   └── news/<idioma>/   # Avisos do programa — collection `news`
+├── pages/
+│   ├── [...locale]/  # Rotas com idioma: Início, editais, pessoas, disciplinas, linhas, avisos, textos
+│   └── [...path].astro  # Páginas da collection `pages`
 ├── components/
-│   ├── layout/       # Header, Footer, navegação desktop/mobile
-│   ├── ui/           # Componentes reutilizáveis
-│   └── *.astro       # Componentes da home
-├── layouts/
-├── lib/data.ts       # Loader dos YAMLs
+│   ├── ds/           # Design system: cabeçalho, rodapé e blocos de página
+│   └── Template.astro  # Texto traduzido com trechos marcados ({nome}) preenchidos por elementos
+├── layouts/          # Layout (casca), PageLayout (páginas do menu), PostLayout (avisos e textos)
+├── lib/
+│   ├── data.ts       # Loader dos YAMLs, já no idioma pedido
+│   ├── content.ts    # Collections por idioma, com o português como reserva
+│   ├── i18n.ts       # Idiomas, idioma da URL, datas
+│   └── url.ts        # Links com base e idioma
 └── styles/
 ```
+
+## Idiomas
+
+O português fica sem prefixo (`/website/about`); inglês e espanhol ficam em `/website/en/...` e `/website/es/...`. As rotas são as mesmas nos três idiomas.
+
+- **Dados (`src/data/*.yaml`)**: cada campo de texto é um mapa `{ pt-br, en, es }`. Nomes, links, códigos e datas numéricas são texto simples, iguais em todos os idiomas. Faltando uma tradução, vale o português.
+- **Textos da interface e das páginas de Início e Editais**: `src/data/ui.yaml`. Marcadores como `{count}` são preenchidos no código; não traduza o nome dentro das chaves.
+- **Conteúdo (`src/content/<collection>/<idioma>/`)**: cada página, aviso ou texto tem um arquivo por idioma, com o mesmo nome. Sem a versão de um idioma, a página aparece em português com um aviso.
 
 ## Rodando localmente
 
@@ -59,14 +66,14 @@ Posts e notícias são **content collections** distintas do Astro, com esquemas,
 
 | Tipo         | Diretório            | Rota listagem | Rota detalhe         | Propósito                                                |
 | :----------- | :------------------- | :------------ | :------------------- | :------------------------------------------------------- |
-| **Post**     | `src/content/posts/` | `/posts`      | `/posts/<slug>`      | Artigos autorais de alunos/professores (pesquisa, tutoriais, experimentos). Tem autores, tags, DOI opcional. |
-| **Notícia**  | `src/content/news/`  | `/news`       | `/news/<slug>`       | Comunicados oficiais do programa (editais, defesas, eventos). Sem autor individual — é o programa falando. |
+| **Post**     | `src/content/posts/<idioma>/` | `/posts`      | `/posts/<slug>`      | Artigos autorais de alunos/professores (pesquisa, tutoriais, experimentos). Tem autores, tags, DOI opcional. |
+| **Notícia**  | `src/content/news/<idioma>/`  | `/news`       | `/news/<slug>`       | Comunicados oficiais do programa (editais, defesas, eventos). Sem autor individual — é o programa falando. |
 
 Os schemas vivem em [`src/content.config.ts`](src/content.config.ts).
 
 ### Criar um post
 
-Nome no padrão `YYYY-MM-DD-slug-descritivo.md` em `src/content/posts/`:
+Nome no padrão `YYYY-MM-DD-slug-descritivo.mdx` em `src/content/posts/pt-br/`; as traduções levam o mesmo nome em `en/` e `es/`:
 
 ```markdown
 ---
@@ -78,7 +85,6 @@ date: 2026-04-08
 tags: ["deep-learning", "cloud"]
 summary: "Resumo curto que aparece no card e na home (1-2 frases)."
 doi: "10.xxxx/yyyy"   # opcional
-cover: "/covers/vit.png"  # opcional
 ---
 
 Corpo em Markdown (CommonMark + extensões do Astro).
@@ -91,14 +97,11 @@ Corpo em Markdown (CommonMark + extensões do Astro).
 | `date`    | sim         | Ordena a listagem                                         |
 | `summary` | sim         | Aparece no card e na home                                 |
 | `tags`    | não         | Cada tag gera `/posts/tags/<tag>`                         |
-| `cover`   | não         | Caminho da imagem de capa                                 |
 | `doi`     | não         | DOI de publicação vinculada                               |
-
-O último post aparece automaticamente na home (componente `LatestPosts`).
 
 ### Criar uma notícia
 
-Nome no padrão `YYYY-MM-DD-slug-descritivo.md` em `src/content/news/`:
+Nome no padrão `YYYY-MM-DD-slug-descritivo.mdx` em `src/content/news/pt-br/`; as traduções levam o mesmo nome em `en/` e `es/`. Os três avisos mais recentes aparecem no Início.
 
 ```markdown
 ---
@@ -106,7 +109,6 @@ title: "Edital de Mestrado 2026 – 1º semestre publicado"
 date: 2026-04-10
 summary: "Inscrições abertas para o processo seletivo (Edital EACH/CPG 90/2025)."
 source: "EACH/CPG"      # opcional
-cover: "/covers/edital.png"  # opcional
 ---
 
 Corpo em Markdown. Links internos para páginas do site:
@@ -119,7 +121,6 @@ Corpo em Markdown. Links internos para páginas do site:
 | `date`    | sim         | Data do comunicado                                  |
 | `summary` | sim         | Resumo exibido na listagem                          |
 | `source`  | não         | Órgão emissor (ex: "EACH/CPG", "CAPES", "CNPq")     |
-| `cover`   | não         | Imagem de capa                                      |
 
 Notícias **não têm autor nem tags** por design — a listagem `/news` é cronológica e enxuta.
 
@@ -139,7 +140,7 @@ O workflow que faz isso vive em [`.github/workflows/issue-to-pr.yml`](.github/wo
 
 ```sh
 npm run dev                                    # http://localhost:4321
-git add src/content/<colecao>/<arquivo>.md
+git add src/content/<colecao>/pt-br/<arquivo>.mdx
 git commit -m "post: título curto"             # ou "news: ..."
 git push
 ```

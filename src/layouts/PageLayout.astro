@@ -1,0 +1,37 @@
+---
+import Layout from './Layout.astro';
+import Button from '../components/ds/Button.astro';
+import PageHero from '../components/ds/PageHero.astro';
+import SubNav from '../components/ds/SubNav.astro';
+import { getNavPage, getUI } from '../lib/data';
+import { localeOf } from '../lib/i18n';
+import { asset, route } from '../lib/url';
+
+interface Props {
+  title: string;
+  sub: string;
+  /** Para páginas fora do menu: a rota do menu de que elas dependem, como /posts para a página de um autor. */
+  parent?: string;
+  /** Repassado ao Layout: rota do seletor de idioma para páginas que só existem neste idioma. */
+  alternate?: string;
+}
+
+const { title, sub, parent, alternate } = Astro.props;
+const locale = localeOf(Astro.url);
+const path = route(Astro.url);
+const entry = getNavPage(parent ?? path, locale);
+if (!entry) throw new Error(`A rota ${parent ?? path} não está no menu (navigation.yaml).`);
+const { section, page } = entry;
+const home = { label: getUI(locale).page.home, href: '/' };
+// As abas do submenu ficam sob o topo da seção, para que trocar de aba mude só o conteúdo; páginas fora do menu têm topo próprio.
+const hero = parent
+  ? { title, sub, crumbs: [home, { label: section.label, href: section.href }, { label: page.label, href: page.href }, { label: title }] }
+  : { title: section.label, sub: section.intro, image: section.image && { src: asset(section.image.src), alt: section.image.alt } };
+const action = parent ? undefined : section.action;
+---
+
+<Layout title={title} description={sub} section={section.id} alternate={alternate}>
+  <PageHero {...hero}>{action && <Button yellow large href={action.href}>{action.label}</Button>}</PageHero>
+  <SubNav label={section.label} items={section.links} current={page.href} />
+  <slot />
+</Layout>

@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  deck: string;
+  image: { src: string; alt: string };
+}
+
+const { title, deck, image } = Astro.props;
+---
+
+<div class="g12 front">
+  <div class="lead">
+    <h1 class="h1">{title}</h1>
+    <p class="deck">{deck}</p>
+    <div class="txt"><slot /></div>
+    <div class="acts"><slot name="actions" /></div>
+    {Astro.slots.has('second') && <div class="second"><slot name="second" /></div>}
+  </div>
+  <div class="figc"><figure class="fig"><img src={image.src} alt={image.alt} /></figure></div>
+</div>
+
+<style>
+  .front { padding: var(--front-pad-top) 0 var(--front-pad-bottom); align-items: stretch; }
+  .lead { grid-column: 1 / 7; }
+  .figc { grid-column: 7 / 13; position: relative; min-height: 480px; }
+  .h1 { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 60px; font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 24px; color: var(--deep); text-wrap: balance; }
+  .deck { font-size: 22px; line-height: 1.4; color: var(--deck); margin: 0 0 24px; font-weight: 300; }
+  .txt :global(p) { font-family: var(--font-serif); font-optical-sizing: auto; font-size: 19px; line-height: 1.6; margin: 0 0 1em; }
+  .acts { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+  .acts :global(.more) { margin: 0; }
+  .second { margin-top: 28px; padding-top: 20px; border-top: var(--rule-hairline) var(--hairline); }
+  .second :global(h2) { font-family: var(--font-serif); font-size: 28px; font-weight: 400; margin: 0; line-height: 1.15; color: var(--deep); }
+  .second :global(p) { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
+  .fig { margin: 0; position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-md); }
+  .fig img { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 118%; width: auto; min-width: 100%; display: block; }
+
+  @media (max-width: 1099px) {
+    .h1 { font-size: 52px; }
+    .deck { font-size: 20px; }
+    .front { padding: 40px 0 56px; }
+    .lead { display: contents; }
+    .lead > * { min-width: 0; grid-column: 1 / -1; }
+    .h1 { order: 1; margin-bottom: 28px; }
+    .figc { order: 2; grid-column: 1 / -1; position: static; min-height: 0; margin-bottom: 32px; }
+    .fig { position: relative; inset: auto; aspect-ratio: 3 / 2; }
+    .fig img { width: 100%; height: auto; }
+    .deck { order: 3; grid-column: 1 / 7; }
+    .txt { order: 4; grid-column: 7 / 13; grid-row: 3 / 6; }
+    .txt :global(p) { font-size: 18px; }
+    .acts { order: 5; grid-column: 1 / 7; }
+    .second { order: 6; grid-column: 1 / 7; }
+  }
+
+  @media (max-width: 699px) {
+    .h1 { font-size: 40px; }
+    .deck { font-size: 18px; }
+    .front { padding: 28px 0 48px; }
+    .figc { margin-bottom: 24px; }
+    .fig { aspect-ratio: 4 / 3; }
+    .deck, .txt, .acts, .second { grid-column: 1 / -1; grid-row: auto; }
+    .txt :global(p) { font-size: 17px; line-height: 1.55; }
+    .acts :global(.btn) { flex: 1 1 100%; justify-content: center; }
+    .second :global(h2) { font-size: 24px; }
+  }
+</style>

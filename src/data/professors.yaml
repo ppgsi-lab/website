@@ -1,0 +1,434 @@
+- name: "André Carlos Busanelli de Aquino"
+  researchAreas:
+    pt-br: "Transformação Digital, Plataformas Digitais, Drones, IoT, Metaverso"
+    en: "Digital transformation, digital platforms, drones, IoT, metaverse"
+    es: "Transformación digital, plataformas digitales, drones, IoT, metaverso"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/2204782841421432"
+  email: "aaquino"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Ariane Machado Lima"
+  researchAreas:
+    pt-br: "Reconhecimento de Padrões, Aprendizado de Máquina, Informática em Saúde"
+    en: "Pattern recognition, machine learning, health informatics"
+    es: "Reconocimiento de patrones, aprendizaje automático, informática en salud"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/6342311646947853"
+  email: "ariane.machado"
+  website: "http://www.each.usp.br/ariane/"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Clodoaldo Aparecido de Moraes Lima"
+  researchAreas:
+    pt-br: "Inteligência Computacional, Aprendizagem de Máquina, Processamento de Sinais"
+    en: "Computational intelligence, machine learning, signal processing"
+    es: "Inteligencia computacional, aprendizaje automático, procesamiento de señales"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/3017337174053381"
+  email: "c.lima"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Daniel de Angelis Cordeiro"
+  researchAreas:
+    pt-br: "Computação em Nuvem, Cidades Inteligentes, Alto Desempenho, Sustentabilidade"
+    en: "Cloud computing, smart cities, high-performance computing, sustainability"
+    es: "Computación en la nube, ciudades inteligentes, alto desempeño, sostenibilidad"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/5322325760113475"
+  email: "daniel.cordeiro"
+  website: "https://each.usp.br/dc/"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Edmir Parada Vasques Prado"
+  researchAreas:
+    pt-br: "Gestão da Informação, Governança de TI, Sistemas Organizacionais"
+    en: "Information management, IT governance, organizational systems"
+    es: "Gestión de la información, gobernanza de TI, sistemas organizacionales"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/2091731281771940"
+  email: "eprado"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Esteban Fernandez Tuesta"
+  researchAreas:
+    pt-br: "Estatística para Saúde, Epidemiologia, Cienciometria"
+    en: "Health statistics, epidemiology, scientometrics"
+    es: "Estadística para la salud, epidemiología, cienciometría"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/1068554491963326"
+  email: "tuesta"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Fátima de Lourdes dos Santos Nunes Marques"
+  researchAreas:
+    pt-br: "Realidade Virtual, Processamento de Imagens, Diagnóstico"
+    en: "Virtual reality, image processing, diagnosis"
+    es: "Realidad virtual, procesamiento de imágenes, diagnóstico"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/8626964624628522"
+  email: "fatima.nunes"
+  website: "http://www.each.usp.br/lapis/"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+    - "inteligencia-de-sistemas"
+- name: "Flávio Luiz Coutinho"
+  researchAreas:
+    pt-br: "Rastreamento do Olhar, Visão Computacional, IHC"
+    en: "Eye tracking, computer vision, HCI"
+    es: "Seguimiento ocular, visión por computadora, IHC"
+  advisingLevel:
+    pt-br: "Mestrado"
+    en: "Master's program"
+    es: "Maestría"
+  lattesUrl: "http://lattes.cnpq.br/3100288618568772"
+  email: "flcoutinho"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Helton Hideraldo Bíscaro"
+  researchAreas:
+    pt-br: "Modelos Analíticos, Simulação de Fluidos, Visão Computacional"
+    en: "Analytical models, fluid simulation, computer vision"
+    es: "Modelos analíticos, simulación de fluidos, visión por computadora"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/8794441658476782"
+  email: "heltonhb"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Ivandré Paraboni"
+  researchAreas:
+    pt-br: "IA Aplicada a Textos, Tecnologia da Língua Humana, PLN, LLMs"
+    en: "AI applied to text, human language technology, NLP, LLMs"
+    es: "IA aplicada a textos, tecnología del lenguaje humano, PLN, LLMs"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/4979536048261282"
+  email: "ivandre"
+  website: "https://ivandreparaboni.wixsite.com/research"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "João Luiz Bernardes Junior"
+  researchAreas:
+    pt-br: "UX, Interação 3D, Realidade Virtual/Aumentada, Jogos"
+    en: "UX, 3D interaction, virtual/augmented reality, games"
+    es: "UX, interacción 3D, realidad virtual/aumentada, juegos"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/8529032048850930"
+  email: "jlbernardes"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "José de Jesus Pérez Alcázar"
+  researchAreas:
+    pt-br: "Tecnologia Web, Sistemas de Informação, IA, Ontologias"
+    en: "Web technology, information systems, AI, ontologies"
+    es: "Tecnología web, sistemas de información, IA, ontologías"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/2201580020088062"
+  email: "jperez"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Karina Valdivia Delgado"
+  researchAreas:
+    pt-br: "IA, Planejamento Probabilístico, Processos Markovianos"
+    en: "AI, probabilistic planning, Markov processes"
+    es: "IA, planificación probabilística, procesos markovianos"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/8420771612707965"
+  email: "kvd"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Karla Roberta Pereira Sampaio Lima"
+  researchAreas:
+    pt-br: "Teoria dos Grafos, Otimização Combinatória, Programação Inteira"
+    en: "Graph theory, combinatorial optimization, integer programming"
+    es: "Teoría de grafos, optimización combinatoria, programación entera"
+  advisingLevel:
+    pt-br: "Mestrado"
+    en: "Master's program"
+    es: "Maestría"
+  lattesUrl: "http://lattes.cnpq.br/8474346566632932"
+  email: "ksampaiolima"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Káthia Maria Honório"
+  researchAreas:
+    pt-br: "Química Computacional, Química Medicinal, Modelagem Molecular"
+    en: "Computational chemistry, medicinal chemistry, molecular modeling"
+    es: "Química computacional, química medicinal, modelado molecular"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/0438695263897215"
+  email: "kmhonorio"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Luciano Antonio Digiampietri"
+  researchAreas:
+    pt-br: "Análise de Redes Sociais, Bioinformática, Cientometria, PLN"
+    en: "Social network analysis, bioinformatics, scientometrics, NLP"
+    es: "Análisis de redes sociales, bioinformática, cienciometría, PLN"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/1689147340536405"
+  email: "digiampietri"
+  website: "http://www.each.usp.br/digiampietri"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+    - "inteligencia-de-sistemas"
+- name: "Luciano Vieira de Araújo"
+  researchAreas:
+    pt-br: "Banco de Dados, Data Mining, Big Data, Bioinformática"
+    en: "Databases, data mining, big data, bioinformatics"
+    es: "Bases de datos, minería de datos, big data, bioinformática"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/2459050725301964"
+  email: "lvaraujo"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+    - "inteligencia-de-sistemas"
+- name: "Marcelo de Souza Lauretto"
+  researchAreas:
+    pt-br: "Aprendizado de Máquina, Bioestatística, Redes Complexas"
+    en: "Machine learning, biostatistics, complex networks"
+    es: "Aprendizaje automático, bioestadística, redes complejas"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/2488734578237992"
+  email: "marcelolauretto"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Marcelo Fantinato"
+  researchAreas:
+    pt-br: "Mineração de Processos, BPM, Brinquedos Inteligentes, Robôs Sociais"
+    en: "Process mining, BPM, smart toys, social robots"
+    es: "Minería de procesos, BPM, juguetes inteligentes, robots sociales"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/8207954538307988"
+  email: "m.fantinato"
+  website: "http://www.each.usp.br/fantinato"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Marcelo Medeiros Eler"
+  researchAreas:
+    pt-br: "Acessibilidade Digital, Teste de Software, Cadeias de Suprimentos"
+    en: "Digital accessibility, software testing, supply chains"
+    es: "Accesibilidad digital, prueba de software, cadenas de suministro"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/0170428647417667"
+  email: "marceloeler"
+  website: "http://www.each.usp.br/marceloeler"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Marcelo Morandini"
+  researchAreas:
+    pt-br: "Engenharia de Software, IHC, Biodiversidade"
+    en: "Software engineering, HCI, biodiversity"
+    es: "Ingeniería de software, IHC, biodiversidad"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/7235951485247158"
+  email: "m.morandini"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Marcos Lordello Chaim"
+  researchAreas:
+    pt-br: "Engenharia de Software, Teste, Manutenção, Linguagens de Programação"
+    en: "Software engineering, testing, maintenance, programming languages"
+    es: "Ingeniería de software, pruebas, mantenimiento, lenguajes de programación"
+  advisingLevel:
+    pt-br: "Mestrado"
+    en: "Master's program"
+    es: "Maestría"
+  lattesUrl: "http://lattes.cnpq.br/6414738466336890"
+  email: "chaim"
+  website: "http://www.each.usp.br/chaim/"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Marislei Nishijima"
+  researchAreas:
+    pt-br: "Economia da Informação, Internet, Redes Sociais, Economia da Saúde"
+    en: "Information economics, internet, social networks, health economics"
+    es: "Economía de la información, internet, redes sociales, economía de la salud"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/5620359266790501"
+  email: "marislei"
+  website: "http://marislei.iri.usp.br"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Norton Trevisan Roman"
+  researchAreas:
+    pt-br: "PLN, Emoção e Sentimento, Reconhecimento de Padrões, IA"
+    en: "NLP, emotion and sentiment, pattern recognition, AI"
+    es: "PLN, emoción y sentimiento, reconocimiento de patrones, IA"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/4440731926425760"
+  email: "norton"
+  website: "http://www.each.usp.br/norton/"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Patrícia Rufino Oliveira"
+  researchAreas:
+    pt-br: "Computação Bioinspirada, IA, Visão Computacional, Machine Learning"
+    en: "Bio-inspired computing, AI, computer vision, machine learning"
+    es: "Computación bioinspirada, IA, visión por computadora, aprendizaje automático"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/9174573815394512"
+  email: "proliveira"
+  website: "http://www.each.usp.br/proliveira/"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Pedro Luiz Pizzigatti Corrêa"
+  researchAreas:
+    pt-br: "Big Data, Ciência de Dados, Sistemas Distribuídos"
+    en: "Big data, data science, distributed systems"
+    es: "Big data, ciencia de datos, sistemas distribuidos"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/3640608958277159"
+  email: "pedro.correa"
+  website: "https://pcs.usp.br/pessoa/?numerousp=1357852"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Régis Rossi Alves Faria"
+  researchAreas:
+    pt-br: "Computação Sonora, Realidade Sonora Virtual/Aumentada"
+    en: "Sound computing, virtual/augmented sound reality"
+    es: "Computación sonora, realidad sonora virtual/aumentada"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/9990463602315076"
+  email: "regis"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Renata Mendes de Araújo"
+  researchAreas:
+    pt-br: "Democracia Digital, Governo Digital, BPM, Inovação Social"
+    en: "Digital democracy, digital government, BPM, social innovation"
+    es: "Democracia digital, gobierno digital, BPM, innovación social"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/3589012014320121"
+  email: "rma.renata.araujo"
+  website: "https://ciberdem.mack.com.br/"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Sarajane Marques Peres"
+  researchAreas:
+    pt-br: "Aprendizado de Máquina, Mineração de Processos, LLMs, Robótica Social"
+    en: "Machine learning, process mining, LLMs, social robotics"
+    es: "Aprendizaje automático, minería de procesos, LLMs, robótica social"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/6265936760089757"
+  email: "sarajane"
+  website: "https://www.linkedin.com/in/sarajane-marques-peres/"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Solange Nice Alves de Souza"
+  researchAreas:
+    pt-br: "Big Data, Redes Sociais, Gestão de Dados, Ontologias"
+    en: "Big data, social networks, data management, ontologies"
+    es: "Big data, redes sociales, gestión de datos, ontologías"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "https://lattes.cnpq.br/2885832796760007"
+  email: "ssouza"
+  researchLines:
+    - "inteligencia-de-sistemas"
+- name: "Thiago Adriano Coleti"
+  researchAreas:
+    pt-br: "Interação Humano-Dados, Educação em Computação, Engenharia de Software"
+    en: "Human-data interaction, computing education, software engineering"
+    es: "Interacción humano-datos, educación en computación, ingeniería de software"
+  advisingLevel:
+    pt-br: "Mestrado"
+    en: "Master's program"
+    es: "Maestría"
+  lattesUrl: "http://lattes.cnpq.br/8368597451080752"
+  email: "thiago.coleti@uenp.edu.br"
+  researchLines:
+    - "gestao-e-desenvolvimento"
+- name: "Valdinei Freire da Silva"
+  researchAreas:
+    pt-br: "Processos Markovianos, Aprendizado por Reforço, Decisões sob Risco"
+    en: "Markov processes, reinforcement learning, decisions under risk"
+    es: "Procesos markovianos, aprendizaje por refuerzo, decisiones bajo riesgo"
+  advisingLevel:
+    pt-br: "Mestrado e Doutorado"
+    en: "Master's and doctoral programs"
+    es: "Maestría y doctorado"
+  lattesUrl: "http://lattes.cnpq.br/0813823100105934"
+  email: "valdinei.freire"
+  website: "http://www.each.usp.br/valdinei/"
+  researchLines:
+    - "inteligencia-de-sistemas"

@@ -1,0 +1,38 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import PeopleList from '../../../components/ds/PeopleList.astro';
+import SectionHead from '../../../components/ds/SectionHead.astro';
+import { getProfessors, getUI } from '../../../lib/data';
+import { fill, localeOf, localeParams } from '../../../lib/i18n';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const t = getUI(locale).people;
+const professors = getProfessors(locale);
+const levels = [...new Set(professors.map((professor) => professor.advisingLevel))];
+const groups = levels.map((level) => ({
+  level,
+  people: professors
+    .filter((professor) => professor.advisingLevel === level)
+    .map((professor) => ({ name: professor.name, href: professor.lattesUrl, areas: professor.researchAreas, site: professor.website })),
+}));
+---
+
+<PageLayout title={t.advisorsTitle} sub={fill(t.advisorsText, { count: professors.length })}>
+  <div class="wrap list">
+    {groups.map((group) => (
+      <section class="sec">
+        <SectionHead title={group.level} />
+        <PeopleList people={group.people} />
+      </section>
+    ))}
+  </div>
+</PageLayout>
+
+<style>
+  .list { padding-bottom: 96px; }
+  @media (max-width: 699px) {
+    .list { padding-bottom: 64px; }
+  }
+</style>

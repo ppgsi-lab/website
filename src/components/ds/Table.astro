@@ -1,0 +1,26 @@
+---
+import type { NavLink } from '../../types';
+import { url } from '../../lib/url';
+import { localeOf } from '../../lib/i18n';
+
+type Cell = string | number | NavLink;
+
+interface Props {
+  columns: string[];
+  rows: Cell[][];
+  /** Deixa o texto das células quebrar linha, para tabelas largas caberem na coluna do texto. */
+  fluid?: boolean;
+}
+
+const { columns, rows, fluid } = Astro.props;
+const locale = localeOf(Astro.url);
+---
+
+<div class:list={['tbl', { fluid }]}><table>
+  <thead><tr>{columns.map((column) => <th>{column}</th>)}</tr></thead>
+  <tbody>{rows.map((row) => <tr>{row.map((cell) => <td>{typeof cell === 'object' ? <a href={url(cell.href, locale)}>{cell.label}</a> : cell}</td>)}</tr>)}</tbody>
+</table></div>
+
+<style>
+  .fluid td { white-space: normal; }
+</style>

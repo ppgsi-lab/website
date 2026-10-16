@@ -1,0 +1,38 @@
+---
+import PageLayout from '../../../../layouts/PageLayout.astro';
+import DocLayout from '../../../../components/ds/DocLayout.astro';
+import EntryList from '../../../../components/ds/EntryList.astro';
+import SideList from '../../../../components/ds/SideList.astro';
+import { getUI } from '../../../../lib/data';
+import { byDateDesc, getLocalized, slugify, tagLabel, type LocalizedEntry } from '../../../../lib/content';
+import { fill, localeOf, localeParam, locales } from '../../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of locales) {
+    const posts = byDateDesc(await getLocalized('posts', locale));
+    const names = [...new Set(posts.flatMap(({ entry }) => entry.data.authors.map((author) => author.name)))];
+    for (const name of names) {
+      const own = posts.filter(({ entry }) => entry.data.authors.some((author) => author.name === name));
+      paths.push({ params: { locale: localeParam(locale), autor: slugify(name) }, props: { name, posts: own } });
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  name: string;
+  posts: LocalizedEntry<'posts'>[];
+}
+
+const { name, posts } = Astro.props;
+const ui = getUI(localeOf(Astro.url));
+const tags = [...new Set(posts.flatMap(({ entry }) => entry.data.tags))].sort();
+---
+
+<PageLayout title={fill(ui.posts.authorTitle, { name })} sub={fill(ui.posts.authorSub, { name })} parent="/posts">
+  <DocLayout>
+    <Fragment slot="side">{tags.length > 0 && <SideList label={ui.posts.topics} items={tags.map((tag) => ({ label: tagLabel(tag), href: `/posts/tags/${tag}` }))} />}</Fragment>
+    <EntryList items={posts.map(({ slug, entry }) => ({ date: entry.data.date, title: entry.data.title, href: `/posts/${slug}`, meta: entry.data.authors.map((author) => author.name).join(', ') }))} />
+  </DocLayout>
+</PageLayout>

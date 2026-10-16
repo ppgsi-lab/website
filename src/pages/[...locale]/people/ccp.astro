@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import Table from '../../../components/ds/Table.astro';
+import { getCCP, getUI } from '../../../lib/data';
+import { localeOf, localeParams } from '../../../lib/i18n';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const t = ui.people;
+const ccp = getCCP(locale);
+const toc = [
+  { label: t.composition, href: '#composicao' },
+  { label: t.pastCoordinators, href: '#ex-coordenadores' },
+  { label: t.meetings, href: '#reunioes' },
+];
+---
+
+<PageLayout title={t.ccpTitle} sub={t.ccpText}>
+  <DocLayout>
+    <SideList slot="side" toc label={ui.page.toc} items={toc} />
+    <h2 id="composicao">{t.composition}</h2>
+    <Table
+      fluid
+      columns={[ui.table.holder, ui.table.role, ui.table.term, ui.table.alternate, ui.table.term]}
+      rows={ccp.members.map((member) => [member.holder, member.role, member.term, member.alternate, member.alternateTerm])}
+    />
+    <h2 id="ex-coordenadores">{t.pastCoordinators}</h2>
+    <Table columns={[ui.table.name, ui.table.period]} rows={ccp.pastCoordinators.map((coordinator) => [coordinator.name, coordinator.term])} />
+    <h2 id="reunioes">{t.meetings}</h2>
+    <p>{t.meetingsText}</p>
+    {ccp.meetings.map((semester) => (
+      <Fragment>
+        <h3>{semester.label}</h3>
+        <Table columns={[ui.table.date, ui.table.day, ui.table.time]} rows={semester.items.map((meeting) => [meeting.date, meeting.day, meeting.time])} />
+      </Fragment>
+    ))}
+    <p class="note"><strong>{t.important}:</strong> {t.importantText}</p>
+  </DocLayout>
+</PageLayout>

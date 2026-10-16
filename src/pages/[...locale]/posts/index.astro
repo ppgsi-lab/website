@@ -1,0 +1,32 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import DocLayout from '../../../components/ds/DocLayout.astro';
+import EntryList from '../../../components/ds/EntryList.astro';
+import SideList from '../../../components/ds/SideList.astro';
+import { getUI } from '../../../lib/data';
+import { byDateDesc, getLocalized, tagLabel } from '../../../lib/content';
+import { localeOf, localeParams } from '../../../lib/i18n';
+
+export const getStaticPaths = localeParams;
+
+const locale = localeOf(Astro.url);
+const ui = getUI(locale);
+const posts = byDateDesc(await getLocalized('posts', locale));
+const years = [...new Set(posts.map(({ entry }) => entry.data.date.getUTCFullYear()))];
+const tags = [...new Set(posts.flatMap(({ entry }) => entry.data.tags))].sort();
+---
+
+<PageLayout title={ui.posts.title} sub={ui.posts.sub}>
+  <DocLayout>
+    <Fragment slot="side">
+      <SideList toc label={ui.page.toc} items={years.map((year) => ({ label: String(year), href: `#ano-${year}` }))} />
+      {tags.length > 0 && <SideList label={ui.posts.topics} items={tags.map((tag) => ({ label: tagLabel(tag), href: `/posts/tags/${tag}` }))} />}
+    </Fragment>
+    {years.map((year) => (
+      <Fragment>
+        <h2 id={`ano-${year}`}>{year}</h2>
+        <EntryList items={posts.filter(({ entry }) => entry.data.date.getUTCFullYear() === year).map(({ slug, entry }) => ({ date: entry.data.date, title: entry.data.title, href: `/posts/${slug}`, meta: entry.data.authors.map((author) => author.name).join(', ') }))} />
+      </Fragment>
+    ))}
+  </DocLayout>
+</PageLayout>

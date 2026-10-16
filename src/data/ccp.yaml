@@ -1,0 +1,185 @@
+members:
+  - holder: "Patrícia Rufino Oliveira"
+    role:
+      pt-br: "Docente (Coordenadora)"
+      en: "Faculty member (coordinator)"
+      es: "Docente (coordinadora)"
+    term: "22/06/24 - 21/06/26"
+    alternate: "Marcelo Morandini"
+    alternateTerm: "22/06/24 - 21/06/26"
+  - holder: "Marcelo M. Eler"
+    role:
+      pt-br: "Docente (Vice-Coordenador)"
+      en: "Faculty member (vice-coordinator)"
+      es: "Docente (vicecoordinador)"
+    term: "26/05/23 - 25/05/25"
+    alternate: "Luciano Digiampietri"
+    alternateTerm: "26/05/23 - 25/05/25"
+  - holder: "Ariane Machado Lima"
+    role:
+      pt-br: "Docente"
+      en: "Faculty member"
+      es: "Docente"
+    term: "01/04/24 - 31/03/26"
+    alternate: "Marislei Nishijima"
+    alternateTerm: "01/04/24 - 31/03/26"
+  - holder: "Marcos Lordello Chaim"
+    role:
+      pt-br: "Docente"
+      en: "Faculty member"
+      es: "Docente"
+    term: "01/04/24 - 31/03/26"
+    alternate: "José Pérez"
+    alternateTerm: "22/06/24 - 21/06/26"
+  - holder: ""
+    role: ""
+    term: ""
+    alternate: "Esteban Fernandez Tuesta"
+    alternateTerm: "22/06/24 - 21/06/26"
+  - holder: "Hermon Faria Araújo"
+    role:
+      pt-br: "Discente"
+      en: "Student representative"
+      es: "Representante estudiantil"
+    term: ""
+    alternate: ""
+    alternateTerm: ""
+pastCoordinators:
+  - name: "Marcelo Medeiros Eler"
+    term: "2020-2022 / 2022-2024"
+  - name: "Karina Valdivia Delgado"
+    term: "2018-2020"
+  - name: "Marcelo Fantinato"
+    term: "2014-2016 / 2016-2018"
+  - name: "Fátima de Lourdes dos Santos Nunes Marques"
+    term: "2012-2014"
+  - name: "Marcos Lordello Chaim"
+    term: "2010-2012"
+meetings:
+  - label:
+      pt-br: "1º Semestre de 2026"
+      en: "First semester of 2026"
+      es: "Primer semestre de 2026"
+    items:
+      - date:
+          pt-br: "Janeiro"
+          en: "January"
+          es: "Enero"
+        day:
+          pt-br: "(não há reunião ordinária)"
+          en: "(no regular meeting)"
+          es: "(no hay reunión ordinaria)"
+        time: ""
+      - date:
+          pt-br: "09 de fevereiro"
+          en: "February 9"
+          es: "9 de febrero"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "02 de março"
+          en: "March 2"
+          es: "2 de marzo"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "06 de abril"
+          en: "April 6"
+          es: "6 de abril"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "04 de maio"
+          en: "May 4"
+          es: "4 de mayo"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "01 de junho"
+          en: "June 1"
+          es: "1 de junio"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "Julho"
+          en: "July"
+          es: "Julio"
+        day:
+          pt-br: "(não há reunião ordinária)"
+          en: "(no regular meeting)"
+          es: "(no hay reunión ordinaria)"
+        time: ""
+  - label:
+      pt-br: "2º Semestre de 2025"
+      en: "Second semester of 2025"
+      es: "Segundo semestre de 2025"
+    items:
+      - date:
+          pt-br: "Julho"
+          en: "July"
+          es: "Julio"
+        day:
+          pt-br: "(não há reunião ordinária)"
+          en: "(no regular meeting)"
+          es: "(no hay reunión ordinaria)"
+        time: ""
+      - date:
+          pt-br: "04 de agosto"
+          en: "August 4"
+          es: "4 de agosto"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "08 de setembro"
+          en: "September 8"
+          es: "8 de septiembre"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "06 de outubro"
+          en: "October 6"
+          es: "6 de octubre"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "03 de novembro"
+          en: "November 3"
+          es: "3 de noviembre"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"
+      - date:
+          pt-br: "01 de dezembro"
+          en: "December 1"
+          es: "1 de diciembre"
+        day:
+          pt-br: "Segunda-feira"
+          en: "Monday"
+          es: "Lunes"
+        time: "14h"

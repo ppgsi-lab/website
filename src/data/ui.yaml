@@ -4,6 +4,7 @@ site:
     pt-br: "Mestrado e Doutorado Acadêmicos em Sistemas de Informação, EACH USP"
     en: "Academic master's and doctoral programs in Information Systems, EACH USP"
     es: "Maestría y doctorado académicos en Sistemas de Información, EACH USP"
+  watermark: "Demo version"
 
 masthead:
   menu:

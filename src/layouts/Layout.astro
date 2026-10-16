@@ -21,6 +21,8 @@ const locale = localeOf(Astro.url);
 const nav = getNavigation(locale);
 const ui = getUI(locale);
 const path = route(Astro.url);
+// Marca d'água, ligada enquanto site.watermark (ui.yaml) tiver texto: o texto vira a máscara que global.css pinta atrás do conteúdo.
+const watermark = ui.site.watermark && `<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700"><text x="180" y="100" transform="rotate(-25 180 100)" text-anchor="middle" dominant-baseline="middle">${ui.site.watermark}</text></svg>`;
 ---
 
 <!doctype html>
@@ -38,7 +40,7 @@ const path = route(Astro.url);
     <title>{title} — {ui.site.title}</title>
     <ClientRouter />
   </head>
-  <body>
+  <body class:list={{ watermark }} style={watermark ? `--watermark: url("data:image/svg+xml,${encodeURIComponent(watermark)}")` : undefined}>
     <Masthead nav={nav.main} current={section} alternate={alternate} />
     <main><slot /></main>
     <Footer columns={nav.footer} />

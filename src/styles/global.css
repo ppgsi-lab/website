@@ -15,6 +15,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Marca d'água, atrás do conteúdo: aparece no fundo branco, e o que tem fundo próprio fica por cima. O Layout liga a classe e passa o
+     texto; o ladrilho estica para caber inteiro na largura. Fica no corpo, e não fixa na tela, porque o Safari só pintava a camada fixa
+     ao selecionar texto. */
+  body.watermark { position: relative; isolation: isolate; }
+  body.watermark::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--ink); opacity: .18; mask: var(--watermark) round repeat; pointer-events: none; }
+
   a { color: var(--teal); text-decoration: none; }
   a:hover { color: var(--deep); text-decoration: underline; }
 

@@ -160,7 +160,7 @@ export interface ResearchLineSummary {
 type Strings<K extends string> = Record<K, string>;
 
 export interface UIStrings {
-  site: Strings<"title" | "description">;
+  site: Strings<"title" | "description" | "watermark">;
   masthead: Strings<"menu" | "nav" | "open" | "logo" | "usp" | "language">;
   footer: Strings<"programName" | "institution" | "university" | "address" | "zip" | "copyright" | "domain">;
   page: Strings<"home" | "crumbs" | "toc" | "documents" | "untranslated">;
